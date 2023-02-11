@@ -6,11 +6,17 @@ const topics =  await reponse.json();
 // Suivre le compte de topics valides demandés
 let validTopicRequests =0;
 
-
 //Extraire la liste des keys
 const listKeys = topics.map(topic => topic.key);
 
 //console.log(listKeys);
+let orientationPortrait = false;
+
+//Contrôler une fois au lancement quelle est l'orientation de la page
+if(screen.availHeight > screen.availWidth){
+    orientationPortrait = true;
+}
+
 
 
 //Fonction qui crée la bulle de chat avec le contenu envoyé par l'user
