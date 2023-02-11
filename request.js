@@ -53,6 +53,7 @@ chatBox.addEventListener("submit", function(event){
     //Appel de la fonction former une bulle de chat avec chatContent
     chatBulleUser(chatContent);
 
+    
     //Appel de l'analyse du message et renvoi des topics demandés
     let wordArrayUser = messageIntoArray(chatContent);
     let selectedTopics = keyComparison(listKeys,wordArrayUser);
@@ -66,8 +67,12 @@ chatBox.addEventListener("submit", function(event){
         validTopicRequests+=1;
         //ajouter le topic à la liste des topics visités
         visitedTopics.push(selectedTopics[0]);
+       
         
+        
+
     } else {
+        //console.log(selectedTopics[0]);
         // Appel fonction je n'ai pas compris votre requête
         //chatBulleUser("I didn't quite get your request");
     }
@@ -75,7 +80,12 @@ chatBox.addEventListener("submit", function(event){
     console.log(`Valid Topic Requests : ${validTopicRequests}`);
 
     //Mise à jour de l'arborescence
-    displayTopicTree();
+     if (!orientationPortrait){
+        displayTopicTree(selectedTopics[0]);
+    }
+     
+    
+    
 
     //Activation de l'accès au chat Whatsapp à partir de 5 requêtes valides
     //if(validTopicRequests>4){
@@ -160,11 +170,13 @@ let listTransverseSubjects = topics.filter(function(a){
     return a.transverse;} );
  listTransverseSubjects=listTransverseSubjects.map(a => a.key);
 
+ 
  if (!orientationPortrait){
     displayTopicTree();
     }
 
-function displayTopicTree(){
+
+function displayTopicTree(centralTopic){
 // Selon qu'il s'agisse d'un "transverse" ou d'un "non-transverse", on append les topicKeys dans l'un ou l'autre des div prévus
     //Boucle listWorks
 
@@ -176,7 +188,7 @@ function displayTopicTree(){
         let topicBox = document.createElement("p");
         topicBox.innerText=listWorks[i];
         document.getElementById('works-tree').appendChild(topicBox);
-        addCorrectClass(topicBox,listWorks[i]);
+        addCorrectClass(topicBox,listWorks[i],centralTopic);
         
     }
 
@@ -184,7 +196,7 @@ function displayTopicTree(){
         let topicBox = document.createElement("p");
         topicBox.innerText=listTransverseSubjects[i];
         document.getElementById('transverse-tree').appendChild(topicBox);
-        addCorrectClass(topicBox,listTransverseSubjects[i]);
+        addCorrectClass(topicBox,listTransverseSubjects[i],centralTopic);
     }
 
 }
@@ -192,9 +204,13 @@ function displayTopicTree(){
 
 
 // Fonction qui ajoute la bonne classe à la box de type "p" topicBox selon le topic 
-function addCorrectClass(topicBox,topic){
+function addCorrectClass(topicBox,topic,centralTopic){
+
+
     if (isTopicAlreadyVisited(topic)){
         topicBox.classList.add('visited-topic');
+    } else if (!isTopicRelated(topic,centralTopic)){
+        topicBox.classList.add('invisible-topic');
     }
 }
 
@@ -208,6 +224,20 @@ function isTopicAlreadyVisited(topic){
     }
 }
 
+function isTopicRelated(topic,centralTopic){
+    if(centralTopic === undefined){
+        return false;
+    } else {
+        const desiredTopic = topics.filter(a => a.key==centralTopic);
+        const relatedThemes = desiredTopic[0].related;
+        const matchRelatedThemes = relatedThemes.filter(a => a == topic);
+        if(matchRelatedThemes.length >0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
 
 
-// Fonction à créer : isRelatedTopic
