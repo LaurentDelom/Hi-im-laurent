@@ -1,3 +1,4 @@
+//import { displayTopicTree } from "./topictree.js";
 
 // Récupérer les données de topics
 const reponse = await fetch('topics.json');
@@ -7,7 +8,7 @@ export const topics =  await reponse.json();
 let validTopicRequests =0;
 
 //Suivre la liste des topics visités
-let visitedTopics=[];
+export let visitedTopics=[];
 
 //Extraire la liste des keys
 const listKeys = topics.map(topic => topic.key);
@@ -73,6 +74,9 @@ chatBox.addEventListener("submit", function(event){
 
     console.log(`Valid Topic Requests : ${validTopicRequests}`);
 
+    //Mise à jour de l'arborescence
+    displayTopicTree();
+
     //Activation de l'accès au chat Whatsapp à partir de 5 requêtes valides
     //if(validTopicRequests>4){
         //Fonction pour dévérouiller l'accès au chat Whatsapp
@@ -92,7 +96,7 @@ function messageIntoArray (message){
 }
 
 // Fonction qui compare chacun des mots à la listKeys et renvoie le ou les mots contenu dans la liste
-function keyComparison (keyList,wordArray){
+export function keyComparison (keyList,wordArray){
     let foundKeyList = [];
 
     // Renvoie une foundKeyList classée par ordre d'apparition dans le message de l'utilisateur
@@ -144,3 +148,66 @@ function displayImages(topicKey){
 
 
 }
+
+//////////////////GESTION DE L'ARBORESCENCE//////////////////////
+
+// Créer deux listes, une avec les topics de catégorie "non-transverse" et une autre avec les topics de catégorie "transverse"
+let listWorks = topics.filter(function(a){
+   return !a.transverse;});
+listWorks=listWorks.map(a => a.key);
+
+let listTransverseSubjects = topics.filter(function(a){
+    return a.transverse;} );
+ listTransverseSubjects=listTransverseSubjects.map(a => a.key);
+
+ if (!orientationPortrait){
+    displayTopicTree();
+    }
+
+function displayTopicTree(){
+// Selon qu'il s'agisse d'un "transverse" ou d'un "non-transverse", on append les topicKeys dans l'un ou l'autre des div prévus
+    //Boucle listWorks
+
+    document.getElementById('works-tree').innerHTML='';
+    document.getElementById('transverse-tree').innerHTML='';
+
+
+    for(let i=0;i<listWorks.length;i++){
+        let topicBox = document.createElement("p");
+        topicBox.innerText=listWorks[i];
+        document.getElementById('works-tree').appendChild(topicBox);
+        addCorrectClass(topicBox,listWorks[i]);
+        
+    }
+
+    for(let i=0;i<listTransverseSubjects.length;i++){
+        let topicBox = document.createElement("p");
+        topicBox.innerText=listTransverseSubjects[i];
+        document.getElementById('transverse-tree').appendChild(topicBox);
+        addCorrectClass(topicBox,listTransverseSubjects[i]);
+    }
+
+}
+
+
+
+// Fonction qui ajoute la bonne classe à la box de type "p" topicBox selon le topic 
+function addCorrectClass(topicBox,topic){
+    if (isTopicAlreadyVisited(topic)){
+        topicBox.classList.add('visited-topic');
+    }
+}
+
+function isTopicAlreadyVisited(topic){
+    const matchVisit = visitedTopics.filter(a => a == topic);
+    if(matchVisit.length >0){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+
+// Fonction à créer : isRelatedTopic
