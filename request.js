@@ -1,16 +1,19 @@
 
 // Récupérer les données de topics
 const reponse = await fetch('topics.json');
-const topics =  await reponse.json();
+export const topics =  await reponse.json();
 
 // Suivre le compte de topics valides demandés
 let validTopicRequests =0;
+
+//Suivre la liste des topics visités
+let visitedTopics=[];
 
 //Extraire la liste des keys
 const listKeys = topics.map(topic => topic.key);
 
 //console.log(listKeys);
-let orientationPortrait = false;
+export let orientationPortrait = false;
 
 //Contrôler une fois au lancement quelle est l'orientation de la page
 if(screen.availHeight > screen.availWidth){
@@ -41,6 +44,7 @@ const chatBox = document.querySelector(".chatbox-user");
 
 chatBox.addEventListener("submit", function(event){
     event.preventDefault();
+    document.getElementById('image-display').innerHTML='';
     let chatContent = event.target.querySelector("[name=writebox-user]").value;
     //console.log(chatContent);
     document.querySelector("[name=writebox-user]").value="";
@@ -56,10 +60,12 @@ chatBox.addEventListener("submit", function(event){
     if(selectedTopics.length>0){
         //Appel fonction display contenu du topic[0]
         displayContent(selectedTopics[0]);
-        document.getElementById('image-display').innerHTML='';
         displayImages(selectedTopics[0]);
         //Incrémenter le compte de topics valides
         validTopicRequests+=1;
+        //ajouter le topic à la liste des topics visités
+        visitedTopics.push(selectedTopics[0]);
+        
     } else {
         // Appel fonction je n'ai pas compris votre requête
         //chatBulleUser("I didn't quite get your request");
