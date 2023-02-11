@@ -128,7 +128,12 @@ function displayImages(topicKey){
     for(let i=0; i<imagesArray.length;i++){
         let imageBox = document.createElement("img");
         imageBox.src=imagesArray[i];
+
+        if(orientationPortrait){
+        document.getElementById('conversation-thread').appendChild(imageBox);
+        } else {
         document.getElementById('image-display').appendChild(imageBox);
+        }
     }
 
 
