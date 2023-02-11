@@ -10,7 +10,7 @@ let validTopicRequests =0;
 //Extraire la liste des keys
 const listKeys = topics.map(topic => topic.key);
 
-console.log(listKeys);
+//console.log(listKeys);
 
 
 //Fonction qui crée la bulle de chat avec le contenu envoyé par l'user
@@ -49,6 +49,7 @@ chatBox.addEventListener("submit", function(event){
 
     if(selectedTopics.length>0){
         //Appel fonction display contenu du topic[0]
+        displayContent(selectedTopics[0]);
         //Incrémenter le compte de topics valides
         validTopicRequests+=1;
     } else {
@@ -72,9 +73,7 @@ chatBox.addEventListener("submit", function(event){
 function messageIntoArray (message){
     message=message.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()@\+\?><\[\]\+]/g, '');
     let wordArray = message.split(" ");
-
-   
-    console.log(wordArray);
+   // console.log(wordArray);
     return wordArray;
 }
 
@@ -82,16 +81,33 @@ function messageIntoArray (message){
 function keyComparison (keyList,wordArray){
     let foundKeyList = [];
 
-    for (let i=0; i<keyList.length; i++){
-        let testKey = keyList[i];
-        for (let j=0; j<wordArray.length; j++){
-            if (wordArray[j]==testKey){
-                foundKeyList.push(testKey);
+    // Renvoie une foundKeyList classée par ordre d'apparition dans le message de l'utilisateur
+    for (let i=0; i<wordArray.length; i++){
+        let testWord = wordArray[i];
+        for (let j=0; j<keyList.length; j++){
+            if (keyList[j]==testWord){
+                foundKeyList.push(testWord);
             }
         }
     
     }
     
+    
     return foundKeyList;
 }
 
+// Fonction qui prend en argument une topic-key et renvoie les textes associés et les images
+function displayContent(topicKey){
+    const desiredTopic = topics.filter(a => a.key==topicKey);
+    
+    const textsArray = desiredTopic[0].texts;
+    console.log(textsArray);
+    
+    for(let i=0;i<textsArray.length;i++){
+        let textBox = document.createElement("p");
+        textBox.innerText=textsArray[i];
+        document.getElementById('conversation-thread').appendChild(textBox);
+    }
+    
+
+}
