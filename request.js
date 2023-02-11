@@ -50,6 +50,8 @@ chatBox.addEventListener("submit", function(event){
     if(selectedTopics.length>0){
         //Appel fonction display contenu du topic[0]
         displayContent(selectedTopics[0]);
+        document.getElementById('image-display').innerHTML='';
+        displayImages(selectedTopics[0]);
         //Incrémenter le compte de topics valides
         validTopicRequests+=1;
     } else {
@@ -96,12 +98,11 @@ function keyComparison (keyList,wordArray){
     return foundKeyList;
 }
 
-// Fonction qui prend en argument une topic-key et renvoie les textes associés et les images
+// Fonction qui prend en argument une topic-key et renvoie les textes associés 
 function displayContent(topicKey){
     const desiredTopic = topics.filter(a => a.key==topicKey);
-    
     const textsArray = desiredTopic[0].texts;
-    console.log(textsArray);
+    //console.log(textsArray);
     
     for(let i=0;i<textsArray.length;i++){
         let textBox = document.createElement("p");
@@ -109,5 +110,20 @@ function displayContent(topicKey){
         document.getElementById('conversation-thread').appendChild(textBox);
     }
     
+}
+
+// Fonction qui prend en argument une topic-key et renvoie les images associées dans le image-display
+
+function displayImages(topicKey){
+    const desiredTopic = topics.filter(a => a.key==topicKey);
+     const imagesArray = desiredTopic[0].images;
+    //console.log(imagesArray);
+
+    for(let i=0; i<imagesArray.length;i++){
+        let imageBox = document.createElement("img");
+        imageBox.src=imagesArray[i];
+        document.getElementById('image-display').appendChild(imageBox);
+    }
+
 
 }

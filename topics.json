@@ -7,13 +7,13 @@
     },
     {
         "key":"nature",
-        "images":["images/nature1.jpg","./images/nature2.jpg"],
+        "images":["./images/nature1.jpg","./images/nature2.jpg"],
         "texts":["La nature c'est très joli","Je parle de la nature dans mes oeuvres"],
         "alreadyVisited":false
     },
     {   
         "key":"work",
-        "images":[";/images/work1.jpg"],
+        "images":["./images/work1.jpg"],
         "texts":["Le travail c'est très important","Il faut beaucoup travailler"],
         "alreadyVisited":false
     }
