@@ -128,7 +128,7 @@ function displayImages(topicKey){
     for(let i=0; i<imagesArray.length;i++){
         let imageBox = document.createElement("img");
         imageBox.src=imagesArray[i];
-
+//Selon l'orientation, les images apparaissent soit dans le conversation-thread, soit dans le image-display
         if(orientationPortrait){
         document.getElementById('conversation-thread').appendChild(imageBox);
         } else {
