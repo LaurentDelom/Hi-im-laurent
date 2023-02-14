@@ -26,7 +26,7 @@ if(screen.availHeight > screen.availWidth){
 if(orientationPortrait){
    document.querySelector(".tree-holder").classList.replace('tree-holder','tree-holder-mobile');
    document.querySelector(".image-holder").classList.replace('image-holder','image-holder-mobile');
-   document.querySelector(".conversation-holder").classList.add('conversation-holder-mobile');
+   document.getElementById("conversation-holder").classList.add('conversation-holder-mobile');
 
 }
 
@@ -63,6 +63,7 @@ chatBox.addEventListener("submit", function(event){
 
     //Appel de la fonction former une bulle de chat avec chatContent
     chatBulleUser(chatContent);
+    scrollToBottom('conversation-thread');
 
     
     //Appel de l'analyse du message et renvoi des topics demandés
@@ -73,6 +74,7 @@ chatBox.addEventListener("submit", function(event){
     if(selectedTopics.length>0){
         //Appel fonction display contenu du topic[0]
         displayContent(selectedTopics[0]);
+        scrollToBottom('conversation-thread');
         displayImages(selectedTopics[0]);
         //Incrémenter le compte de topics valides
         validTopicRequests+=1;
@@ -252,3 +254,8 @@ function isTopicRelated(topic,centralTopic){
 }
 
 
+// Fonction to scroll to bottom of the section after pressing send or sending up a response
+const scrollToBottom = (id) => {
+    const element = document.getElementById(id);
+  element.scrollTop = element.scrollHeight;
+}

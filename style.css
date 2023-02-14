@@ -7,16 +7,25 @@
 .tree-holder{
     width:10%;
     border: solid green 1px;
+    height: 98vh;
 }
 
 .image-holder{
     width:40%;
     border: solid blue 1px
+    height:98vh;
 }
 
-.conversation-holder{
+#conversation-holder{
     border: solid black 1px;
+    height:98vh;
     width:50%;
+}
+
+#conversation-thread{
+    height:90%;
+    border: solid green 1px;
+    overflow-y:scroll;
 }
 
 .tree-holder-mobile{
@@ -29,6 +38,11 @@
 
 .conversation-holder-mobile{
     width:100%
+}
+
+.chatbox-user{
+    position: fixed;
+    top:90vh;
 }
 
 h1 {
