@@ -7,26 +7,32 @@
    <!--<script type="module" src="topictree.js"></script>-->
 </head>
 <body>
-   <h1>Check this out Laurent, i believe in you! And I have faith in VSC</h1>
    
-   <form class="chatbox-user">
-   <input type="text" name="writebox-user" placeholder="Message">
-   <button>Send</button> 
-   </form>
+   <div class="tableau">
+         <section class="tree-holder">
+            <h3>Arborescence</h3>
+            <div id="topic-tree">
+               
+               <div id="works-tree"></div>
+               <div id="transverse-tree"></div>
+            </div>
+         </section>
 
-   <div id="topic-tree">
-      <h3>Arborescence</h3>
-      <div id="works-tree"></div>
-      <div id="transverse-tree"></div>
+         <section class="conversation-holder">
+            <div id="conversation-thread">
+               <h3>Chatbox</h3>
+            </div>
+            <form class="chatbox-user">
+               <input type="text" name="writebox-user" placeholder="Message">
+               <button>Send</button> 
+               </form>
+         </section>
+
+         <section class="image-holder">
+            <h3>Display</h3>
+            <div id="image-display">    
+            </div>
+         </section>
    </div>
-
-   <div id="conversation-thread">
-      <h3>Chatbox</h3>
-   </div>
-
-   <h3>Display</h3>
-   <div id="image-display">    
-   </div>
-
 </body>
 </html>

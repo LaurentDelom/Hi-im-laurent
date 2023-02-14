@@ -21,6 +21,17 @@ if(screen.availHeight > screen.availWidth){
     orientationPortrait = true;
 }
 
+// Préparer le tableau en fonction de mobile ou PC >> masquer tree-holder & image-holder
+
+if(orientationPortrait){
+   document.querySelector(".tree-holder").classList.replace('tree-holder','tree-holder-mobile');
+   document.querySelector(".image-holder").classList.replace('image-holder','image-holder-mobile');
+   document.querySelector(".conversation-holder").classList.add('conversation-holder-mobile');
+
+}
+
+
+
 
 
 //Fonction qui crée la bulle de chat avec le contenu envoyé par l'user
