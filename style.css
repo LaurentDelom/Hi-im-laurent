@@ -5,21 +5,18 @@
 }
 
 .tree-holder{
-    width:10%;
-    border: solid green 1px;
+    width:15%;
     height: 98vh;
 }
 
 .image-holder{
     width:40%;
-    border: solid blue 1px
     height:98vh;
 }
 
 .conversation-holder{
-    border: solid black 1px;
     height:98vh;
-    width:50%;
+    width:45%;
     background-image: url("./images/background-wa.jpg");
     background-repeat: repeat;
     background-size: 50%;
@@ -27,7 +24,6 @@
 
 #conversation-thread{
     height:90%;
-    border: solid green 1px;
     overflow-y:scroll;
 }
 
@@ -56,10 +52,7 @@
     width:100%
 }
 
-.chatbox-user{
-    position: fixed;
-    top:90vh;
-}
+
 
 h1 {
     color:brown;
@@ -73,3 +66,52 @@ h1 {
     color:red;
 }
 
+
+/* Style du formulaire et du boutton */
+
+.chatbox-user{
+    position: fixed;
+    top:90vh;
+    width:inherit;
+    height:inherit;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+input[type=text] {
+    background-color: rgba(46, 183, 34, 0.652);
+    width:75%;
+    height:50px;
+    border-radius:35px;
+    border-color: rgba(46, 183, 34, 0.87);
+    padding:0px 18px;
+    border: none;
+    border: solid green 2px;
+}
+    
+input::placeholder {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.2em;
+    color: rgba(244, 252, 248, 0.807);
+   }
+
+.send-button{
+    background-color: rgb(46, 183, 25, 0.85);
+    height: 52px;
+    width: 52px;
+    border-radius:100%;
+    border: solid rgba(0, 128, 0, 0) 2px;
+    margin-left:5px;
+    background-image: url("./images/logo-send-mini.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: 40% 50%;  
+}
+
+/* GESTION DES IMAGES */
+img {
+    height: 40%;
+    width: auto;
+}
