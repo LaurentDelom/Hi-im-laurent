@@ -16,10 +16,13 @@
     height:98vh;
 }
 
-#conversation-holder{
+.conversation-holder{
     border: solid black 1px;
     height:98vh;
     width:50%;
+    background-image: url("./images/background-wa.jpg");
+    background-repeat: repeat;
+    background-size: 50%;
 }
 
 #conversation-thread{
@@ -27,6 +30,19 @@
     border: solid green 1px;
     overflow-y:scroll;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+  }
 
 .tree-holder-mobile{
     display: none;

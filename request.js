@@ -26,7 +26,7 @@ if(screen.availHeight > screen.availWidth){
 if(orientationPortrait){
    document.querySelector(".tree-holder").classList.replace('tree-holder','tree-holder-mobile');
    document.querySelector(".image-holder").classList.replace('image-holder','image-holder-mobile');
-   document.getElementById("conversation-holder").classList.add('conversation-holder-mobile');
+   document.querySelector(".conversation-holder").classList.add('conversation-holder-mobile');
 
 }
 
