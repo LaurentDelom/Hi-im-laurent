@@ -58,6 +58,10 @@ h1 {
     color:brown;
 }
 
+h3{
+    display: none;
+}
+
 .invisible-topic{
     color:whitesmoke;
 }
@@ -88,13 +92,19 @@ input[type=text] {
     padding:0px 18px;
     border: none;
     border: solid green 2px;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.2em;
+    color: white;
 }
+
+
     
 input::placeholder {
     font-family: Roboto;
     font-weight: 400;
-    font-size: 1.2em;
-    color: rgba(244, 252, 248, 0.807);
+    font-size: 1em;
+    color: rgba(244, 252, 248, 0.607);
    }
 
 .send-button{
@@ -108,10 +118,4 @@ input::placeholder {
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: 40% 50%;  
-}
-
-/* GESTION DES IMAGES */
-img {
-    height: 40%;
-    width: auto;
 }
