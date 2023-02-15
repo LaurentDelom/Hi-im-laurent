@@ -212,7 +212,7 @@ chatBox.addEventListener("submit", function(event){
 
 // Fonction qui sépare les mots contenus dans l'input text
 function messageIntoArray (message){
-    message=message.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()@\+\?><\[\]\+]/g, '');
+    message=message.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()@\+\?><\[\]\+]/g, '').toLowerCase();
     let wordArray = message.split(" ");
    // console.log(wordArray);
     return wordArray;
