@@ -38,14 +38,68 @@ if(orientationPortrait){
 
 //Fonction qui crée la bulle de chat avec le contenu envoyé par l'user
 function chatBulleUser  (message){
-    //créer un pragraphe et le remplid du contenu en attribut
-    const bulleUser = document.createElement("p");
-    bulleUser.innerText = message;
+    // Récupérer la date, heure et minute
+    const date = new Date();
+    const hours = (date.getHours()<10?'0':'') + date.getHours();
+    const minutes = (date.getMinutes()<10?'0':'') + date.getMinutes();
+
+
+    //créer un pragraphe et le remplir du contenu en attribut
     
+    const textBulleUser = document.createElement("div");
+    textBulleUser.classList.add("message-user");
+    textBulleUser.innerText = message;
+
+    const hoursBulle = document.createElement("div");
+    hoursBulle.classList.add("hours-bulle");
+    hoursBulle.innerText = + hours + ":" + minutes;   
+        
+    // Créer la bulle qui englobe le message et l'heure
+    const bulleUser = document.createElement("div");
+    bulleUser.classList.add("bulle-user");
+    const chatEntry = document.createElement("div");
+    chatEntry.classList.add("chat-entry-user");
+    bulleUser.appendChild(textBulleUser);    
+    bulleUser.appendChild(hoursBulle);    
+    chatEntry.appendChild(bulleUser);
+
     //rentrer la bulle dans le dom
-    document.getElementById('conversation-thread').appendChild(bulleUser);
+    document.getElementById('conversation-thread').appendChild(chatEntry);
 }
 
+
+// Fonction qui crée la bulle de chat avec la réponse du serveur
+function chatBulleServer (message,color){
+    // Récupérer la date, heure et minute
+    const date = new Date();
+    const hours = (date.getHours()<10?'0':'') + date.getHours();
+    const minutes = (date.getMinutes()<10?'0':'') + date.getMinutes();
+
+
+    //créer un pragraphe et le remplir du contenu en attribut
+    
+    const textBulleUser = document.createElement("div");
+    textBulleUser.classList.add("message-user");
+    textBulleUser.innerText = message;
+
+    const hoursBulle = document.createElement("div");
+    hoursBulle.classList.add("hours-bulle");
+    hoursBulle.innerText = + hours + ":" + minutes;   
+        
+    // Créer la bulle qui englobe le message et l'heure
+    const bullServer = document.createElement("div");
+    bullServer.classList.add("bulle-user");
+    bullServer.style.backgroundColor = color;
+
+    const chatEntry = document.createElement("div");
+    chatEntry.classList.add("chat-entry-server");
+    bullServer.appendChild(textBulleUser);    
+    bullServer.appendChild(hoursBulle);    
+    chatEntry.appendChild(bullServer);
+
+    //rentrer la bulle dans le dom
+    document.getElementById('conversation-thread').appendChild(chatEntry);
+}
 
 
 
@@ -61,21 +115,24 @@ chatBox.addEventListener("submit", function(event){
     document.getElementById('image-display').innerHTML='';
     let chatContent = event.target.querySelector("[name=writebox-user]").value;
     //console.log(chatContent);
+    if (!(chatContent == '')){
     document.querySelector("[name=writebox-user]").value="";
-
+    
     //Appel de la fonction former une bulle de chat avec chatContent
     chatBulleUser(chatContent);
     scrollToBottom('conversation-thread');
-
+    }
     
     //Appel de l'analyse du message et renvoi des topics demandés
     let wordArrayUser = messageIntoArray(chatContent);
     let selectedTopics = keyComparison(listKeys,wordArrayUser);
     //console.log(selectedTopics);
+    //Appelle la fonction qui retrouve la couleur du message
+    const color = "red";
 
     if(selectedTopics.length>0){
         //Appel fonction display contenu du topic[0]
-        displayContent(selectedTopics[0]);
+        displayContent(selectedTopics[0],color);
         scrollToBottom('conversation-thread');
         displayImages(selectedTopics[0]);
         //Incrémenter le compte de topics valides
@@ -140,15 +197,14 @@ export function keyComparison (keyList,wordArray){
 }
 
 // Fonction qui prend en argument une topic-key et renvoie les textes associés 
-function displayContent(topicKey){
+function displayContent(topicKey,color){
     const desiredTopic = topics.filter(a => a.key==topicKey);
     const textsArray = desiredTopic[0].texts;
     //console.log(textsArray);
     
     for(let i=0;i<textsArray.length;i++){
-        let textBox = document.createElement("p");
-        textBox.innerText=textsArray[i];
-        document.getElementById('conversation-thread').appendChild(textBox);
+        chatBulleServer(textsArray[i],color);
+        
     }
     
 }
@@ -242,6 +298,7 @@ function displayTopicTree(centralTopic){
         topicBox.innerText=listTransverseSubjects[i];
         document.getElementById('transverse-tree').appendChild(topicBox);
         topicBox.style.color=gradientArray[i+listWorks.length];
+        topicBox.style.fontStyle="italic";
         addCorrectClass(topicBox,listTransverseSubjects[i],centralTopic);
     }
 

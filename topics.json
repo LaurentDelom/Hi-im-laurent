@@ -19,6 +19,13 @@
         "texts":["Le travail c'est très important","Il faut beaucoup travailler"],
         "related":["technique"],
         "transverse":false
+    },
+    {   
+        "key":"internet",
+        "images":["./images/internet1.jpg"],
+        "texts":["Internet ça nous relie tous","Moi je l'utilise tous les jours"],
+        "related":["technique"],
+        "transverse":true
     }
 
 
