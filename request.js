@@ -37,6 +37,9 @@ if(orientationPortrait){
 
 const reactionTime=2800;
 
+let dateNextScroll = Date.now();
+console.log("Date Next Scroll : " + dateNextScroll);
+let nextScrollToDo = true;
 
 //Création des constantes de couleurs
 const colorUser = "rgba(46, 183, 34, 0.652)";    //"#29fe45";
@@ -170,7 +173,7 @@ chatBox.addEventListener("submit", function(event){
     
     //Appel de la fonction former une bulle de chat avec chatContent
     chatBulleUser(chatContent,colorBulle);
-    scrollToBottom('conversation-thread');
+    updateScroll();
     }
     
     //Appel de l'analyse du message et renvoi des topics demandés
@@ -212,14 +215,17 @@ chatBox.addEventListener("submit", function(event){
         );
 
         
-        scrollToBottom('conversation-thread');
+        
         
         //Incrémenter le compte de topics valides
         validTopicRequests+=1;
         //ajouter le topic à la liste des topics visités
         visitedTopics.push(selectedTopics[0]);
        waitForArborescence = waitForImages;
-        
+        dateNextScroll = Date.now() + waitForImages + 500;
+        console.log("date next scroll" + dateNextScroll);
+        nextScrollToDo = true;
+       
         
 
     } else {
@@ -249,9 +255,11 @@ chatBox.addEventListener("submit", function(event){
     //if(validTopicRequests>4){
         //Fonction pour dévérouiller l'accès au chat Whatsapp
     //}
-    setTimeout(updateScroll,100);
+    setTimeout(updateScroll,1000);
+    
 
 })
+
 
 
 
@@ -344,11 +352,21 @@ function displayImages(topicKey){
         });
         }   
     }
-    scrollToBottom('conversation-thread');
+    updateScroll();
 
 }
 
+// This functions gets the last bit of scroll by checking the date and seeing if it needs to be done
+if(orientationPortrait){setInterval(getDateNow,500);}
 
+function getDateNow(){
+    let now = Date.now();
+         console.log(nextScrollToDo);
+    if(nextScrollToDo && now > dateNextScroll) {
+        updateScroll();
+        nextScrollToDo = false;
+         }
+}
 
 
 //////////////////GESTION DE L'ARBORESCENCE//////////////////////
@@ -444,7 +462,7 @@ const scrollToBottom = (id) => {
 
 function updateScroll(){
     scrollToBottom('conversation-thread');
-    console.log("Scroll updated");
+    //console.log("Scroll updated");
 }
 
 
