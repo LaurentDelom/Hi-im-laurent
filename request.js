@@ -361,8 +361,7 @@ if(orientationPortrait){setInterval(getDateNow,500);}
 
 function getDateNow(){
     let now = Date.now();
-         console.log(nextScrollToDo);
-    if(nextScrollToDo && now > dateNextScroll) {
+         if(nextScrollToDo && now > dateNextScroll) {
         updateScroll();
         nextScrollToDo = false;
          }
