@@ -33,11 +33,41 @@ if(orientationPortrait){
 }
 
 
+//Création des constantes de couleurs
+const colorUser = "rgba(46, 183, 34, 0.652)";    //"#29fe45";
+const colorGradient1 = "#21b433";
+const colorGradient2 = "#00a293";
+
+
+///////////////////// GESTION DES COULEURS ///////////////
+
+// Les couleurs sont gérées depuis javascript. On crée un array de gradient qui irriguera les couleurs des éléments de l'arborescence plutôt que standard black.
+
+// Création d'un gradient de couleur
+const gradientArray = new Gradient()
+  .setColorGradient(colorGradient1, colorGradient2)
+  .setMidpoint(topics.length)
+  .getColors();
+
+console.log(gradientArray);
+
+
+/*setColorGradient()		Initializes {Gradient} with two or more hex color values. Should always be defined.
+setMidpoint(n)		Defines number of midpoints. Defaults to 10.
+getColors()		Returns an array of hex color values .
+getColor(n)		Returns single hex color value corresponding to the provided index.
+*/
+
+
+
+
+
+
 
 
 
 //Fonction qui crée la bulle de chat avec le contenu envoyé par l'user
-function chatBulleUser  (message){
+function chatBulleUser  (message, color){
     // Récupérer la date, heure et minute
     const date = new Date();
     const hours = (date.getHours()<10?'0':'') + date.getHours();
@@ -57,6 +87,8 @@ function chatBulleUser  (message){
     // Créer la bulle qui englobe le message et l'heure
     const bulleUser = document.createElement("div");
     bulleUser.classList.add("bulle-user");
+    bulleUser.style.backgroundColor = color;
+
     const chatEntry = document.createElement("div");
     chatEntry.classList.add("chat-entry-user");
     bulleUser.appendChild(textBulleUser);    
@@ -109,17 +141,22 @@ function chatBulleServer (message,color){
 //Lancer l'anlayse de la chaine de caractère
 
 const chatBox = document.querySelector(".chatbox-user");
+let colorBulle = gradientArray[0];
+
 
 chatBox.addEventListener("submit", function(event){
     event.preventDefault();
     document.getElementById('image-display').innerHTML='';
     let chatContent = event.target.querySelector("[name=writebox-user]").value;
+
+
+
     //console.log(chatContent);
     if (!(chatContent == '')){
     document.querySelector("[name=writebox-user]").value="";
     
     //Appel de la fonction former une bulle de chat avec chatContent
-    chatBulleUser(chatContent);
+    chatBulleUser(chatContent,colorBulle);
     scrollToBottom('conversation-thread');
     }
     
@@ -128,14 +165,17 @@ chatBox.addEventListener("submit", function(event){
     let selectedTopics = keyComparison(listKeys,wordArrayUser);
     //console.log(selectedTopics);
     //Appelle la fonction qui retrouve la couleur du message
-    const color = "red";
+    
 
     if(selectedTopics.length>0){
+
+        colorBulle = gradientArray[topicIndex(selectedTopics[0])];
         //Appel fonction display contenu du topic[0]
-        console.log(topicIndex(selectedTopics[0]));
-        displayContent(selectedTopics[0],color);
-        scrollToBottom('conversation-thread');
+        
+        displayContent(selectedTopics[0],colorBulle);
         displayImages(selectedTopics[0]);
+        scrollToBottom('conversation-thread');
+        
         //Incrémenter le compte de topics valides
         validTopicRequests+=1;
         //ajouter le topic à la liste des topics visités
@@ -151,7 +191,7 @@ chatBox.addEventListener("submit", function(event){
     }
 
     console.log(`Valid Topic Requests : ${validTopicRequests}`);
-
+    
     //Mise à jour de l'arborescence
      if (!orientationPortrait){
         displayTopicTree(selectedTopics[0]);
@@ -164,7 +204,7 @@ chatBox.addEventListener("submit", function(event){
     //if(validTopicRequests>4){
         //Fonction pour dévérouiller l'accès au chat Whatsapp
     //}
-
+    setTimeout(updateScroll,100);
 
 })
 
@@ -236,7 +276,7 @@ function displayImages(topicKey){
     for(let i=0; i<imagesArray.length;i++){
         let imageBox = document.createElement("img");
         imageBox.src=imagesArray[i];
-//Selon l'orientation, les images apparaissent soit dans le conversation-thread, soit dans le image-display
+        //Selon l'orientation, les images apparaissent soit dans le conversation-thread, soit dans le image-display
         if(orientationPortrait){
         document.getElementById('conversation-thread').appendChild(imageBox);
         imageBox.addEventListener("click", function () {
@@ -249,29 +289,9 @@ function displayImages(topicKey){
         });
         }   
     }
+    scrollToBottom('conversation-thread');
+
 }
-
-///////////////////// GESTION DES COULEURS ///////////////
-
-// Les couleurs sont gérées depuis javascript. On crée un array de gradient qui irriguera les couleurs des éléments de l'arborescence plutôt que standard black.
-
-// Création d'un gradient de couleur
-const gradientArray = new Gradient()
-  .setColorGradient("#3F2CAF", "e9446a")
-  .setMidpoint(topics.length)
-  .getColors();
-
-console.log(gradientArray);
-
-
-/*setColorGradient()		Initializes {Gradient} with two or more hex color values. Should always be defined.
-setMidpoint(n)		Defines number of midpoints. Defaults to 10.
-getColors()		Returns an array of hex color values .
-getColor(n)		Returns single hex color value corresponding to the provided index.
-*/
-
-
-
 
 
 
@@ -366,4 +386,10 @@ const scrollToBottom = (id) => {
     const element = document.getElementById(id);
   element.scrollTop = element.scrollHeight;
 }
+
+function updateScroll(){
+    scrollToBottom('conversation-thread');
+    console.log("Scroll updated");
+}
+
 

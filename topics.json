@@ -1,4 +1,11 @@
 [ 
+    {   
+        "key":"work",
+        "images":["./images/work1.jpg"],
+        "texts":["Le travail c'est très important","Il faut beaucoup travailler"],
+        "related":["technique"],
+        "transverse":false
+    },
     {
         "key":"technique",
         "images":["./images/technique1.jpg","./images/technique2.jpg","./images/technique3.jpg"],
@@ -12,13 +19,6 @@
         "texts":["La nature c'est très joli","Je parle de la nature dans mes oeuvres"],
         "related":["work","technique"],
         "transverse":true
-    },
-    {   
-        "key":"work",
-        "images":["./images/work1.jpg"],
-        "texts":["Le travail c'est très important","Il faut beaucoup travailler"],
-        "related":["technique"],
-        "transverse":false
     },
     {   
         "key":"internet",
