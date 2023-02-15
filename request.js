@@ -132,6 +132,7 @@ chatBox.addEventListener("submit", function(event){
 
     if(selectedTopics.length>0){
         //Appel fonction display contenu du topic[0]
+        console.log(topicIndex(selectedTopics[0]));
         displayContent(selectedTopics[0],color);
         scrollToBottom('conversation-thread');
         displayImages(selectedTopics[0]);
@@ -195,6 +196,22 @@ export function keyComparison (keyList,wordArray){
     
     return foundKeyList;
 }
+
+// Fonction qui renvoie l'index i correspondant au topic dans l'array topics[i] 
+function topicIndex (topic){
+    let indexSelected;
+    for (let i=0; i< topics.length; i++){
+        if(topic == topics[i].key){
+            indexSelected = i;
+        break
+        }
+    }
+    return indexSelected;
+}
+
+
+
+
 
 // Fonction qui prend en argument une topic-key et renvoie les textes associés 
 function displayContent(topicKey,color){
