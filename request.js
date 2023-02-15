@@ -54,7 +54,7 @@ const gradientArray = new Gradient()
   .setMidpoint(topics.length)
   .getColors();
 
-console.log(gradientArray);
+
 
 
 /*setColorGradient()		Initializes {Gradient} with two or more hex color values. Should always be defined.
@@ -176,6 +176,8 @@ chatBox.addEventListener("submit", function(event){
     //Appel de l'analyse du message et renvoi des topics demandés
     let wordArrayUser = messageIntoArray(chatContent);
     let selectedTopics = keyComparison(listKeys,wordArrayUser);
+    let waitForImages = reactionTime*1.2;
+    let waitForArborescence = 0;
     //console.log(selectedTopics);
     //Appelle la fonction qui retrouve la couleur du message
     
@@ -183,26 +185,45 @@ chatBox.addEventListener("submit", function(event){
     if(selectedTopics.length>0){
 
         colorBulle = gradientArray[topicIndex(selectedTopics[0])];
+        const objectTopic = topics.filter(a => a.key==selectedTopics[0]);
+
+        const waitingWriteArray = objectTopic[0].waiting;
+
+        
+        
+            for(let i=0;i<waitingWriteArray.length;i++){
+                waitForImages += waitingWriteArray[i];
+            }
+            
+
         //Appel fonction display contenu du topic[0]
         
 
         setTimeout( () => {
             displayContent(selectedTopics[0],colorBulle);
+            updateScroll();
         },reactionTime
         );
         
-        displayImages(selectedTopics[0]);
+        setTimeout( () => {
+            displayImages(selectedTopics[0]);
+            updateScroll();
+        },waitForImages
+        );
+
+        
         scrollToBottom('conversation-thread');
         
         //Incrémenter le compte de topics valides
         validTopicRequests+=1;
         //ajouter le topic à la liste des topics visités
         visitedTopics.push(selectedTopics[0]);
-       
+       waitForArborescence = waitForImages;
         
         
 
     } else {
+        waitForArborescence=0;
         //console.log(selectedTopics[0]);
         // Appel fonction je n'ai pas compris votre requête
         //chatBulleUser("I didn't quite get your request");
@@ -212,7 +233,13 @@ chatBox.addEventListener("submit", function(event){
     
     //Mise à jour de l'arborescence
      if (!orientationPortrait){
-        displayTopicTree(selectedTopics[0]);
+
+        setTimeout( () => {
+            displayTopicTree(selectedTopics[0]);
+        },waitForArborescence
+        );
+
+        
     }
      
     
@@ -285,6 +312,7 @@ function displayContent(topicKey,color){
         
         setTimeout(() => {
             chatBulleServer(textsArray[i],color,waitingTimeArray[i]);
+            updateScroll();
         },waitingTime);
         
     }
@@ -298,7 +326,6 @@ function displayImages(topicKey){
      const imagesArray = desiredTopic[0].images;
     //console.log(imagesArray);
 
-    const waitingTimeArray = desiredTopic[0].imagewait;
 
 
     for(let i=0; i<imagesArray.length;i++){
