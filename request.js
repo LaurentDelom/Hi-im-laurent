@@ -33,13 +33,11 @@ if(orientationPortrait){
 
 }
 
-//Constante du temps de réaction du robot
+//Constantes du temps 
 
-const reactionTime=2800;
-
-let dateNextScroll = Date.now();
-console.log("Date Next Scroll : " + dateNextScroll);
-let nextScrollToDo = true;
+const reactionTime=2800; // Temps de réaction avant de commencer à écrire
+let dateNextScroll = Date.now(); // Initialisation du calcul pour effectuer un scroll après affichage d'image
+let nextScrollToDo = true; // idem
 
 //Création des constantes de couleurs
 const colorUser = "rgba(46, 183, 34, 0.652)";    //"#29fe45";
@@ -216,20 +214,18 @@ chatBox.addEventListener("submit", function(event){
 
         
         
+        // Incrémentation des valeurs externes
         
-        //Incrémenter le compte de topics valides
-        validTopicRequests+=1;
-        //ajouter le topic à la liste des topics visités
-        visitedTopics.push(selectedTopics[0]);
-       waitForArborescence = waitForImages;
+        validTopicRequests+=1; //Incrémenter le compte de topics valides
+        visitedTopics.push(selectedTopics[0]); //ajouter le topic à la liste des topics visités
+        waitForArborescence = waitForImages; // Attribuer le même délai à l'arrivée de l'arborescence
         dateNextScroll = Date.now() + waitForImages + 500;
-        console.log("date next scroll" + dateNextScroll);
         nextScrollToDo = true;
        
         
 
     } else {
-        waitForArborescence=0;
+        waitForArborescence=0; // En cas de requête non valide > disparition immédiate de l'arborescence
         //console.log(selectedTopics[0]);
         // Appel fonction je n'ai pas compris votre requête
         //chatBulleUser("I didn't quite get your request");
@@ -255,7 +251,7 @@ chatBox.addEventListener("submit", function(event){
     //if(validTopicRequests>4){
         //Fonction pour dévérouiller l'accès au chat Whatsapp
     //}
-    setTimeout(updateScroll,1000);
+    updateScroll();
     
 
 })
@@ -355,9 +351,12 @@ function displayImages(topicKey){
     updateScroll();
 
 }
-
-// This functions gets the last bit of scroll by checking the date and seeing if it needs to be done
+// En mode portrait, il y a un problème pour avoir le dernier bout de scroll, je place donc un observateur de la date. 
+//On pourrait décider de l'activer aussi avec l'orientation paysage s'il y avait un problème avec des div plus longs
 if(orientationPortrait){setInterval(getDateNow,500);}
+
+
+// This functions gets the last bit of scroll by checking the date and seeing if it needs to be done after completion of all waiting Time
 
 function getDateNow(){
     let now = Date.now();
@@ -398,6 +397,7 @@ function displayTopicTree(centralTopic){
         topicBox.innerText=listWorks[i];
         document.getElementById('works-tree').appendChild(topicBox);
         topicBox.style.color=gradientArray[i];
+        topicBox.style.fontWeight="600";
         addCorrectClass(topicBox,listWorks[i],centralTopic);
         
     }
@@ -408,6 +408,7 @@ function displayTopicTree(centralTopic){
         document.getElementById('transverse-tree').appendChild(topicBox);
         topicBox.style.color=gradientArray[i+listWorks.length];
         topicBox.style.fontStyle="italic";
+        topicBox.style.fontWeight="600";
         addCorrectClass(topicBox,listTransverseSubjects[i],centralTopic);
     }
 
