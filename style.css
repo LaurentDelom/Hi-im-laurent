@@ -1,3 +1,12 @@
+html, body{
+    padding:0;
+    margin:0;
+    border:0;
+}
+
+
+
+
 .tableau{
     display: flex;
     flex-direction: row;
@@ -16,7 +25,7 @@
 }
 
 .conversation-holder{
-    height:98vh;
+    height:100vh;
     width:40%;
     background-image: url("./images/background-wa.jpg");
     background-repeat: repeat;
@@ -24,30 +33,25 @@
 }
 
 #conversation-thread{
-    height:90%;
+    height:88%;
     overflow-y:scroll;
     color: rgba(244, 252, 248, 1);
 }
 
-#conversation-thread p{
-    font-family: Roboto;
-    min-width:60%;
-    border: solid green 1px;
-    border-radius: 4px;
-}
+
 
 .chat-entry-user {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin: 5px 3px 0px 3px;
+    margin: 5px 5px 0px 3px;
 }
 
 .chat-entry-server {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin: 5px 3px 0px 3px;
+    margin: 5px 3px 0px 7px;
 }
 
 .bulle-user{
@@ -66,6 +70,13 @@
 .message-user{
     display: flex;
     flex-direction: row;
+}
+
+.message-user-green{
+    display: flex;
+    flex-direction: row;
+    color: green;
+    font-style: italic;
 }
 
 .hours-bulle{
@@ -168,6 +179,16 @@ input::placeholder {
     background-repeat: no-repeat;
     background-position: 40% 50%;  
 }
+
+/*Style du formulaire et bouton si mobile */
+
+.input-user-mobile{
+width:35%;
+}
+
+
+/* Gestion des images */
+
 
 img {
     max-width: 50%;

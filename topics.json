@@ -4,6 +4,8 @@
         "images":["./images/work1.jpg"],
         "texts":["Le travail c'est très important","Il faut beaucoup travailler"],
         "related":["technique"],
+        "waiting":[3000,3000],
+        "imagewait":[1000],
         "transverse":false
     },
     {
@@ -11,6 +13,8 @@
         "images":["./images/technique1.jpg","./images/technique2.jpg","./images/technique3.jpg"],
         "texts":["La technique c'est bien","J'aime bien la technique","Je chorégrpahie la technique"],
         "related":["work"],
+        "waiting":[1000,1000,1000],
+        "imagewait":[1000,1000,1000],
         "transverse":true
     },
     {
@@ -18,6 +22,8 @@
         "images":["./images/nature1.jpg","./images/nature2.jpg"],
         "texts":["La nature c'est très joli","Je parle de la nature dans mes oeuvres"],
         "related":["work","technique"],
+        "waiting":[1000,1000],
+        "imagewait":[1000,1000],
         "transverse":true
     },
     {   
@@ -25,6 +31,8 @@
         "images":["./images/internet1.jpg"],
         "texts":["Internet ça nous relie tous","Moi je l'utilise tous les jours"],
         "related":["technique"],
+        "waiting":[1000,1000],
+        "imagewait":[1000],
         "transverse":true
     }
 

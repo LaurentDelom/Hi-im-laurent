@@ -29,8 +29,13 @@ if(orientationPortrait){
    document.querySelector(".tree-holder").classList.replace('tree-holder','tree-holder-mobile');
    document.querySelector(".image-holder").classList.replace('image-holder','image-holder-mobile');
    document.querySelector(".conversation-holder").classList.add('conversation-holder-mobile');
+   document.querySelector("[name=writebox-user]").style.width = "65%";
 
 }
+
+//Constante du temps de réaction du robot
+
+const reactionTime=2800;
 
 
 //Création des constantes de couleurs
@@ -101,18 +106,26 @@ function chatBulleUser  (message, color){
 
 
 // Fonction qui crée la bulle de chat avec la réponse du serveur
-function chatBulleServer (message,color){
+function chatBulleServer (message,color,waitingTime){
     // Récupérer la date, heure et minute
     const date = new Date();
     const hours = (date.getHours()<10?'0':'') + date.getHours();
     const minutes = (date.getMinutes()<10?'0':'') + date.getMinutes();
 
+    
+    
+
 
     //créer un pragraphe et le remplir du contenu en attribut
     
     const textBulleUser = document.createElement("div");
-    textBulleUser.classList.add("message-user");
-    textBulleUser.innerText = message;
+    textBulleUser.classList.add("message-user-green");
+    textBulleUser.innerText = "is typing...";
+    setTimeout( () => {
+        textBulleUser.innerText = message;
+        textBulleUser.classList.remove("message-user-green");
+    },waitingTime
+    );
 
     const hoursBulle = document.createElement("div");
     hoursBulle.classList.add("hours-bulle");
@@ -172,7 +185,12 @@ chatBox.addEventListener("submit", function(event){
         colorBulle = gradientArray[topicIndex(selectedTopics[0])];
         //Appel fonction display contenu du topic[0]
         
-        displayContent(selectedTopics[0],colorBulle);
+
+        setTimeout( () => {
+            displayContent(selectedTopics[0],colorBulle);
+        },reactionTime
+        );
+        
         displayImages(selectedTopics[0]);
         scrollToBottom('conversation-thread');
         
@@ -257,10 +275,17 @@ function topicIndex (topic){
 function displayContent(topicKey,color){
     const desiredTopic = topics.filter(a => a.key==topicKey);
     const textsArray = desiredTopic[0].texts;
-    //console.log(textsArray);
+    const waitingTimeArray = desiredTopic[0].waiting;
+    let waitingTime = 0;
     
-    for(let i=0;i<textsArray.length;i++){
-        chatBulleServer(textsArray[i],color);
+    chatBulleServer(textsArray[0],color,waitingTimeArray[0]);
+    
+    for(let i=1;i<textsArray.length;i++){
+        waitingTime = waitingTime + waitingTimeArray[i];
+        
+        setTimeout(() => {
+            chatBulleServer(textsArray[i],color,waitingTimeArray[i]);
+        },waitingTime);
         
     }
     
@@ -272,6 +297,9 @@ function displayImages(topicKey){
     const desiredTopic = topics.filter(a => a.key==topicKey);
      const imagesArray = desiredTopic[0].images;
     //console.log(imagesArray);
+
+    const waitingTimeArray = desiredTopic[0].imagewait;
+
 
     for(let i=0; i<imagesArray.length;i++){
         let imageBox = document.createElement("img");
