@@ -1,5 +1,7 @@
 //import { displayTopicTree } from "./topictree.js";
 
+import {Gradient} from "./color-gradient.js";
+
 // Récupérer les données de topics
 const reponse = await fetch('topics.json');
 export const topics =  await reponse.json();
@@ -176,6 +178,31 @@ function displayImages(topicKey){
     }
 }
 
+///////////////////// GESTION DES COULEURS ///////////////
+
+// Les couleurs sont gérées depuis javascript. On crée un array de gradient qui irriguera les couleurs des éléments de l'arborescence plutôt que standard black.
+
+// Création d'un gradient de couleur
+const gradientArray = new Gradient()
+  .setColorGradient("#3F2CAF", "e9446a")
+  .setMidpoint(topics.length)
+  .getColors();
+
+console.log(gradientArray);
+
+
+/*setColorGradient()		Initializes {Gradient} with two or more hex color values. Should always be defined.
+setMidpoint(n)		Defines number of midpoints. Defaults to 10.
+getColors()		Returns an array of hex color values .
+getColor(n)		Returns single hex color value corresponding to the provided index.
+*/
+
+
+
+
+
+
+
 //////////////////GESTION DE L'ARBORESCENCE//////////////////////
 
 // Créer deux listes, une avec les topics de catégorie "non-transverse" et une autre avec les topics de catégorie "transverse"
@@ -205,6 +232,7 @@ function displayTopicTree(centralTopic){
         let topicBox = document.createElement("p");
         topicBox.innerText=listWorks[i];
         document.getElementById('works-tree').appendChild(topicBox);
+        topicBox.style.color=gradientArray[i];
         addCorrectClass(topicBox,listWorks[i],centralTopic);
         
     }
@@ -213,6 +241,7 @@ function displayTopicTree(centralTopic){
         let topicBox = document.createElement("p");
         topicBox.innerText=listTransverseSubjects[i];
         document.getElementById('transverse-tree').appendChild(topicBox);
+        topicBox.style.color=gradientArray[i+listWorks.length];
         addCorrectClass(topicBox,listTransverseSubjects[i],centralTopic);
     }
 
@@ -225,9 +254,9 @@ function addCorrectClass(topicBox,topic,centralTopic){
 
 
     if (isTopicAlreadyVisited(topic)){
-        topicBox.classList.add('visited-topic');
+        topicBox.style.textDecoration = "underline";
     } else if (!isTopicRelated(topic,centralTopic)){
-        topicBox.classList.add('invisible-topic');
+        topicBox.style.color = "whitesmoke";
     }
 }
 
