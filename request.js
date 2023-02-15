@@ -164,12 +164,16 @@ function displayImages(topicKey){
 //Selon l'orientation, les images apparaissent soit dans le conversation-thread, soit dans le image-display
         if(orientationPortrait){
         document.getElementById('conversation-thread').appendChild(imageBox);
+        imageBox.addEventListener("click", function () {
+            imageBox.classList.toggle("enlarged-image");
+            });
         } else {
         document.getElementById('image-display').appendChild(imageBox);
-        }
+        imageBox.addEventListener("click", function () {
+            imageBox.classList.toggle("enlarged-image");
+        });
+        }   
     }
-
-
 }
 
 //////////////////GESTION DE L'ARBORESCENCE//////////////////////
@@ -259,3 +263,4 @@ const scrollToBottom = (id) => {
     const element = document.getElementById(id);
   element.scrollTop = element.scrollHeight;
 }
+

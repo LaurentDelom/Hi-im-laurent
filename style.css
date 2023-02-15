@@ -12,6 +12,7 @@
 .image-holder{
     width:40%;
     height:98vh;
+    position: relative;
 }
 
 .conversation-holder{
@@ -118,4 +119,18 @@ input::placeholder {
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: 40% 50%;  
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+}
+
+.enlarged-image{
+    max-width:100%;
+    height:auto;
+    position: absolute;
+    z-index: 2;
+    top:0;
+    left:0;
 }
