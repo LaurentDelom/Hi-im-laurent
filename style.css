@@ -22,14 +22,17 @@ html, body{
     width:50%;
     height:98vh;
     position: relative;
+    background-image: url("./images/background-hi-30.jpg");
+    background-repeat: repeat;
+    background-size: 80%;
 }
 
 .conversation-holder{
     height:100vh;
     width:40%;
-    background-image: url("./images/background-wa.jpg");
+    background-image: url("./images/background-hi-60.jpg");
     background-repeat: repeat;
-    background-size: 50%;
+    background-size: 40%;
 }
 
 #conversation-thread{
@@ -146,12 +149,12 @@ h3{
 }
 
 input[type=text] {
-    background-color: rgba(33, 180, 51, 0.7);
+    background-color: rgba(224, 178, 230, 0.758);
     width:70%;
     height:50px;
     border:none;
     border-radius:35px;
-    border: solid rgba(33, 180, 51, 1) 2px;
+    border: solid rgb(221, 143, 231) 2px;  /* original green : rgba(33, 180, 51, 1)*/
     padding:0px 18px;
     font-family: Roboto;
     font-weight: 400;
@@ -168,7 +171,7 @@ input::placeholder {
    }
 
 .send-button{
-    background-color: rgb(33, 180, 51, 0.85);
+    background-color: rgba(224, 143, 230, 0.8);
     height: 52px;
     width: 52px;
     border-radius:100%;
@@ -201,6 +204,10 @@ img {
     max-height:100%;
     position: absolute;
     z-index: 2;
-    top:0;
-    left:0;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-color: rgba(0,0,0,1);
+    border-width: 300px 200px 300px 200px;
+    border-style: solid;
 }
