@@ -119,18 +119,22 @@ function chatBulleServer (message,color,waitingTime){
 
     //créer un pragraphe et le remplir du contenu en attribut
     
+    const hoursBulle = document.createElement("div");
+    hoursBulle.classList.add("hours-bulle");
+    hoursBulle.innerText = + hours + ":" + minutes; 
+
+
     const textBulleUser = document.createElement("div");
     textBulleUser.classList.add("message-user-green");
-    textBulleUser.innerText = "is typing...";
+    textBulleUser.innerText = "is typing...  ";
     setTimeout( () => {
         textBulleUser.innerText = message;
         textBulleUser.classList.remove("message-user-green");
+        //bullServer.appendChild(hoursBulle);    TOGGLE THIS LINE with line 147 if I don't want the time to appear when "is typing"
+    
     },waitingTime
     );
-
-    const hoursBulle = document.createElement("div");
-    hoursBulle.classList.add("hours-bulle");
-    hoursBulle.innerText = + hours + ":" + minutes;   
+     
         
     // Créer la bulle qui englobe le message et l'heure
     const bullServer = document.createElement("div");
