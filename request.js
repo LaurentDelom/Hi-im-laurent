@@ -151,7 +151,7 @@ function chatBulleServer (message,color,waitingTime){
     document.getElementById('conversation-thread').appendChild(chatEntry);
 }
 
-
+let arrayMessageUser =[];
 
 // EventListener du SUBMIT:
 //Récupère le contenu .value de l'input text 
@@ -161,6 +161,8 @@ function chatBulleServer (message,color,waitingTime){
 const chatBox = document.querySelector(".chatbox-user");
 let colorBulle = gradientArray[0];
 
+chatBulleServer("Hi! I'm Laurent!",colorBulle,0);
+chatBulleServer(":-)", colorBulle,0);
 
 chatBox.addEventListener("submit", function(event){
     event.preventDefault();
@@ -176,6 +178,11 @@ chatBox.addEventListener("submit", function(event){
     //Appel de la fonction former une bulle de chat avec chatContent
     chatBulleUser(chatContent,colorBulle);
     updateScroll();
+
+    // Update de l'arrayMessageUser
+    arrayMessageUser.push(chatContent);
+    console.log(arrayMessageUser);
+
     }
     
     //Appel de l'analyse du message et renvoi des topics demandés
@@ -186,8 +193,17 @@ chatBox.addEventListener("submit", function(event){
     //console.log(selectedTopics);
     //Appelle la fonction qui retrouve la couleur du message
     
+    if (arrayMessageUser.length == 1){
+        setTimeout( () => {
+            displayContent("intro",colorBulle);
+            updateScroll();
+        },reactionTime*1.5
+        );
 
-    if(selectedTopics.length>0){
+    }
+
+
+    else if(selectedTopics.length>0){
 
         colorBulle = gradientArray[topicIndex(selectedTopics[0])];
         const objectTopic = topics.filter(a => a.key==selectedTopics[0]);
@@ -499,5 +515,6 @@ function updateScroll(){
     scrollToBottom('conversation-thread');
     //console.log("Scroll updated");
 }
+
 
 

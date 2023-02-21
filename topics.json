@@ -1,5 +1,14 @@
 [ 
     {   
+        "key":"intro",
+        "images":[],
+        "texts":["So nice to see you here!","Let me show you how it works:"],
+        "related":[],
+        "waiting":[3200,4200],
+        "transverse":false
+    },
+
+    {   
         "key":"work",
         "images":["./images/work1.jpg"],
         "texts":["Le travail c'est très important","Il faut beaucoup travailler"],
@@ -31,7 +40,6 @@
         "waiting":[1000,1000],
         "transverse":true
     }
-
 
 
 
