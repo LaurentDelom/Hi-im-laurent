@@ -39,6 +39,14 @@
         "related":["technique"],
         "waiting":[1000,1000],
         "transverse":true
+    },
+    {   
+        "key":"myself",
+        "images":["./images/signonthewall-balanced.gif"],
+        "texts":["I am an engineer","But more importantly, I am an artist!"],
+        "related":[],
+        "waiting":[1000,1000],
+        "transverse":true
     }
 
 
