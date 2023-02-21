@@ -339,21 +339,38 @@ function displayImages(topicKey){
     for(let i=0; i<imagesArray.length;i++){
         let imageBox = document.createElement("img");
         imageBox.src=imagesArray[i];
+
+        let imageBulle = document.createElement("div");
+        imageBulle.classList.add("image-bulle");
+
+
+
         //Selon l'orientation, les images apparaissent soit dans le conversation-thread, soit dans le image-display
         if(orientationPortrait){
         document.getElementById('conversation-thread').appendChild(imageBox);
+
+
+        // Ajout d'un event listener qui agrandit les images sur click, et masque le reste; et retour à état normal en sur click
         imageBox.addEventListener("click", function () {
             imageBox.classList.toggle("enlarged-image");
+            document.querySelector(".chatbox-user").classList.toggle("chatbox-user-enlarged");
+            document.getElementById("conversation-hider").classList.toggle("conversation-hider-enlarged");
             });
+
+            
         } else {
         document.getElementById('image-display').appendChild(imageBox);
+
+
+        //Ajout d'un event listener qui agrandit les images sur click et masque le reste du div; et retour à l'état normal sur click
         imageBox.addEventListener("click", function () {
             imageBox.classList.toggle("enlarged-image");
-        });
-        }   
+            document.getElementById("image-holder-hider").classList.toggle("image-holder-hider-enlarged");
+        })  
     }
     updateScroll();
 
+}
 }
 // En mode portrait, il y a un problème pour avoir le dernier bout de scroll, je place donc un observateur de la date. 
 //On pourrait décider de l'activer aussi avec l'orientation paysage s'il y avait un problème avec des div plus longs

@@ -33,6 +33,7 @@ html, body{
     background-image: url("./images/background-hi-60.jpg");
     background-repeat: repeat;
     background-size: 40%;
+    overflow: hidden;
 }
 
 #conversation-thread{
@@ -167,7 +168,7 @@ input::placeholder {
     font-family: Roboto;
     font-weight: 400;
     font-size: 1em;
-    color: rgba(244, 252, 248, 0.607);
+    color: rgba(255,255,255, 0.707);
    }
 
 .send-button{
@@ -177,7 +178,7 @@ input::placeholder {
     border-radius:100%;
     border: solid rgba(0, 128, 0, 0) 2px;
     margin-left:5px;
-    background-image: url("./images/logo-send-mini.png");
+    background-image: url("./images/logo-send-mini-white.png");
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: 40% 50%;  
@@ -196,6 +197,13 @@ width:35%;
 img {
     max-width: 50%;
     height: fit-content;
+   
+}
+
+.image-bulle{
+    padding:px;
+    border-radius: 4px;
+    background-color: green;
 }
 
 .enlarged-image{
@@ -207,7 +215,28 @@ img {
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    border-color: rgba(0,0,0,1);
-    border-width: 300px 200px 300px 200px;
+   /* border-color: rgba(0,0,0,1);
+    border-width: 100px 100px 100px 100px;
     border-style: solid;
+    */
+}
+
+ .conversation-hider-enlarged{
+    z-index:3;
+    background-color: black;
+       height:100%;
+    width:100%;
+
+}
+
+.chatbox-user-enlarged{
+    display: none;
+}
+
+.image-holder-hider-enlarged{
+    z-index:1;
+    background-color: black;
+       height:100%;
+    width:100%;
+    position:absolute;
 }
