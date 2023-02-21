@@ -6,14 +6,20 @@ import {Gradient} from "./color-gradient.js";
 const reponse = await fetch('topics.json');
 export const topics =  await reponse.json();
 
-// Suivre le compte de topics valides demandés
-let validTopicRequests =0;
-
-//Suivre la liste des topics visités
-export let visitedTopics=[];
-
 //Extraire la liste des keys
 const listKeys = topics.map(topic => topic.key);
+
+// Récupérer les données de messages d'erreurs
+
+const errors = await fetch('errors.json');
+const errorResponses = await errors.json();
+
+
+
+let validTopicRequests =0; // Suivre le compte de topics valides demandés
+let visitedTopics=[]; //Suivre la liste des topics visités
+let arrayMessageUser =[]; //Historique de toutes les requêtes envoyées par l'utilisateur
+let numberInvalidRequests = 0; // Suivre le compte des requêtes invalides
 
 //console.log(listKeys);
 export let orientationPortrait = false;
@@ -35,7 +41,7 @@ if(orientationPortrait){
 
 //Constantes du temps 
 
-const reactionTime=2800; // Temps de réaction avant de commencer à écrire
+const reactionTime=100; // Temps de réaction avant de commencer à écrire
 let dateNextScroll = Date.now(); // Initialisation du calcul pour effectuer un scroll après affichage d'image
 let nextScrollToDo = true; // idem
 
@@ -151,7 +157,8 @@ function chatBulleServer (message,color,waitingTime){
     document.getElementById('conversation-thread').appendChild(chatEntry);
 }
 
-let arrayMessageUser =[];
+
+
 
 // EventListener du SUBMIT:
 //Récupère le contenu .value de l'input text 
@@ -246,9 +253,19 @@ chatBox.addEventListener("submit", function(event){
 
     } else {
         waitForArborescence=0; // En cas de requête non valide > disparition immédiate de l'arborescence
-        //console.log(selectedTopics[0]);
+        console.log(`Invalid requests :${numberInvalidRequests}`);
         // Appel fonction je n'ai pas compris votre requête
-        //chatBulleUser("I didn't quite get your request");
+        setTimeout( () => {
+            displayError(numberInvalidRequests,colorBulle);
+            updateScroll();
+        },reactionTime
+        );
+        
+
+
+        
+
+
     }
 
     console.log(`Valid Topic Requests : ${validTopicRequests}`);
@@ -342,6 +359,32 @@ function displayContent(topicKey,color){
     }
     
 }
+
+// Fonction qui prend en argument le compte d'erreurs et renvoie le text adapté
+
+function displayError(errorNumber,color){
+    const desiredTopic = errorResponses[errorNumber];
+    const textsArray = desiredTopic.texts;
+    const waitingTimeArray = desiredTopic.waiting;
+    let waitingTime = 0;
+    chatBulleServer(textsArray[0],color,waitingTimeArray[0]);
+
+
+    numberInvalidRequests = (numberInvalidRequests + 1) % errorResponses.length;
+    
+    for(let i=1;i<textsArray.length;i++){
+        waitingTime = waitingTime + waitingTimeArray[i];
+        
+        setTimeout(() => {
+            chatBulleServer(textsArray[i],color,waitingTimeArray[i]);
+            updateScroll();
+        },waitingTime);
+        
+    }
+    
+}
+
+
 
 // Fonction qui prend en argument une topic-key et renvoie les images associées dans le image-display
 

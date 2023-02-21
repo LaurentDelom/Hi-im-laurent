@@ -1,0 +1,16 @@
+[ 
+    {   
+        "texts":["I am sorry, I didn't quite get that one..."],
+        "waiting":[1500]
+    },
+
+    {   
+        "texts":["I am sorry again, I didn't get that one either..."],
+        "waiting":[1500]
+    },
+    
+    {
+        "texts":["Oupsie, come again..."],
+        "waiting":[1500]
+    }
+]
