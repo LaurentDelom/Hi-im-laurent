@@ -211,7 +211,7 @@ chatBox.addEventListener("submit", function(event){
         );
         
         setTimeout( () => {
-            displayImages(selectedTopics[0]);
+            displayImages(selectedTopics[0],colorBulle);
             updateScroll();
         },waitForImages
         );
@@ -329,10 +329,13 @@ function displayContent(topicKey,color){
 
 // Fonction qui prend en argument une topic-key et renvoie les images associées dans le image-display
 
-function displayImages(topicKey){
+function displayImages(topicKey,color){
     const desiredTopic = topics.filter(a => a.key==topicKey);
      const imagesArray = desiredTopic[0].images;
     //console.log(imagesArray);
+
+
+   
 
 
 
@@ -342,12 +345,23 @@ function displayImages(topicKey){
 
         let imageBulle = document.createElement("div");
         imageBulle.classList.add("image-bulle");
+        imageBulle.style.backgroundColor = color;
 
+         // Récupérer la date, heure et minute
+    const date = new Date();
+    const hours = (date.getHours()<10?'0':'') + date.getHours();
+    const minutes = (date.getMinutes()<10?'0':'') + date.getMinutes();   
+    const hoursBulle = document.createElement("div");
+    hoursBulle.classList.add("hours-bulle");
+    hoursBulle.innerText = + hours + ":" + minutes; 
 
+        imageBulle.appendChild(imageBox);
+        imageBulle.appendChild(hoursBulle);
 
         //Selon l'orientation, les images apparaissent soit dans le conversation-thread, soit dans le image-display
         if(orientationPortrait){
-        document.getElementById('conversation-thread').appendChild(imageBox);
+           
+        document.getElementById('conversation-thread').appendChild(imageBulle);
 
 
         // Ajout d'un event listener qui agrandit les images sur click, et masque le reste; et retour à état normal en sur click
@@ -359,7 +373,7 @@ function displayImages(topicKey){
 
             
         } else {
-        document.getElementById('image-display').appendChild(imageBox);
+        document.getElementById('image-display').appendChild(imageBulle);
 
 
         //Ajout d'un event listener qui agrandit les images sur click et masque le reste du div; et retour à l'état normal sur click
