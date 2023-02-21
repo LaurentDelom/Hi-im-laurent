@@ -41,14 +41,13 @@ if(orientationPortrait){
 
 //Constantes du temps 
 
-const reactionTime=100; // Temps de réaction avant de commencer à écrire
+const reactionTime=3200; // Temps de réaction avant de commencer à écrire
 let dateNextScroll = Date.now(); // Initialisation du calcul pour effectuer un scroll après affichage d'image
 let nextScrollToDo = true; // idem
 
 //Création des constantes de couleurs
-const colorUser = "rgba(46, 183, 34, 0.652)";    //"#29fe45";
-const colorGradient1 = "#21b433";
-const colorGradient2 = "#00a293";
+const colorGradient1 = "#21b433"; //"#21b433"
+const colorGradient2 = "#20bdb8"; //"#00a293"
 
 
 ///////////////////// GESTION DES COULEURS ///////////////
@@ -188,14 +187,13 @@ chatBox.addEventListener("submit", function(event){
 
     // Update de l'arrayMessageUser
     arrayMessageUser.push(chatContent);
-    console.log(arrayMessageUser);
-
+    
     }
     
     //Appel de l'analyse du message et renvoi des topics demandés
     let wordArrayUser = messageIntoArray(chatContent);
     let selectedTopics = keyComparison(listKeys,wordArrayUser);
-    let waitForImages = reactionTime*1.2;
+    let waitForImages = reactionTime*0.8;
     let waitForArborescence = 0;
     //console.log(selectedTopics);
     //Appelle la fonction qui retrouve la couleur du message
@@ -220,7 +218,7 @@ chatBox.addEventListener("submit", function(event){
         
         
             for(let i=0;i<waitingWriteArray.length;i++){
-                waitForImages += waitingWriteArray[i];
+                waitForImages += waitingWriteArray[i] + reactionTime*0.5;
             }
             
 
@@ -253,7 +251,6 @@ chatBox.addEventListener("submit", function(event){
 
     } else {
         waitForArborescence=0; // En cas de requête non valide > disparition immédiate de l'arborescence
-        console.log(`Invalid requests :${numberInvalidRequests}`);
         // Appel fonction je n'ai pas compris votre requête
         setTimeout( () => {
             displayError(numberInvalidRequests,colorBulle);
@@ -344,17 +341,21 @@ function displayContent(topicKey,color){
     const desiredTopic = topics.filter(a => a.key==topicKey);
     const textsArray = desiredTopic[0].texts;
     const waitingTimeArray = desiredTopic[0].waiting;
-    let waitingTime = 0;
+    let waitingTime = waitingTimeArray[0];
     
-    chatBulleServer(textsArray[0],color,waitingTimeArray[0]);
+    chatBulleServer(textsArray[0],color,waitingTime);
+
+    waitingTime = waitingTime + reactionTime*0.5;
     
     for(let i=1;i<textsArray.length;i++){
-        waitingTime = waitingTime + waitingTimeArray[i];
+        
         
         setTimeout(() => {
             chatBulleServer(textsArray[i],color,waitingTimeArray[i]);
             updateScroll();
         },waitingTime);
+
+        waitingTime = waitingTime + waitingTimeArray[i] + reactionTime*0.5;
         
     }
     

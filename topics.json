@@ -2,9 +2,9 @@
     {   
         "key":"intro",
         "images":[],
-        "texts":["So nice to see you here!","Let me show you how it works:"],
+        "texts":["So nice to see you here!","Let me show you how it works:","Instruction 1, instruction 2, instruction 3","There you are! Ready to go!","Where would you like to start?"],
         "related":[],
-        "waiting":[3200,4200],
+        "waiting":[3200,4200,4000,3000,3000],
         "transverse":false
     },
 
@@ -13,7 +13,7 @@
         "images":["./images/work1.jpg"],
         "texts":["Le travail c'est très important","Il faut beaucoup travailler"],
         "related":["technique"],
-        "waiting":[3000,3000],
+        "waiting":[4000,3000],
         "transverse":false
     },
     {
