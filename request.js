@@ -157,6 +157,18 @@ function chatBulleServer (message,color,waitingTime){
 }
 
 
+function infoBulle (message) {
+    const infoBox = document.createElement("div");
+    infoBox.classList.add("info-box");
+    const infoMessage = document.createElement("p");
+    infoMessage.classList.add("info-bulle");
+    infoMessage.innerText = message;
+
+    
+    infoBox.appendChild(infoMessage);
+    document.getElementById('conversation-thread').appendChild(infoBox);
+}
+
 
 
 // EventListener du SUBMIT:
@@ -167,6 +179,7 @@ function chatBulleServer (message,color,waitingTime){
 const chatBox = document.querySelector(".chatbox-user");
 let colorBulle = gradientArray[0];
 
+infoBulle("Today");
 chatBulleServer("Hi! I'm Laurent!",colorBulle,0);
 chatBulleServer(":-)", colorBulle,0);
 

@@ -257,3 +257,20 @@ img {
     width:100%;
     position:absolute;
 }
+
+.info-box{
+    display: flex;
+    justify-content: center;
+
+}
+
+.info-bulle{
+    font-family: Roboto;
+    font-size: 0.8em;
+    font-weight:500;
+    color: rgba(170, 160, 171, 0.8);
+    border-radius: 6px;
+    width: fit-content;
+    padding: 7px 10px 7px 10px;
+    background-color: rgba(224, 178, 230, 0.558); 
+}
