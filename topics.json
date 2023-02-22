@@ -43,11 +43,12 @@
     {   
         "key":"myself",
         "images":["./images/signonthewall-balanced.gif"],
-        "texts":["I am an engineer","But more importantly, I am an artist!"],
+        "texts":["I am an engineer","But more importantly, I am an artist!","Reach me out on Whatsapp via https://wa.me/0033673144374"],
         "related":[],
-        "waiting":[1000,1000],
+        "waiting":[1000,1000,1000],
         "transverse":true
     }
+    
 
 
 
