@@ -29,6 +29,23 @@ if(screen.availHeight > screen.availWidth){
     orientationPortrait = true;
 }
 
+if (iOS()){
+    orientationPortrait = true;
+}
+
+function iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
 // Préparer le tableau en fonction de mobile ou PC >> masquer tree-holder & image-holder
 
 if(orientationPortrait){
