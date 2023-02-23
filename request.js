@@ -3,15 +3,22 @@
 import {Gradient} from "./color-gradient.js";
 
 // Récupérer les données de topics
-const reponse = await fetch('topics.json');
-export const topics =  await reponse.json();
+/*
+(async () => {
+        const result = await fetch('/api')
+    })()
+program):1 SyntaxError: Unexpected identifier 'fetch'. Expected ';' after variable declaration.promiseReactionJob @ (program):1
+*/
+
+const reponse = await fetch('./topics.json');
+const topics =  await reponse.json();
 
 //Extraire la liste des keys
 const listKeys = topics.map(topic => topic.key);
 
 // Récupérer les données de messages d'erreurs
 
-const errors = await fetch('errors.json');
+const errors = await fetch('./errors.json');
 const errorResponses = await errors.json();
 
 
@@ -22,7 +29,7 @@ let arrayMessageUser =[]; //Historique de toutes les requêtes envoyées par l'u
 let numberInvalidRequests = 0; // Suivre le compte des requêtes invalides
 
 //console.log(listKeys);
-export let orientationPortrait = false;
+let orientationPortrait = false;
 
 //Contrôler une fois au lancement quelle est l'orientation de la page
 if(screen.availHeight > screen.availWidth){
@@ -332,7 +339,7 @@ function messageIntoArray (message){
 }
 
 // Fonction qui compare chacun des mots à la listKeys et renvoie le ou les mots contenu dans la liste
-export function keyComparison (keyList,wordArray){
+function keyComparison (keyList,wordArray){
     let foundKeyList = [];
 
     // Renvoie une foundKeyList classée par ordre d'apparition dans le message de l'utilisateur
@@ -597,9 +604,16 @@ let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", () => {
+        vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+  }
+/*
 window.addEventListener('resize', () => {
     // We execute the same script as before
-    vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    
   });
+  */
 
