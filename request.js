@@ -62,7 +62,7 @@ if(orientationPortrait){
 
 //Constantes du temps 
 
-const reactionTime=3200; // Temps de réaction avant de commencer à écrire
+const reactionTime=2200; // Temps de réaction avant de commencer à écrire
 let dateNextScroll = Date.now(); // Initialisation du calcul pour effectuer un scroll après affichage d'image
 let nextScrollToDo = true; // idem
 
@@ -201,7 +201,7 @@ const chatBox = document.querySelector(".chatbox-user");
 let colorBulle = gradientArray[0];
 
 infoBulle("Today");
-chatBulleServer("Hi! I'm Laurent!",colorBulle,0);
+chatBulleServer("Hi! I'm Laurent!",colorBulle,1000);
 chatBulleServer(":-)", colorBulle,0);
 
 chatBox.addEventListener("submit", function(event){
@@ -625,10 +625,6 @@ let keyboardUpdatePermission = true;
 
 document.querySelector(".send-button").style.backgroundColor = "grey";
 
-if(/Chrome/i.test(ua)){ 
-    keyboardUpdatePermission = true;
-    document.querySelector(".send-button").style.backgroundColor = "red";
-}
 
 if(iOS()){
     keyboardUpdatePermission = false; 
