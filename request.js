@@ -1,7 +1,8 @@
 //import { displayTopicTree } from "./topictree.js";
 
 import {Gradient} from "./color-gradient.js";
-
+import {topics} from "./topics-sheet.js";
+import {errorResponses} from "./topics-sheet.js";
 // Récupérer les données de topics
 /*
 (async () => {
@@ -10,16 +11,12 @@ import {Gradient} from "./color-gradient.js";
 program):1 SyntaxError: Unexpected identifier 'fetch'. Expected ';' after variable declaration.promiseReactionJob @ (program):1
 */
 
-const reponse = await fetch('./topics.json');
-const topics =  await reponse.json();
+
 
 //Extraire la liste des keys
 const listKeys = topics.map(topic => topic.key);
 
 // Récupérer les données de messages d'erreurs
-
-const errors = await fetch('./errors.json');
-const errorResponses = await errors.json();
 
 
 

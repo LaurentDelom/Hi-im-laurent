@@ -7,7 +7,7 @@ request.js
 
 Gestion du FETCH JSON pour iOS
 
-Je vais créer 3 branches pour tester différentes hypothèses de travail sur la gestion du FECTH*
+Je vais créer 3 branches à partir de safety-post-async pour tester différentes hypothèses de travail sur la gestion du FECTH*
 
 1. Les listes topics et errors seront incluses dans le request.js
 2. Les listes topics et errors seront dans un module JS externe géré avec import et export
