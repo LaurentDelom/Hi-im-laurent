@@ -626,7 +626,7 @@ let keyboardUpdatePermission = true;
 document.querySelector(".send-button").style.backgroundColor = "grey";
 
 if(/Chrome/i.test(ua)){ 
-    keyboardUpdatePermission = false;
+    keyboardUpdatePermission = true;
     document.querySelector(".send-button").style.backgroundColor = "red";
 }
 
