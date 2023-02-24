@@ -622,15 +622,20 @@ chatForm.addEventListener("blur",(event) => {
 
 const ua = navigator.userAgent;
 let keyboardUpdatePermission = true;
+
+document.querySelector(".send-button").style.backgroundColor = "grey";
+
 if(/Chrome/i.test(ua)){ 
     keyboardUpdatePermission = false;
+    document.querySelector(".send-button").style.backgroundColor = "red";
 }
 
 if(iOS()){
     keyboardUpdatePermission = false;
+    document.querySelector(".send-button").style.backgroundColor = "green";
 }
 
-
+///// If it's not chr
 
 if (window.visualViewport && keyboardUpdatePermission) {
     window.visualViewport.addEventListener("resize", () => {
