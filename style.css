@@ -155,8 +155,8 @@ h3{
 
 .chatbox-user{
     position: fixed;
-    top:80vh;
-    top: calc(var(--vh, 1vh) * 80);
+    bottom:10vh;
+    bottom: calc(var(--vh, 1vh) * 10);
     width:inherit;
     padding-left: 0px;
     display: flex;
