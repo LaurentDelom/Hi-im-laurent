@@ -631,7 +631,7 @@ if(/Chrome/i.test(ua)){
 }
 
 if(iOS()){
-    keyboardUpdatePermission = false;
+    keyboardUpdatePermission = false; 
     document.querySelector(".send-button").style.backgroundColor = "green";
 }
 
