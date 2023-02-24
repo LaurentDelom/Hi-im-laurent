@@ -482,7 +482,7 @@ function displayImages(topicKey,color){
 }
 // En mode portrait, il y a un problème pour avoir le dernier bout de scroll, je place donc un observateur de la date. 
 //On pourrait décider de l'activer aussi avec l'orientation paysage s'il y avait un problème avec des div plus longs
-if(orientationPortrait){setInterval(getDateNow,200);}
+if(orientationPortrait){setInterval(getDateNow,500);}
 
 
 // This functions gets the last bit of scroll by checking the date and seeing if it needs to be done after completion of all waiting Time
@@ -623,6 +623,8 @@ if (window.visualViewport) {
     window.visualViewport.addEventListener("resize", () => {
         vh = window.visualViewport.height * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
+        document.querySelector(".chatbox-user").classList.toggle("chatbox-user-keyboardON");
+        document.getElementById("conversation-thread").classList.toggle("conversation-thread-keyboardON");
         dateNextScroll = Date.now() + 150; 
         nextScrollToDo = true;
     });

@@ -36,6 +36,7 @@ html, body{
 
 .conversation-holder{
     position:fixed;
+    top:0;
     height:100vh;
     width:40%;
     background-image: url("./images/background-hi-60.jpg");
@@ -276,4 +277,21 @@ img {
     width: fit-content;
     padding: 7px 10px 7px 10px;
     background-color: rgba(224, 178, 230, 0.458); 
+}
+
+
+.chatbox-user-keyboardON{
+    top:82vh;
+    top: calc(var(--vh, 1vh) * 82);
+}
+
+
+.chatbox-user-keyboardON{
+    top:80vh;
+    top: calc(var(--vh, 1vh) * 80);
+}
+
+.conversation-thread-keyboardON{
+    height:78vh;
+    height: calc(var(--vh, 1vh) * 78);
 }
