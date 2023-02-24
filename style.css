@@ -156,7 +156,6 @@ h3{
     top:90vh;
     top: calc(var(--vh, 1vh) * 90);
     width:inherit;
-    height:inherit;
     padding-left: 0px;
     display: flex;
     justify-content: center;
@@ -280,18 +279,3 @@ img {
 }
 
 
-.chatbox-user-keyboardON{
-    top:82vh;
-    top: calc(var(--vh, 1vh) * 82);
-}
-
-
-.chatbox-user-keyboardON{
-    top:80vh;
-    top: calc(var(--vh, 1vh) * 80);
-}
-
-.conversation-thread-keyboardON{
-    height:78vh;
-    height: calc(var(--vh, 1vh) * 78);
-}

@@ -623,8 +623,6 @@ if (window.visualViewport) {
     window.visualViewport.addEventListener("resize", () => {
         vh = window.visualViewport.height * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
-        document.querySelector(".chatbox-user").classList.toggle("chatbox-user-keyboardON");
-        document.getElementById("conversation-thread").classList.toggle("conversation-thread-keyboardON");
         dateNextScroll = Date.now() + 150; 
         nextScrollToDo = true;
     });
