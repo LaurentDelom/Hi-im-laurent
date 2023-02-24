@@ -20,11 +20,11 @@ chatForm.addEventListener("blur",(event) => {
     document.getElementById("conversation-thread").style.height = "88vh";
     updateScroll();
 });
+*/
 
-/*
 if (window.visualViewport) {
     window.visualViewport.addEventListener("resize", () => {
-        vh = window.innerHeight * 0.01;
+        vh = window.visualViewport.height * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
   }
