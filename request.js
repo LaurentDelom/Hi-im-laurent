@@ -618,11 +618,25 @@ chatForm.addEventListener("blur",(event) => {
     updateScroll();
 });
 */
+/////// TESTING IF IT'S CHROME OR iOS
 
-if (window.visualViewport) {
+const ua = navigator.userAgent;
+let keyboardUpdatePermission = true;
+if(/Chrome/i.test(ua)){ 
+    keyboardUpdatePermission = false;
+}
+
+if(iOS()){
+    keyboardUpdatePermission = false;
+}
+
+
+
+if (window.visualViewport && keyboardUpdatePermission) {
     window.visualViewport.addEventListener("resize", () => {
         vh = window.visualViewport.height * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
+        document.querySelector('input [type="text"]').style.background = "black";
         dateNextScroll = Date.now() + 150; 
         nextScrollToDo = true;
     });
