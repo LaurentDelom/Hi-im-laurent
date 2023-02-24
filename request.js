@@ -636,7 +636,7 @@ if (window.visualViewport && keyboardUpdatePermission) {
     window.visualViewport.addEventListener("resize", () => {
         vh = window.visualViewport.height * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
-        document.querySelector('input [type="text"]').style.background = "black";
+       // document.querySelector('input [type="text"]').style.background = "black";
         dateNextScroll = Date.now() + 150; 
         nextScrollToDo = true;
     });
