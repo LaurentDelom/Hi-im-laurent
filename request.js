@@ -626,13 +626,14 @@ let keyboardUpdatePermission = true;
 document.querySelector(".send-button").style.backgroundColor = "grey";
 
 if(/Chrome/i.test(ua)){ 
-    keyboardUpdatePermission = true;
+    keyboardUpdatePermission = false;
     document.querySelector(".send-button").style.backgroundColor = "red";
 }
 
 if(iOS()){
-    keyboardUpdatePermission = true; 
+    keyboardUpdatePermission = false; 
     document.querySelector(".send-button").style.backgroundColor = "green";
+    document.getElementById("chatbox-form").classList.replace("chatbox-user","chatbox-user-ios");
 }
 
 ///// If it's not chr
