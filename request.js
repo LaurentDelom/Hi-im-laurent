@@ -461,8 +461,9 @@ function displayImages(topicKey,color){
         // Ajout d'un event listener qui agrandit les images sur click, et masque le reste; et retour à état normal en sur click
         imageBox.addEventListener("click", function () {
             imageBox.classList.toggle("enlarged-image");
-            document.querySelector(".chatbox-user").classList.toggle("chatbox-user-enlarged");
+            document.getElementById("chatbox-form").classList.toggle("chatbox-user-enlarged");
             document.getElementById("conversation-hider").classList.toggle("conversation-hider-enlarged");
+            updateScroll();
             });
 
             
@@ -623,13 +624,12 @@ chatForm.addEventListener("blur",(event) => {
 const ua = navigator.userAgent;
 let keyboardUpdatePermission = true;
 
-document.querySelector(".send-button").style.backgroundColor = "grey";
+
 
 
 if(iOS()){
     keyboardUpdatePermission = false; 
-    document.querySelector(".send-button").style.backgroundColor = "green";
-    document.getElementById("chatbox-form").classList.replace("chatbox-user","chatbox-user-ios");
+   document.getElementById("chatbox-form").classList.replace("chatbox-user","chatbox-user-ios");
 }
 
 ///// If it's not chr
