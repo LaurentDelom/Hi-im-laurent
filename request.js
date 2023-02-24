@@ -222,7 +222,7 @@ chatBox.addEventListener("submit", function(event){
     // Update de l'arrayMessageUser
     arrayMessageUser.push(chatContent);
     
-    }
+    
     
     //Appel de l'analyse du message et renvoi des topics demandés
     let wordArrayUser = messageIntoArray(chatContent);
@@ -278,7 +278,7 @@ chatBox.addEventListener("submit", function(event){
         validTopicRequests+=1; //Incrémenter le compte de topics valides
         visitedTopics.push(selectedTopics[0]); //ajouter le topic à la liste des topics visités
         waitForArborescence = waitForImages; // Attribuer le même délai à l'arrivée de l'arborescence
-        dateNextScroll = Date.now() + waitForImages + 750;
+        dateNextScroll = Date.now() + waitForImages + 1200;
         nextScrollToDo = true;
        
         
@@ -289,12 +289,14 @@ chatBox.addEventListener("submit", function(event){
         setTimeout( () => {
             displayError(numberInvalidRequests,colorBulle);
             updateScroll();
+            dateNextScroll = Date.now() + reactionTime + 200;
+        nextScrollToDo = true;
         },reactionTime
         );
         
 
 
-        
+    }   
 
 
     }
