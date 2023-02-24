@@ -278,7 +278,7 @@ chatBox.addEventListener("submit", function(event){
         validTopicRequests+=1; //Incrémenter le compte de topics valides
         visitedTopics.push(selectedTopics[0]); //ajouter le topic à la liste des topics visités
         waitForArborescence = waitForImages; // Attribuer le même délai à l'arrivée de l'arborescence
-        dateNextScroll = Date.now() + waitForImages + 500;
+        dateNextScroll = Date.now() + waitForImages + 750;
         nextScrollToDo = true;
        
         
