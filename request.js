@@ -201,12 +201,12 @@ const chatBox = document.querySelector(".chatbox-user");
 let colorBulle = gradientArray[0];
 
 infoBulle("Today");
-chatBulleServer("Hi! I'm Laurent!",colorBulle,1000);
+chatBulleServer("Hi! I'm Laurent!",colorBulle,0);
 chatBulleServer(":-)", colorBulle,0);
 
 chatBox.addEventListener("submit", function(event){
     event.preventDefault();
-    document.getElementById('image-display').innerHTML='';
+    
     let chatContent = event.target.querySelector("[name=writebox-user]").value;
 
 
@@ -214,6 +214,7 @@ chatBox.addEventListener("submit", function(event){
     //console.log(chatContent);
     if (!(chatContent == '')){
     document.querySelector("[name=writebox-user]").value="";
+    document.getElementById('image-display').innerHTML='';
     
     //Appel de la fonction former une bulle de chat avec chatContent
     chatBulleUser(chatContent,colorBulle);
@@ -289,8 +290,8 @@ chatBox.addEventListener("submit", function(event){
         setTimeout( () => {
             displayError(numberInvalidRequests,colorBulle);
             updateScroll();
-            dateNextScroll = Date.now() + reactionTime + 200;
-        nextScrollToDo = true;
+            dateNextScroll = Date.now() + reactionTime + 300;
+            nextScrollToDo = true;
         },reactionTime
         );
         
@@ -298,13 +299,8 @@ chatBox.addEventListener("submit", function(event){
 
     }   
 
-
-    }
-
-    console.log(`Valid Topic Requests : ${validTopicRequests}`);
-    
     //Mise à jour de l'arborescence
-     if (!orientationPortrait){
+    if (!orientationPortrait){
 
         setTimeout( () => {
             displayTopicTree(selectedTopics[0]);
@@ -313,6 +309,13 @@ chatBox.addEventListener("submit", function(event){
 
         
     }
+
+
+    }
+
+    console.log(`Valid Topic Requests : ${validTopicRequests}`);
+    
+    
      
     
     
@@ -485,7 +488,7 @@ function displayImages(topicKey,color){
 }
 // En mode portrait, il y a un problème pour avoir le dernier bout de scroll, je place donc un observateur de la date. 
 //On pourrait décider de l'activer aussi avec l'orientation paysage s'il y avait un problème avec des div plus longs
-if(orientationPortrait){setInterval(getDateNow,500);}
+setInterval(getDateNow,500);
 
 
 // This functions gets the last bit of scroll by checking the date and seeing if it needs to be done after completion of all waiting Time
