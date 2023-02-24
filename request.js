@@ -403,7 +403,7 @@ function displayError(errorNumber,color){
     const waitingTimeArray = desiredTopic.waiting;
     let waitingTime = 0;
     chatBulleServer(textsArray[0],color,waitingTimeArray[0]);
-
+    updateScroll();
 
     numberInvalidRequests = (numberInvalidRequests + 1) % errorResponses.length;
     
@@ -416,7 +416,7 @@ function displayError(errorNumber,color){
         },waitingTime);
         
     }
-    
+    updateScroll();
 }
 
 
@@ -602,6 +602,21 @@ function updateScroll(){
 let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+const chatForm = document.querySelector('input[type="text"]'); 
+
+chatForm.addEventListener("focus",(event) => {
+    document.querySelector(".chatbox-user").style.top="40vh";
+    document.getElementById("conversation-thread").style.height = "38vh";
+    updateScroll();
+});
+
+chatForm.addEventListener("blur",(event) => {
+    document.querySelector(".chatbox-user").style.top="90vh";
+    document.getElementById("conversation-thread").style.height = "88vh";
+    updateScroll();
+});
+
 /*
 if (window.visualViewport) {
     window.visualViewport.addEventListener("resize", () => {
