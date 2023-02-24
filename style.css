@@ -24,7 +24,7 @@ html, body{
     position: relative;
     background-image: url("./images/background-hi-30.jpg");
     background-repeat: repeat;
-    background-size: 80%;
+    background-size: 85%;
     }
 
 
@@ -39,7 +39,7 @@ html, body{
     width:40%;
     background-image: url("./images/background-hi-60.jpg");
     background-repeat: repeat;
-    background-size: 40%;
+    background-size: 55%;
     overflow: hidden;
 }
 
