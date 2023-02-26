@@ -24,9 +24,8 @@ html, body{
     width:50%;
     height:98vh;
     position: relative;
-    background-image: url("./images/background-hi-30.jpg");
-    background-repeat: repeat;
-    background-size: 85%;
+    background: no-repeat center/60% url("./images/background-image-15.jpg"); // 
+    
     }
 
 
