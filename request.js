@@ -62,7 +62,7 @@ if(orientationPortrait){
 
 //Constantes du temps 
 
-const reactionTime=2200; // Temps de réaction avant de commencer à écrire
+const reactionTime=200; // Temps de réaction avant de commencer à écrire
 let dateNextScroll = Date.now(); // Initialisation du calcul pour effectuer un scroll après affichage d'image
 let nextScrollToDo = true; // idem
 
@@ -462,7 +462,7 @@ function displayImages(topicKey,color){
            
         document.getElementById('conversation-thread').appendChild(imageBulle);
 
-
+        
         // Ajout d'un event listener qui agrandit les images sur click, et masque le reste; et retour à état normal en sur click
         imageBox.addEventListener("click", function () {
             imageBox.classList.toggle("enlarged-image");
@@ -478,14 +478,50 @@ function displayImages(topicKey,color){
 
         //Ajout d'un event listener qui agrandit les images sur click et masque le reste du div; et retour à l'état normal sur click
         imageBox.addEventListener("click", function () {
-            imageBox.classList.toggle("enlarged-image");
-            document.getElementById("image-holder-hider").classList.toggle("image-holder-hider-enlarged");
+            imageBox.classList.add("enlarged-image");
+            document.getElementById("image-holder-hider").classList.add("image-holder-hider-enlarged");
+            document.getElementById("image-holder-hider").classList.remove("image-holder-hider-normal");
+            document.getElementById("image-closer").style.zIndex = 4;
+
+
+            document.getElementById("image-closer").addEventListener("click", function(){
+               let allEnlargedImage = document.querySelectorAll(".enlarged-image");
+               
+                for (let i=0; i<allEnlargedImage.length;i++){allEnlargedImage[i].classList.remove("enlarged-image");}
+
+                document.getElementById("image-holder-hider").classList.remove("image-holder-hider-enlarged");
+                document.getElementById("image-holder-hider").classList.add("image-holder-hider-normal");
+
+            });
+            
         })  
     }
     updateScroll();
 
 }
 }
+
+
+
+function clickToReduce(){
+    let allEnlargedImage = document.querySelectorAll(".enlarged-image");
+               
+    for (let i=0; i<allEnlargedImage.length;i++){allEnlargedImage[i].classList.remove("enlarged-image");}
+
+    document.getElementById("image-holder-hider").classList.remove("image-holder-hider-enlarged");
+    document.getElementById("image-holder-hider").classList.add("image-holder-hider-normal");
+
+    imageBox.addEventListener("click", clickToEnlarge(imageBox));
+    }
+
+
+
+
+
+
+
+
+
 // En mode portrait, il y a un problème pour avoir le dernier bout de scroll, je place donc un observateur de la date. 
 //On pourrait décider de l'activer aussi avec l'orientation paysage s'il y avait un problème avec des div plus longs
 setInterval(getDateNow,500);

@@ -22,10 +22,11 @@ html, body{
 
 .image-holder{
     width:50%;
-    height:98vh;
+    height:100vh;
     position: relative;
-    background: no-repeat center/60% url("./images/background-image-15.jpg"); // 
-    
+    background: no-repeat center/60% url("./images/background-image-15.jpg");
+    overflow: hidden;
+
     }
 
 
@@ -33,6 +34,7 @@ html, body{
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
+    overflow: hidden;
 }
 
 .conversation-holder{
@@ -243,7 +245,7 @@ img {
 .enlarged-image{
     max-width:100%;
     height:auto;
-    max-height:100%;
+    max-height:90%;
     position: absolute;
     z-index: 2;
     top:50%;
@@ -267,12 +269,32 @@ img {
     display: none;
 }
 
+.image-holder-hider-normal{
+    display: none;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
 .image-holder-hider-enlarged{
-    z-index:1;
+   
     background-color: black;
        height:100%;
     width:100%;
-    position:absolute;
+    /*position:absolute;*/
+    color: white;
+   
+    z-index:1;
+}
+
+#image-closer {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:50%;
+    background-color: rgba(159, 189, 179, 0.704);
+    z-index: 4;
 }
 
 .info-box{
