@@ -588,6 +588,7 @@ function displayTopicTree(centralTopic){
         document.getElementById('works-tree').appendChild(topicBox);
         topicBox.style.color=gradientArray[i];
         topicBox.style.fontWeight="600";
+        topicBox.style.opacity="0.5";
         addCorrectClass(topicBox,listWorks[i],centralTopic);
         
     }
@@ -599,6 +600,7 @@ function displayTopicTree(centralTopic){
         topicBox.style.color=gradientArray[i+listWorks.length];
         topicBox.style.fontStyle="italic";
         topicBox.style.fontWeight="600";
+        topicBox.style.opacity="0.5";
         addCorrectClass(topicBox,listTransverseSubjects[i],centralTopic);
     }
 
@@ -611,9 +613,14 @@ function addCorrectClass(topicBox,topic,centralTopic){
 
 
     if (isTopicAlreadyVisited(topic)){
-        topicBox.style.textDecoration = "underline";
+        //topicBox.style.textDecoration = "underline";
+        topicBox.style.opacity = "1";
     } else if (!isTopicRelated(topic,centralTopic)){
         topicBox.style.color = "whitesmoke";
+    } 
+    
+    if (isTopicMatchingCentralTopic(topic,centralTopic)){
+        topicBox.style.textDecoration = "underline";
     }
 }
 
@@ -635,6 +642,19 @@ function isTopicRelated(topic,centralTopic){
         const relatedThemes = desiredTopic[0].related;
         const matchRelatedThemes = relatedThemes.filter(a => a == topic);
         if(matchRelatedThemes.length >0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+function isTopicMatchingCentralTopic(topic,centralTopic){
+    if(centralTopic === undefined){
+        return false;
+    } else {
+        if (topic == centralTopic){
             return true;
         }
         else {
