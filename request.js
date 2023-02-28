@@ -215,6 +215,8 @@ chatBox.addEventListener("submit", function(event){
     if (!(chatContent == '')){
     document.querySelector("[name=writebox-user]").value="";
     document.getElementById('image-display').innerHTML='';
+    document.getElementById("image-holder-hider").classList.remove("image-holder-hider-enlarged");
+    document.getElementById("image-holder-hider").classList.add("image-holder-hider-normal");
     
     //Appel de la fonction former une bulle de chat avec chatContent
     chatBulleUser(chatContent,colorBulle);
@@ -290,7 +292,7 @@ chatBox.addEventListener("submit", function(event){
         setTimeout( () => {
             displayError(numberInvalidRequests,colorBulle);
             updateScroll();
-            dateNextScroll = Date.now() + reactionTime + 300;
+            dateNextScroll = Date.now() + reactionTime + 1800;
             nextScrollToDo = true;
         },reactionTime
         );
@@ -465,9 +467,26 @@ function displayImages(topicKey,color){
         
         // Ajout d'un event listener qui agrandit les images sur click, et masque le reste; et retour à état normal en sur click
         imageBox.addEventListener("click", function () {
-            imageBox.classList.toggle("enlarged-image");
-            document.getElementById("chatbox-form").classList.toggle("chatbox-user-enlarged");
-            document.getElementById("conversation-hider").classList.toggle("conversation-hider-enlarged");
+            imageBox.classList.add("enlarged-image");
+            document.getElementById("chatbox-form").classList.add("chatbox-user-enlarged");
+            document.getElementById("conversation-hider").classList.remove("conversation-hider-normal");
+            document.getElementById("conversation-hider").classList.add("conversation-hider-enlarged");
+
+            document.getElementById("image-closer-conversation").addEventListener("click", function(){
+                let allEnlargedImage = document.querySelectorAll(".enlarged-image");
+                
+                 for (let i=0; i<allEnlargedImage.length;i++){allEnlargedImage[i].classList.remove("enlarged-image");}
+ 
+                 document.getElementById("conversation-hider").classList.remove("conversation-hider-enlarged");
+                 document.getElementById("conversation-hider").classList.add("conversation-hider-normal");
+                 document.getElementById("chatbox-form").classList.remove("chatbox-user-enlarged");
+                 updateScroll();
+ 
+             });
+
+
+
+
             updateScroll();
             });
 
@@ -481,7 +500,7 @@ function displayImages(topicKey,color){
             imageBox.classList.add("enlarged-image");
             document.getElementById("image-holder-hider").classList.add("image-holder-hider-enlarged");
             document.getElementById("image-holder-hider").classList.remove("image-holder-hider-normal");
-            document.getElementById("image-closer").style.zIndex = 4;
+            
 
 
             document.getElementById("image-closer").addEventListener("click", function(){
