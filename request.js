@@ -674,12 +674,12 @@ function isTopicMatchingCentralTopic(topic,centralTopic){
 function checkWhatsApp (){
     switch (validTopicRequests){
         case 1:
-            infoBulle(`Ask ${10 - validTopicRequests} more questions </br> and unlock direct access  via WhatsApp`);
-            addWhatsAppButton("Here is the Link");
+            infoBulle(`Ask ${10 - validTopicRequests} more questions </br> and unlock direct message on WhatsApp`);
+            addWhatsAppButton("Message on WhatsApp (locked)");
         break;
         case 2:
-            infoBulle(`Ask ${10 - validTopicRequests} more questions </br> and unlock direct access  via WhatsApp`);
-            openWhatsAppButton("Or ask me directly on WhatsApp");
+            infoBulle(`Well done! By asking ${validTopicRequests} questions </br> you unlocked direct messaging on WhatsApp`);
+            openWhatsAppButton("Message on WhatsApp");
         break;
 
     }
@@ -690,25 +690,45 @@ function addWhatsAppButton(message){
     //empty the button if it exists
 
     //create the button and find a place to append it? (maybe the form?)
-    let waButton = document.getElementById("button-whatsapp");
-    waButton.value = message;
-    waButton.disabled = true;
-    waButton.style.display= "block";
-    waButton.addEventListener("click", function(){
-        window.open("https://www.google.com", "_blank");
-    })
+    let waInput = document.getElementById("input-whatsapp");
+    waInput.placeholder = message;
+    waInput.disabled = true;
+
+    document.getElementById("whatsapp-send-button").disabled =true;
+    document.getElementById("whatsapp-chat").style.display= "flex";
+    //waButton.addEventListener("click", function(){
+      //  window.open("https://www.google.com", "_blank");
+    //})
     //<input type="button" onclick="location.href='https://google.com';" value="Go to Google" />
     
 }
 
 function openWhatsAppButton(message){
-    let waButton = document.getElementById("button-whatsapp");
-    waButton.value = message;
-    waButton.disabled = false;
+    let waInput = document.getElementById("input-whatsapp");
+    waInput.placeholder = message;
+    waInput.disabled = false;
+    document.getElementById("whatsapp-send-button").disabled =false;
+
+//add event listener to the form
+const whatsappChat = document.getElementById("whatsapp-chat");
+    whatsappChat.addEventListener("submit", function(event){
+        event.preventDefault();
+    
+        let chatContent = event.target.querySelector("[name=writebox-whatsapp]").value;
+        
+        if (!(chatContent == '')){
+            document.querySelector("[name=writebox-whatsapp]").value="";
+            window.open(`https://wa.me/33673144374?text=${chatContent}`,`_blank`);
+        }
+        
+    });
+
+
+
 }
 
-
-
+//text=${chatContent}
+//text=I'm%20interested%20in%20your%20car%20for%20sale
 
 ////////////////////////////////////////////////////////////////////
 
