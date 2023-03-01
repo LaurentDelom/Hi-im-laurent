@@ -243,7 +243,8 @@ img {
 .enlarged-image{
     max-width:100%;
     height:auto;
-    max-height:100%;
+    max-height:100vh;
+    max-height:calc(var(--vh, 1vh) * 100);
     position: absolute;
     z-index: 2;
     top:50%;
