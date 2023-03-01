@@ -477,6 +477,7 @@ function displayImages(topicKey,color){
         imageBox.addEventListener("click", function () {
             imageBox.classList.add("enlarged-image");
             document.getElementById("chatbox-form").classList.add("chatbox-user-enlarged");
+            document.getElementById("whatsapp-chat").style.display="none";
             document.getElementById("conversation-hider").classList.remove("conversation-hider-normal");
             document.getElementById("conversation-hider").classList.add("conversation-hider-enlarged");
 
@@ -488,6 +489,8 @@ function displayImages(topicKey,color){
                  document.getElementById("conversation-hider").classList.remove("conversation-hider-enlarged");
                  document.getElementById("conversation-hider").classList.add("conversation-hider-normal");
                  document.getElementById("chatbox-form").classList.remove("chatbox-user-enlarged");
+                 document.getElementById("whatsapp-chat").style.display="flex";
+                 
                  updateScroll();
  
              });
@@ -828,6 +831,7 @@ function addVisibilityToggleBetweenForms(){
     userInput.addEventListener("blur", function(){
         whatsappForm.style.bottom = "calc(var(--vh,1vh)*1)";
         userForm.style.bottom = "calc(var(--vh,1vh)*10)";
+        userForm.style.zIndex = "2";
     });
 
     whatsappInput.addEventListener("focus", function(){
@@ -845,6 +849,7 @@ function addVisibilityToggleBetweenForms(){
         animateUp(userForm);
         //whatsappForm.style.bottom = "calc(var(--vh,1vh)*1)";
         //userForm.style.bottom = "calc(var(--vh,1vh)*10)";
+        whatsappForm.style.zIndex = "2";
     });
 
 }
