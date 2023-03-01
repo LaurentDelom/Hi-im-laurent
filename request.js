@@ -821,6 +821,8 @@ function addVisibilityToggleBetweenForms(){
     userInput.addEventListener("focus", function(){
         whatsappForm.style.bottom = "calc(var(--vh,1vh)*1)";
         userForm.style.bottom = "calc(var(--vh,1vh)*10)";
+        userForm.style.zIndex = "3";
+        whatsappForm.style.zIndex = "2";
     });
 
     userInput.addEventListener("blur", function(){
@@ -833,6 +835,8 @@ function addVisibilityToggleBetweenForms(){
         animateDown(userForm);
         //whatsappForm.style.bottom = "calc(var(--vh,1vh)*10)";
         animateUp(whatsappForm);
+        userForm.style.zIndex = "2";
+        whatsappForm.style.zIndex = "3";
     });
 
     whatsappInput.addEventListener("blur", function(){
