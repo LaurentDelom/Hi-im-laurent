@@ -798,7 +798,7 @@ if(iOS()){
 }
 
 
-
+/*
 if (window.visualViewport && keyboardUpdatePermission) {
     window.visualViewport.addEventListener("resize", () => {
         vh = window.visualViewport.height * 0.01;
@@ -810,7 +810,7 @@ if (window.visualViewport && keyboardUpdatePermission) {
     });
   }
 
-
+*/
 
 function addVisibilityToggleBetweenForms(){
     const userForm = document.getElementById("chatbox-form");
