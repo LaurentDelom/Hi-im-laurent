@@ -341,4 +341,6 @@ img {
     text-align: center;
 }
 
-
+#button-whatsapp{
+    display: none;
+}

@@ -679,6 +679,7 @@ function checkWhatsApp (){
         break;
         case 2:
             infoBulle(`Ask ${10 - validTopicRequests} more questions </br> and unlock direct access  via WhatsApp`);
+            openWhatsAppButton("Or ask me directly on WhatsApp");
         break;
 
     }
@@ -691,6 +692,8 @@ function addWhatsAppButton(message){
     //create the button and find a place to append it? (maybe the form?)
     let waButton = document.getElementById("button-whatsapp");
     waButton.value = message;
+    waButton.disabled = true;
+    waButton.style.display= "block";
     waButton.addEventListener("click", function(){
         window.open("https://www.google.com", "_blank");
     })
@@ -698,6 +701,11 @@ function addWhatsAppButton(message){
     
 }
 
+function openWhatsAppButton(message){
+    let waButton = document.getElementById("button-whatsapp");
+    waButton.value = message;
+    waButton.disabled = false;
+}
 
 
 
