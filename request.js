@@ -1,5 +1,6 @@
 //import { displayTopicTree } from "./topictree.js";
 
+
 import {Gradient} from "./color-gradient.js";
 import {topics} from "./topics-sheet.js";
 import {errorResponses} from "./topics-sheet.js";
@@ -183,7 +184,7 @@ function infoBulle (message) {
     infoBox.classList.add("info-box");
     const infoMessage = document.createElement("p");
     infoMessage.classList.add("info-bulle");
-    infoMessage.innerText = message;
+    infoMessage.innerHTML = message;
 
     
     infoBox.appendChild(infoMessage);
@@ -270,6 +271,8 @@ chatBox.addEventListener("submit", function(event){
         
         setTimeout( () => {
             displayImages(selectedTopics[0],colorBulle);
+            //infoBulle("Ask 5 more questions </br> and unlock direct access  via WhatsApp");
+            checkWhatsApp ();
             updateScroll();
         },waitForImages
         );
@@ -284,6 +287,7 @@ chatBox.addEventListener("submit", function(event){
         dateNextScroll = Date.now() + waitForImages + 1200;
         nextScrollToDo = true;
        
+       updateScroll();
         
 
     } else {
@@ -664,6 +668,43 @@ function isTopicMatchingCentralTopic(topic,centralTopic){
 }
 
 
+///////////////////////// CHECK WHATSAPP //////////////////////////////////
+
+
+function checkWhatsApp (){
+    switch (validTopicRequests){
+        case 1:
+            infoBulle(`Ask ${10 - validTopicRequests} more questions </br> and unlock direct access  via WhatsApp`);
+            addWhatsAppButton("Here is the Link");
+        break;
+        case 2:
+            infoBulle(`Ask ${10 - validTopicRequests} more questions </br> and unlock direct access  via WhatsApp`);
+        break;
+
+    }
+}
+
+
+function addWhatsAppButton(message){
+    //empty the button if it exists
+
+    //create the button and find a place to append it? (maybe the form?)
+    let waButton = document.getElementById("button-whatsapp");
+    waButton.value = message;
+    waButton.addEventListener("click", function(){
+        window.open("https://www.google.com", "_blank");
+    })
+    //<input type="button" onclick="location.href='https://google.com';" value="Go to Google" />
+    
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
 // Fonction to scroll to bottom of the section after pressing send or sending up a response
 const scrollToBottom = (id) => {
     const element = document.getElementById(id);
@@ -674,6 +715,8 @@ function updateScroll(){
     scrollToBottom('conversation-thread');
     //console.log("Scroll updated");
 }
+
+
 
 
 
@@ -712,7 +755,7 @@ if(iOS()){
    document.getElementById("chatbox-form").classList.replace("chatbox-user","chatbox-user-ios");
 }
 
-///// If it's not chr
+
 
 if (window.visualViewport && keyboardUpdatePermission) {
     window.visualViewport.addEventListener("resize", () => {
