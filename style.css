@@ -24,7 +24,7 @@ html, body{
     width:50%;
     height:100vh;
     position: relative;
-    background: no-repeat center/60% url("./images/background-image-15.jpg");
+    background: no-repeat center/60% url("./images/background-image-v2-20.jpg");
     overflow: hidden;
 
     }
@@ -212,11 +212,7 @@ input::placeholder {
     background-position: 40% 50%;  
 }
 
-/*Style du formulaire et bouton si mobile */
 
-.input-user-mobile{
-width:35%;
-}
 
 
 /* Gestion des images */
@@ -351,6 +347,16 @@ img {
     justify-content: center;
 }
 
+.whatsapp-chatbox-ios{
+    position: fixed;
+    bottom:1vh;
+    bottom: calc(var(--vh, 1vh) * 1);
+    width:inherit;
+    padding-left: 0px;
+    display: none;
+    justify-content: center;
+}
+
 .input-whatsapp-desktop{
         background-color: rgba(33, 182, 80, 0.7);
         width:70%;
@@ -379,5 +385,11 @@ img {
     background-position: 50% 50%;  
 
 }
+
+/*Style du formulaire et bouton si mobile */
+
+.input-user-mobile{
+    width:35%;
+    }
 
 /* background-color: rgba(33, 182, 80, 0.7);

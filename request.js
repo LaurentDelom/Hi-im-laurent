@@ -58,6 +58,7 @@ if(orientationPortrait){
    document.querySelector(".image-holder").classList.replace('image-holder','image-holder-mobile');
    document.querySelector(".conversation-holder").classList.add('conversation-holder-mobile');
    document.querySelector("[name=writebox-user]").style.width = "65%";
+   document.querySelector("[name=writebox-whatsapp]").style.width = "65%";
 
 }
 
@@ -271,13 +272,15 @@ chatBox.addEventListener("submit", function(event){
         
         setTimeout( () => {
             displayImages(selectedTopics[0],colorBulle);
-            //infoBulle("Ask 5 more questions </br> and unlock direct access  via WhatsApp");
-            checkWhatsApp ();
             updateScroll();
         },waitForImages
         );
 
-        
+        setTimeout( () => {
+            checkWhatsApp ();
+            updateScroll();
+        },waitForImages + 2000
+        );
         
         // Incrémentation des valeurs externes
         
@@ -674,13 +677,17 @@ function isTopicMatchingCentralTopic(topic,centralTopic){
 function checkWhatsApp (){
     switch (validTopicRequests){
         case 1:
-            infoBulle(`Ask ${10 - validTopicRequests} more questions </br> and unlock direct message on WhatsApp`);
-            addWhatsAppButton("Message on WhatsApp (locked)");
+            infoBulle(`Ask ${3 - validTopicRequests} more questions </br> and unlock direct message on WhatsApp`);
+            addWhatsAppButton("(Locked) Message on WhatsApp");
         break;
         case 2:
+            
+        break;
+        case 3:
             infoBulle(`Well done! By asking ${validTopicRequests} questions </br> you unlocked direct messaging on WhatsApp`);
             openWhatsAppButton("Message on WhatsApp");
         break;
+        
 
     }
 }
@@ -694,8 +701,11 @@ function addWhatsAppButton(message){
     waInput.placeholder = message;
     waInput.disabled = true;
 
+    
+
     document.getElementById("whatsapp-send-button").disabled =true;
     document.getElementById("whatsapp-chat").style.display= "flex";
+    document.getElementById("whatsapp-chat").style.opacity= "0.7";
     //waButton.addEventListener("click", function(){
       //  window.open("https://www.google.com", "_blank");
     //})
@@ -711,6 +721,7 @@ function openWhatsAppButton(message){
 
 //add event listener to the form
 const whatsappChat = document.getElementById("whatsapp-chat");
+    whatsappChat.style.opacity="1";
     whatsappChat.addEventListener("submit", function(event){
         event.preventDefault();
     
@@ -781,6 +792,7 @@ let keyboardUpdatePermission = true;
 if(iOS()){
     keyboardUpdatePermission = false; 
    document.getElementById("chatbox-form").classList.replace("chatbox-user","chatbox-user-ios");
+   document.getElementById("whatsapp-chat").classList.replace("whatsapp-chatbox","whatsapp-chatbox-ios");
 }
 
 

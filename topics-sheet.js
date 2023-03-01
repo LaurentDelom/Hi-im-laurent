@@ -43,7 +43,7 @@ export const topics = [
     {   
         "key":"myself",
         "images":["./images/signonthewall-balanced.gif"],
-        "texts":["I am an engineer","But more importantly, I am an artist!","Reach me out on Whatsapp via https://wa.me/0033673144374"],
+        "texts":["I am an engineer","But more importantly, I am an artist!","I like to do sports"],
         "related":[],
         "waiting":[1000,1000,1000],
         "transverse":true
