@@ -58,7 +58,7 @@ if(orientationPortrait){
    document.querySelector(".image-holder").classList.replace('image-holder','image-holder-mobile');
    document.querySelector(".conversation-holder").classList.add('conversation-holder-mobile');
    document.querySelector("[name=writebox-user]").style.width = "65%";
-   document.querySelector("[name=writebox-whatsapp]").style.width = "65%";
+  
 
 }
 
@@ -681,15 +681,15 @@ function isTopicMatchingCentralTopic(topic,centralTopic){
 function checkWhatsApp (){
     switch (validTopicRequests){
         case 1:
-            infoBulle(`Ask ${3 - validTopicRequests} more questions </br> and unlock direct message on WhatsApp`);
+            infoBulle(`Ask ${3 - validTopicRequests} more questions </br> to unlock direct messaging on WhatsApp`);
             addWhatsAppButton("(Locked) Message on WhatsApp");
         break;
         case 2:
             
         break;
         case 3:
-            infoBulle(`Well done! By asking ${validTopicRequests} questions </br> you unlocked direct messaging on WhatsApp`);
-            infoBulle(`Feel free to ask me more questions there </br> or to just drop by and say "Hi!" `)
+            infoBulle(`Well done! By asking ${validTopicRequests} questions </br> you unlocked direct messaging on WhatsApp.`);
+            infoBulle(`Feel free to ask me further questions </br> or to just drop by and say <i>Hi!</i>`);
             openWhatsAppButton("Message on WhatsApp");
         break;
         
@@ -702,15 +702,9 @@ function addWhatsAppButton(message){
     //empty the button if it exists
 
     //create the button and find a place to append it? (maybe the form?)
-    let waInput = document.getElementById("input-whatsapp");
-    waInput.placeholder = message;
-    waInput.disabled = true;
-
-    
-
     document.getElementById("whatsapp-send-button").disabled =true;
     document.getElementById("whatsapp-chat").style.display= "flex";
-    document.getElementById("whatsapp-chat").style.opacity= "0.8";
+    document.getElementById("whatsapp-chat").style.opacity= "0.7";
     //waButton.addEventListener("click", function(){
       //  window.open("https://www.google.com", "_blank");
     //})
@@ -719,29 +713,16 @@ function addWhatsAppButton(message){
 }
 
 function openWhatsAppButton(message){
-    let waInput = document.getElementById("input-whatsapp");
-    waInput.placeholder = message;
-    waInput.disabled = false;
-    document.getElementById("whatsapp-send-button").disabled =false;
-
-//add event listener to the form
-const whatsappChat = document.getElementById("whatsapp-chat");
+      document.getElementById("whatsapp-send-button").disabled =false;
+    //add event listener to the form
+    const whatsappChat = document.getElementById("whatsapp-chat");
     whatsappChat.style.opacity="1";
     whatsappChat.addEventListener("submit", function(event){
-        event.preventDefault();
-    
-        let chatContent = event.target.querySelector("[name=writebox-whatsapp]").value;
-        
-        if (!(chatContent == '')){
-            document.querySelector("[name=writebox-whatsapp]").value="";
-            window.open(`https://wa.me/33673144374?text=${chatContent}`,`_blank`);
-        }
-        
+        event.preventDefault();       
+        window.open(`https://wa.me/33673144374?`,`_blank`);    
     });
 
-    addVisibilityToggleBetweenForms();
-
-
+    
 }
 
 //text=${chatContent}
@@ -815,7 +796,7 @@ if (window.visualViewport && keyboardUpdatePermission) {
   }
 
 */
-
+/*
 function addVisibilityToggleBetweenForms(){
     const userForm = document.getElementById("chatbox-form");
     const whatsappForm = document.getElementById("whatsapp-chat");
@@ -889,3 +870,4 @@ function animateDown(element){
           }
         }
       }
+*/
