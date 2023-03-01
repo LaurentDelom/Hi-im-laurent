@@ -819,19 +819,61 @@ function addVisibilityToggleBetweenForms(){
     const whatsappInput = document.querySelector("[name=writebox-whatsapp]");
 
     userInput.addEventListener("focus", function(){
-        whatsappForm.style.display = "none";
+        whatsappForm.style.bottom = "calc(var(--vh,1vh)*1)";
+        userForm.style.bottom = "calc(var(--vh,1vh)*10)";
     });
 
     userInput.addEventListener("blur", function(){
-        whatsappForm.style.display = "flex";
+        whatsappForm.style.bottom = "calc(var(--vh,1vh)*1)";
+        userForm.style.bottom = "calc(var(--vh,1vh)*10)";
     });
 
     whatsappInput.addEventListener("focus", function(){
-        userForm.style.display = "none";
+       // userForm.style.bottom = "calc(var(--vh,1vh)*1)";
+        animateDown(userForm);
+        //whatsappForm.style.bottom = "calc(var(--vh,1vh)*10)";
+        animateUp(whatsappForm);
     });
 
     whatsappInput.addEventListener("blur", function(){
-        userForm.style.display = "flex";
+
+        animateDown(whatsappForm);
+        animateUp(userForm);
+        //whatsappForm.style.bottom = "calc(var(--vh,1vh)*1)";
+        //userForm.style.bottom = "calc(var(--vh,1vh)*10)";
     });
 
 }
+
+function animateDown(element){
+        let id = null;
+        let pos = 10;
+        clearInterval(id);
+        id = setInterval(frame, 50);
+        function frame() {
+          if (pos == 1) {
+            clearInterval(id);
+          } else {
+            pos--;
+            element.style.bottom = `calc(var(--vh,1vh)* ${pos})`;
+            
+          }
+        }
+      }
+      
+
+      function animateUp(element){
+        let id = null;
+        let pos = 1;
+        clearInterval(id);
+        id = setInterval(frame, 50);
+        function frame() {
+          if (pos == 10) {
+            clearInterval(id);
+          } else {
+            pos++;
+            element.style.bottom = `calc(var(--vh,1vh)* ${pos})`;
+            
+          }
+        }
+      }
