@@ -277,6 +277,7 @@ chatBox.addEventListener("submit", function(event){
         );
 
         setTimeout( () => {
+            validTopicRequests+=1; //Incrémenter le compte de topics valides
             checkWhatsApp ();
             updateScroll();
         },waitForImages + 2000
@@ -284,7 +285,7 @@ chatBox.addEventListener("submit", function(event){
         
         // Incrémentation des valeurs externes
         
-        validTopicRequests+=1; //Incrémenter le compte de topics valides
+        
         visitedTopics.push(selectedTopics[0]); //ajouter le topic à la liste des topics visités
         waitForArborescence = waitForImages; // Attribuer le même délai à l'arrivée de l'arborescence
         dateNextScroll = Date.now() + waitForImages + 1200;
@@ -322,7 +323,7 @@ chatBox.addEventListener("submit", function(event){
 
     }
 
-    console.log(`Valid Topic Requests : ${validTopicRequests}`);
+   // console.log(`Valid Topic Requests : ${validTopicRequests}`);
     
     
      
@@ -734,6 +735,7 @@ const whatsappChat = document.getElementById("whatsapp-chat");
         
     });
 
+    addVisibilityToggleBetweenForms();
 
 
 }
@@ -801,9 +803,35 @@ if (window.visualViewport && keyboardUpdatePermission) {
     window.visualViewport.addEventListener("resize", () => {
         vh = window.visualViewport.height * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
+        
        // document.querySelector('input [type="text"]').style.background = "black";
         dateNextScroll = Date.now() + 150; 
         nextScrollToDo = true;
     });
   }
 
+
+
+function addVisibilityToggleBetweenForms(){
+    const userForm = document.getElementById("chatbox-form");
+    const whatsappForm = document.getElementById("whatsapp-chat");
+    const userInput = document.querySelector("[name=writebox-user]");
+    const whatsappInput = document.querySelector("[name=writebox-whatsapp]");
+
+    userInput.addEventListener("focus", function(){
+        whatsappForm.style.display = "none";
+    });
+
+    userInput.addEventListener("blur", function(){
+        whatsappForm.style.display = "flex";
+    });
+
+    whatsappInput.addEventListener("focus", function(){
+        userForm.style.display = "none";
+    });
+
+    whatsappInput.addEventListener("blur", function(){
+        userForm.style.display = "flex";
+    });
+
+}
