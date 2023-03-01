@@ -50,8 +50,8 @@ html, body{
 }
 
 #conversation-thread{
-    height:78vh;
-    height: calc(var(--vh, 1vh) * 78);
+    height:76vh;
+    height: calc(var(--vh, 1vh) * 76);
     overflow-y:scroll;
     color: rgba(244, 252, 248, 1);
 }
@@ -171,8 +171,8 @@ h3{
 
 .chatbox-user-ios{
     position: fixed;
-    bottom:10vh;
-    bottom: calc(var(--vh, 1vh) * 10);
+    bottom:11vh;
+    bottom: calc(var(--vh, 1vh) * 11);
     width:inherit;
     padding-left: 0px;
     display: flex;

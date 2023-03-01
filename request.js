@@ -526,7 +526,7 @@ function displayImages(topicKey,color){
             
         })  
     }
-    updateScroll();
+    
 
 }
 }
