@@ -705,7 +705,7 @@ function addWhatsAppButton(message){
 
     document.getElementById("whatsapp-send-button").disabled =true;
     document.getElementById("whatsapp-chat").style.display= "flex";
-    document.getElementById("whatsapp-chat").style.opacity= "0.7";
+    document.getElementById("whatsapp-chat").style.opacity= "0.8";
     //waButton.addEventListener("click", function(){
       //  window.open("https://www.google.com", "_blank");
     //})
