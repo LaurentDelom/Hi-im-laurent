@@ -689,6 +689,7 @@ function checkWhatsApp (){
         break;
         case 3:
             infoBulle(`Well done! By asking ${validTopicRequests} questions </br> you unlocked direct messaging on WhatsApp`);
+            infoBulle(`Feel free to ask me more questions there </br> or to just drop by and say "Hi!" `)
             openWhatsAppButton("Message on WhatsApp");
         break;
         
@@ -832,6 +833,7 @@ function addVisibilityToggleBetweenForms(){
         whatsappForm.style.bottom = "calc(var(--vh,1vh)*1)";
         userForm.style.bottom = "calc(var(--vh,1vh)*10)";
         userForm.style.zIndex = "2";
+        updateScroll();
     });
 
     whatsappInput.addEventListener("focus", function(){
@@ -850,6 +852,7 @@ function addVisibilityToggleBetweenForms(){
         //whatsappForm.style.bottom = "calc(var(--vh,1vh)*1)";
         //userForm.style.bottom = "calc(var(--vh,1vh)*10)";
         whatsappForm.style.zIndex = "2";
+        updateScroll();
     });
 
 }
