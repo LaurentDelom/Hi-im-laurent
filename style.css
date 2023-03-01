@@ -169,8 +169,8 @@ h3{
 
 .chatbox-user-ios{
     position: fixed;
-    bottom:10vh;
-    bottom: calc(var(--vh, 1vh) * 10);
+    bottom:12vh;
+    bottom: calc(var(--vh, 1vh) * 12);
     width:inherit;
     padding-left: 0px;
     display: flex;
