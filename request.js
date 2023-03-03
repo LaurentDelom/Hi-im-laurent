@@ -611,7 +611,7 @@ function displayTopicTree(centralTopic){
         topicBox.style.color=gradientArray[i+listWorks.length];
         topicBox.style.fontStyle="italic";
         topicBox.style.fontWeight="600";
-        topicBox.style.opacity="0.5";
+        topicBox.style.opacity="0.3";
         addCorrectClass(topicBox,listTransverseSubjects[i],centralTopic);
     }
 
@@ -740,6 +740,7 @@ const scrollToBottom = (id) => {
 function updateScroll(){
     scrollToBottom('conversation-thread');
     //console.log("Scroll updated");
+
 }
 
 
@@ -783,7 +784,10 @@ if(iOS()){
 }
 
 
+
 /*
+pif pof
+
 if (window.visualViewport && keyboardUpdatePermission) {
     window.visualViewport.addEventListener("resize", () => {
         vh = window.visualViewport.height * 0.01;

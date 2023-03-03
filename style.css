@@ -379,13 +379,14 @@ img {
     background-color: rgba(33, 182, 80, 0.8);
     height: 52px;
     width: 52px;
-    border-radius:100%;
-    border: solid rgba(0, 128, 0, 0) 2px;
+    border-radius:6px;
+    border: solid rgb(255, 255, 255) 0px;
     margin-left:5px;
     background-image: url("./images/logo-whatsapp-mini-white.png");
-    background-size: 65%;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: 50% 50%;  
+    
 
 }
 
