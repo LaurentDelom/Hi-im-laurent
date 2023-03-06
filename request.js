@@ -719,7 +719,7 @@ function openWhatsAppButton(message){
     whatsappChat.style.opacity="1";
     whatsappChat.addEventListener("submit", function(event){
         event.preventDefault();       
-        window.open(`https://wa.me/33673144374?`,`_blank`);    
+        window.open(`https://wa.me/33673144374?text=Hi!`,`_blank`);    
     });
 
     
