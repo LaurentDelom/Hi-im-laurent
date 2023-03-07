@@ -2,7 +2,7 @@ export const topics = [
     {   
         "key":"intro",
         "images":[],
-        "texts":["So nice to see you here!","Let me show you how it works:","Just enter one of the following keywords: work, nature, technique, about myself, internet...","There you are! Ready to go!","Where would you like to start?"],
+        "texts":["So nice to see you here!","Let me show you how it works:","Just enter one of the following keywords: <b>work</b>, <i>nature</i>, technique, about myself, internet...","There you are! Ready to go!","Where would you like to start?"],
         "related":[],
         "waiting":[200,200,400,300,300], //[3200,4200,4000,3000,3000],
         "transverse":false

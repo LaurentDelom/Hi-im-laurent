@@ -156,7 +156,7 @@ function chatBulleServer (message,color,waitingTime){
     textBulleUser.classList.add("message-user-green");
     textBulleUser.innerText = "is typing...  ";
     setTimeout( () => {
-        textBulleUser.innerText = message;
+        textBulleUser.innerHTML = message;
         textBulleUser.classList.remove("message-user-green");
         //bullServer.appendChild(hoursBulle);    TOGGLE THIS LINE with line 147 if I don't want the time to appear when "is typing"
     
