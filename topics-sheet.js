@@ -31,7 +31,7 @@ export const topics = [
 
     {   
         "key":"ext",
-        "images":[],
+        "images":["./images/ext-1.jpg"],
         "texts":[".ext was a 3 year long research between October 2019 and June 2022.", 
             "During which I produced several works.",
             "At first an exploration of the figure of the mountaineer. The starting point was to examine it in its specific socio-cultural context and its contingency to our western history and aesthetics.",
@@ -39,14 +39,14 @@ export const topics = [
             "There is a legacy of unspoken rules pre-scripting the practice of mountaineering, establishing re-enactment as default behavior. Our desires, perceptions, subjective experience and ethos when we are in nature, is conditioned.",
             "To <i>speculate</i> was one of the <b>action verbs</b> that drove the research. For example <b>Silicon Mountain</b> speculates on the contemplation of nature under the pressure of technology, <b>BULK</b> on the commodification of hiking, <b>intuit</b> on our faith in Gore-tex, and <b>Stone Beauty contest</b> on the origins of beauty in nature.",
             "Some <b>themes</b> will continue to pervade my <b>work forecast</b> such as <b>nature</b>, <b>technology</b>, <b>internet</b>. As well as an emerging <b>research methodology</b>."],
-        "related":["existing","forecast","themes","nature","technology","methodology","verbs","silicon","bulk","inuit","contest"],
+        "related":["existing","forecast","nature","technology","methodology","verbs","silicon","bulk","inuit","contest"],
         "waiting":[200,1000,200,400,150,300,200], 
         "transverse":false
     },
 
     {   
         "key":"silicon",
-        "images":[],
+        "images":["./images/silicon-2.jpg","./images/silicon-3.jpg","./images/silicon-1.jpg"],
         "texts":["Silicon Mountain is the main outcome of the <b>.ext</b> research. It is a performance that speculates on what contemplation of nature means today.", 
             "It opens with descriptions of sublime landscapes, taken from XIXth century literature. Then we dive into the mind of a genius Silicon Valley entrepreneur launching his Contemplation-of-Nature App. With this downloaded, our longing for true connection with nature will be quenched once and for good. Then the audience gets access to the App.", 
             "Tadaaa!",
@@ -64,7 +64,7 @@ export const topics = [
 
     {   
         "key":"bulk",
-        "images":[],
+        "images":["./images/bulk-1.jpg","./images/bulk-2.jpg"],
         "texts":["BULK is a fictional entrepreneurial project that brings the first indoor hiking gym to the world.", 
             "It takes the form of a commercial facility branded BULK. Just like climbing gyms, skating-rinks, indoor skiing, indoor skydiving, indoor swimming… Now we have a place to practice indoor hiking!", 
             "You set the level of difficulty and our A.I software INFINITRACK video-maps the route for you! Share your stats with your friends and give each other kudos!", 
@@ -82,7 +82,7 @@ export const topics = [
 
     {   
         "key":"intuit",
-        "images":[],
+        "images":["./images/intuit-1.jpg","./images/intuit-2.jpg","./images/intuit-3.jpg"],
         "texts":["<i>Intuit®</i> is pronounced “into-it” but derives its spelling from “intuition”. It is a textile work co-designed with (and entirely realized by) Ruby Russell.", 
             "It is inspired by how Amazonian indigenous tribes use special garments to invoke protection from the dangers of the forest. Think about the bright red and blue feather headdresses, or jaguar teeth necklaces...", 
             "Adapted to our Western practice of the great outdoors, <i>intuit®</i> is made of technical water-proof <i>Gore-Tex®</i> fabric. The technology is woven within the fibers of the fabric, protecting you from the elements. It is not visible but it works just like magic." ,
@@ -97,7 +97,7 @@ export const topics = [
 
     {   
         "key":"contest",
-        "images":[],
+        "images":["./images/contest-1.png","./images/contest-2.png"],
         "texts":[
             "Oh I loved that one!", 
             "The Stone Beauty Contest was a one-time online event organized with the Wandering Arts Biennale (Brussels) in December 2020.", 
@@ -114,7 +114,7 @@ export const topics = [
 
     {   
         "key":"duet",
-        "images":[],
+        "images":["./images/duet-1.jpg","./images/duet-2.jpg","./images/duet-3.jpg","./images/duet-4.jpg"],
         "texts":[
             "<i>duet</i> is a dance piece actually entitled <i>dddddddduettttttttttt</i>.", 
             "It was co-created in 2019 with Dan Mussett, a friend from the Conservatoire of Antwerp. We wanted to learn <i>how to become each other.</i>", 
@@ -132,7 +132,7 @@ export const topics = [
 
     {   
         "key":"question",
-        "images":[],
+        "images":["./images/question-1.jpg","./images/question-2.jpg"],
         "texts":[
             "<i>IF ANY QUESTION</i> is a solo performance I made in my 2nd year at school.", 
             "It’s an intimate performance about love and disillusion, where the main protagonist is a toaster. He gives the timing and all the cues. At the end, the last words is his.",
@@ -149,22 +149,22 @@ export const topics = [
 
     {   
         "key":"2016",
-        "images":[],
+        "images":["./images/2016-1.jpg","./images/2016-2.jpg","./images/2016-3.jpg"],
         "texts":[
             "In 2016 I designed my first artist’s webpage as a mini-performance to present my aspirations as a young artist.", 
             "It was named <i>About the movie</i>, and looked like rolling credits at the end of films. It follows a dramaturgy of screenshots, and navigates linearly through a fake cult film from the 1960’s.",
             "It’s really cool actually. You can look it up at laurentdelom.com/2016 <br> (although the contents are totally outdated by now)",
-            "That website was my first artistic object on <b>internet</b> after graduating. It has been replaced in 2023 by this <b>chatbox</b> entitled “Hi! I’m Laurent”: you are on it right now." 
+            "That website was my first artistic object on <b>internet</b>, playing with <b>design</b> and <b>action verbs</b> after graduating. It has been replaced in 2023 by this <b>chatbox</b> entitled “Hi! I’m Laurent”: you are on it right now." 
             
         ],            
-        "related":["existing","technique","verbs","internet","design","chatbox"],
+        "related":["existing","verbs","internet","design"],
         "waiting":[200,150,1000,200,200,1000], 
         "transverse":false
     },
 
     {   
         "key":"chatbox",
-        "images":[],
+        "images":["./images/gradient-chatbox.png"],
         "texts":[
             "For the wrap-up of <b>.ext</b> I organized 2 <i>Easy Conversations</i> taking place on WhatsApp to present the overall research.", 
             "The thing was: there was just too much to say to be exhaustive.", 
@@ -208,7 +208,7 @@ export const topics = [
 
     {   
         "key":"travail",
-        "images":[],
+        "images":["./images/work1.jpg","./images/travail-2.jpg","./images/travail-3.jpg"],
         "texts":[
             "<i>Travail!</i> is a project co-created with Mina Perrichon, and supported by the program Chimères, in France.",
             "It will become a performance flirting with the game world.", 
@@ -228,7 +228,7 @@ export const topics = [
 
     {   
         "key":"deep",
-        "images":[],
+        "images":["./images/deep-1.jpg","./images/deep-2.jpg","./images/deep-3.jpg"],
         "texts":[
             "<i>deep beliefs</i> is the title of my next artistic research starting in 2024, (prolonging the previous one <b>.ext</b>)", 
             "Where I am entering now is via a different natural landscape and another human practice attached to that environment.", 
@@ -249,7 +249,7 @@ export const topics = [
 
     {   
         "key":"vanilla",
-        "images":[],
+        "images":["./images/vanilla-1.jpg"],
         "texts":[
              "<i>Vanilla</i> is a very immature seed for a potential future project. (in the wake of <b>Silicon Mountain</b> and the sheer joy I have with <b>design</b>", 
             ")",
@@ -303,7 +303,7 @@ export const topics = [
 
     {   
         "key":"nature",
-        "images":[],
+        "images":["./images/nature1.jpg","./images/nature2.jpg"],
         "texts":[
             "Well, <i>nature</i> is everywhere, you know.",
             "Huhu.",
@@ -314,14 +314,14 @@ export const topics = [
             "Central to our relationship with nature, the trope of “re-connecting with nature” takes for granted that the “link has been broken”. What strikes me: when we speak about nature, or when we go into nature, we are reactivating this dichotomy.",
             
         ],            
-        "related":["ext","deep","silicon","bulk","bulk2","contest","intuit"],
+        "related":["ext","deep","silicon","bulk","bulk2","contest","intuit","themes"],
         "waiting":[200,150,1000,200,200,1000,100,100,100,100,100], 
         "transverse":true
     },
 
     {   
         "key":"technology",
-        "images":[],
+        "images":["./images/technology-1.jpg"],
         "texts":[
             "<i>Technology</i> constitutes a regular counterpart to the theme of <b>nature</b> in my investigations.", 
             "Such antagonism between <i>technology</i> and <i>nature</i> is common discourse. Think video-games vs. walk in the forest.",
@@ -334,14 +334,14 @@ export const topics = [
             "Politically, it is also about reclaiming space and attention that is otherwise colonized by commercial interests. See <b>entrepreneur</b> if needs be. "
 
         ],            
-        "related":["ext","silicon","intuit","vanilla","chatbox","internet","technique","entrepreneur"],
+        "related":["ext","silicon","intuit","vanilla","chatbox","internet","technique","entrepreneur","themes"],
         "waiting":[200,150,1000,200,200,1000,100,100,100,100,100], 
         "transverse":true
     },
 
     {   
         "key":"internet",
-        "images":[],
+        "images":["./images/internet-2.jpg"],
         "texts":[
             "Pfew. Don't get me started on it...",
             "It’s just so much present here the whole time. That we stopped seeing it",
@@ -351,14 +351,14 @@ export const topics = [
             "So internet was on the table in <b>2016</b> when I made the first <b>design</b> of my artist website, and in 2019 when we made <b>duet</b>, and in <b>silicon mountain</b>, and in this <b>chatbox</b>, and in <b>vanilla</b>."
 
         ],            
-        "related":["design","silicon","vanilla","chatbox","technology","duet","entrepreneur"],
+        "related":["design","silicon","vanilla","chatbox","technology","duet","entrepreneur","themes"],
         "waiting":[200,150,1000,200,200,1000,100,100,100,100,100], 
         "transverse":true
     },
 
     {   
         "key":"entrepreneur",
-        "images":[],
+        "images":["./images/entrepreneur-1.jpg"],
         "texts":[
             "When I am saying <i>entrepreneur</i>, I am referring to the archetypical figure of the successful creative businessman.", 
             "in its most U.S.A slash siliconian style (think of Elon, Jeff, Mark, Bill…)", 
@@ -368,7 +368,7 @@ export const topics = [
             "My own private little inner entrepreneur was active in <b>Silicon Mountain</b> and in <b>BULK</b>.", 
             "It will get extra legroom with <b>BULK2</b> & <b>Vanilla</b>. He works closely with the theme of <b>technology</b> and my <b>action verbs</b>."
         ],            
-        "related":["silicon","vanilla","technology","bulk2","verbs"],
+        "related":["silicon","vanilla","technology","bulk2","verbs","themes"],
         "waiting":[200,150,1000,200,200,1000,100,100,100,100,100], 
         "transverse":true
     },
@@ -390,14 +390,14 @@ export const topics = [
                 "In <b>Silicon Mountain</b>, technique conveys the discourse. And <b>Travail!</b> is nothing but choreographing Technique."    
         
         ],            
-        "related":["silicon","duet","question","travail"],
+        "related":["silicon","duet","question","travail","themes"],
         "waiting":[200,150,1000,200,200,1000,100,100,100,100,100], 
         "transverse":true
     },
 
     {   
         "key":"methodology",
-        "images":[],
+        "images":["./images/methodology-1.jpg"],
         "texts":[
             "I am very very careful when I speak about methodology.", 
             "Firstly because I don’t have one.", 
@@ -413,14 +413,14 @@ export const topics = [
             "These divagations originated in <b>duet</b>, in <b>.ext</b>, in <b>Travail!</b> and in this <b>chatbox</b>. "
                 
         ],            
-        "related":["ext","duet","travail","chatbox"],
+        "related":["ext","duet","travail","chatbox","themes"],
         "waiting":[200,150,1000,200,200,1000,100,100,100,100,100,100], 
         "transverse":true
     },
 
     {   
         "key":"verbs",
-        "images":[],
+        "images":["./images/gradient-action-verbs-2.jpg"],
         "texts":[
            "I have 3 <i>action verbs</i>.",
            "Of-course-I-do!",
@@ -432,7 +432,7 @@ export const topics = [
             "And <i>explorer</i> is about daring to go out of place, dealing with the unknown, not understanding, adapting, modifying yourself. Which is where I am at with <b>deep beliefs</b>."
             
         ],            
-        "related":["ext","duet","travail","chatbox","bulk","entrepreneur","vanilla","deep"],
+        "related":["ext","duet","travail","chatbox","bulk","entrepreneur","vanilla","deep","themes"],
         "waiting":[200,150,1000,200,200,1000,100,100,100,100,100,100], 
         "transverse":true
     },
@@ -451,7 +451,7 @@ export const topics = [
            "In the meanwhile, you can have a look at my <b>research methodology</b>, or my deep deep thoughts on <b>choreographing technique</b>."
 
         ],            
-        "related":["silicon","travail","chatbox","2016","methodology","technique"],
+        "related":["silicon","travail","chatbox","2016","methodology","technique","themes"],
         "waiting":[200,150,1000,200,200,1000,100,100,100,100,100,100], 
         "transverse":true
     },
