@@ -686,25 +686,58 @@ function isTopicMatchingCentralTopic(topic,centralTopic){
 function checkWhatsApp (){
     switch (validTopicRequests){
         case 1:
-            infoBulle(`Ask ${3 - validTopicRequests} more questions </br> to unlock Fast Response`);
-            addSpeedButton();
+           
         break;
         case 2:
-            infoBulle(`Fast Response : unlocked!! <br> Get quicker answers!`);
-           
-            activateSpeedButton();
+            infoBulle(`Ask ${4 - validTopicRequests} more questions </br> to unlock Quick Response`);
+            addSpeedButton();
         break;
         case 3:
-            infoBulle(`Ask ${3 - validTopicRequests} more questions </br> to unlock direct messaging on WhatsApp`);
-            addWhatsAppButton();
+            infoBulle(`Ask ${4 - validTopicRequests} more questions </br> to unlock Quick Response`);
         break;
         case 4:
+            infoBulle(`Quick Response : unlocked!! <br> Get answers quicker !`);
+            activateSpeedButton();
+        break;
+        case 5:
+            
+        break;
+        case 6:
+            
+        break;
+        case 7:
+            infoBulle(`Ask ${9 - validTopicRequests} more questions </br> to unlock direct messaging on WhatsApp`);
+            addWhatsAppButton();
+        break;
+        case 8:
+            infoBulle(`Ask ${9 - validTopicRequests} more questions </br> to unlock direct messaging on WhatsApp`);
+        break; 
+        case 9:
             infoBulle(`Well done! By asking ${validTopicRequests} questions </br> you unlocked direct messaging on WhatsApp.`);
-            infoBulle(`Feel free to ask me further questions </br> or to just drop by and say <i>Hi!</i>`);
+            infoBulle(`Feel free to send more questions on it</br> or to just drop by and say <i>Hi!</i>`);
             openWhatsAppButton();
         break;
+        case 10:
+            
+        break;
+        case 11:
+            infoBulle(`Feel free to send more questions via the WhatsApp button</br> or to just drop by and say <i>Hi!</i>`);
+        break;
+        case 12:
         
-
+        break;
+        case 13:
+            infoBulle(`Feel free to send more questions via the WhatsApp button</br> or to just drop by and say <i>Hi!</i>`);
+        break;
+        case 14:
+        
+        break;
+        case 15:
+        
+        break;
+        case 16:
+            infoBulle(`Feel free to send more questions via the WhatsApp button</br> or to just drop by and say <i>Hi!</i>`);
+        break;
     }
 }
 
@@ -763,13 +796,13 @@ function activateSpeedButton(){
             fastMode = true;
             speedFactor = 0.3;
             speedButton.style.opacity = "0.7";
-            infoBulle(`Fast Response activated`);
+            infoBulle(`Quick Response activated!`);
             updateScroll();
         } else {
             fastMode = false;
             speedFactor = 1;
             speedButton.style.opacity = "1";
-            infoBulle(`Fast Response deactivated`);
+            infoBulle(`Quick Response deactivated...`);
             updateScroll();
         }
         //console.log(`Speed Factor = ${speedFactor}`);
