@@ -17,7 +17,7 @@ export const topics = [
     {   
         "key":"bold",
         "images":[],
-        "texts":["Correct!","<i>Bold</i> is indeed the first keyxord...","You’re so meta!","*keyword"],
+        "texts":["Correct!","<i>Bold</i> is indeed the first keyxord...","You're so meta!","*keyword"],
         "related":["existing","forecast","themes","news","myself"],
         "waiting":[3000,3000,4200,2500], 
         "transverse":false
@@ -58,7 +58,7 @@ export const topics = [
             "Tadaaa!",
             " And it really works!",
             "Different layers of questioning. What do we look at when we look at nature? How do we deal with technology today? (mediatizing large parts of our interaction with the world: social life, entertainment, memory...)  Will it go as far as to cover our connection with nature?", 
-            "And WTF is an ‘im-mediate connection’ with nature anyways?",
+            "And WTF is an 'im-mediate connection' with nature anyways?",
             "so basically >>> </br> the <b>themes</b> are <b>nature</b>, <b>technology</b>, <b>internet</b>, <b>choreographing technique</b>, <b>design</b>, <b>entrepreneur</b>. And <b>methodology</b>",
             "you got the picture"
         ],
@@ -78,7 +78,7 @@ export const topics = [
             "Speculating on this idea, BULK was co-designed with architect Jules Flocke and graphic-designer Timon Bloemen. ",
             "<b>#design</b>!!", 
             "Amongst my <b>work forecast</b>, there is this fantasy about going further with <b>BULK2</b>.", 
-            "In any case, it’s a very very good illustration of my <b>action verbs</b> and thoughts on <b>nature</b>",
+            "In any case, it's a very very good illustration of my <b>action verbs</b> and thoughts on <b>nature</b>",
         ],
             
         "related":["existing","ext","nature","technology","verbs","design","entrepreneur","bulk2"],
@@ -107,10 +107,10 @@ export const topics = [
         "texts":[
             "Oh I loved that one!", 
             "The <i>Stone Beauty Contest</i> was a one-time online event organized with the Wandering Arts Biennale (Brussels) in December 2020.", 
-            "Participants were asked to submit the most beautiful stone they had ever picked. They had to write about why their stone should win. We could ask questions and challenge each other’s assumptions on true authentic stone beauty.", 
-            "Come to think of it, it’s quite cute and absurd to pick up stones as we hike... Do we find beauty in stones? Or are stones beautiful in themselves?", 
+            "Participants were asked to submit the most beautiful stone they had ever picked. They had to write about why their stone should win. We could ask questions and challenge each other's assumptions on true authentic stone beauty.", 
+            "Come to think of it, it's quite cute and absurd to pick up stones as we hike... Do we find beauty in stones? Or are stones beautiful in themselves?", 
             "A legal vote designated the winner, earning it a shrine in the WAB office in Brussels.",
-            "The <i>Stone Beauty Contest</i> is a franchise that could be reproduced, but still hasn’t."
+            "The <i>Stone Beauty Contest</i> is a franchise that could be reproduced, but still hasn't."
         ],
             
         "related":["existing","ext","nature","verbs"],
@@ -128,7 +128,7 @@ export const topics = [
             "Caught in that injunction to learn and transform, we assessed how it could be adapted to our goal of becoming each other.",
             "The piece reveals the dynamics between learning and teaching, and repeating repeating repeating…", 
             "So yeah, the theme of <b>internet</b> was already there back then. The <b>action verbs</b> too, somehow. And the first seeds of a <b>research methodology</b>.",
-            "Oh and do check Dan’s project: The Dating Project (on Instagram)."
+            "Oh and do check Dan's project: The Dating Project (on Instagram)."
         ],
             
         "related":["existing","internet","verbs","methodology"],
@@ -141,7 +141,7 @@ export const topics = [
         "images":["./images/question-1.jpg","./images/question-2.jpg"],
         "texts":[
             "<i>IF ANY QUESTION</i> is a solo performance I made in my 2nd year at school.", 
-            "It’s an intimate performance about love and disillusion, where the main protagonist is a toaster. He gives the timing and all the cues. At the end, the last words is his.",
+            "It's an intimate performance about love and disillusion, where the main protagonist is a toaster. He gives the timing and all the cues. At the end, the last words is his.",
             "As I read the opening chapter of a recipe book, contrasting feelings and confusion arise in the audience. We are talking about family here.", 
             "Five minutes long. Three people at a time.",
             "When I look back at it, I see: <b>choreographing technique</b>, and a first pass at some of my <b>action verbs.</b>",
@@ -157,10 +157,10 @@ export const topics = [
         "key":"2016",
         "images":["./images/2016-1.jpg","./images/2016-2.jpg","./images/2016-3.jpg"],
         "texts":[
-            "In 2016 I designed my first artist’s webpage as a mini-performance to present my aspirations as a young artist.", 
-            "It was named <i>About the movie</i>, and looked like the subtitles + rolling credits at the end of films. It follows a dramaturgy of screenshots, and navigates linearly through a fake cult film from the 1960’s.",
-            "It’s really cool actually. You can look it up at laurentdelom.com/2016 <br> (although the contents are totally outdated by now)",
-            "That website was my first artistic object on <b>internet</b>, playing with <b>design</b> and <b>action verbs</b> after graduating. It has been replaced in 2023 by this <b>chatbox</b> entitled “Hi! I’m Laurent”: you are on it right now." 
+            "In 2016 I designed my first artist's webpage as a mini-performance to present my aspirations as a young artist.", 
+            "It was named <i>About the movie</i>, and looked like the subtitles + rolling credits at the end of films. It follows a dramaturgy of screenshots, and navigates linearly through a fake cult film from the 1960's.",
+            "It's really cool actually. You can look it up at laurentdelom.com/2016 <br> (although the contents are totally outdated by now)",
+            "That website was my first artistic object on <b>internet</b>, playing with <b>design</b> and <b>action verbs</b> after graduating. It has been replaced in 2023 by this <b>chatbox</b> entitled <i>Hi! I'm Laurent</i>: you are on it right now." 
             
         ],            
         "related":["existing","verbs","internet","design","chatbox"],
@@ -224,7 +224,7 @@ export const topics = [
             "There won't be actors. So the challenge is to spark theatricality from within the game",
             "and to encourage fruitful conversationnal dynamics",
             "WE ARE FULL OF HOPE",
-            "Very good so. <i>Travail!</i> is part of my <b>work forecast</b>. It’s linked to <b>technology</b> and <b>choreographing technique</b> obviously, to the <b>action verbs</b>, and to <b>design</b> a lot."
+            "Very good so. <i>Travail!</i> is part of my <b>work forecast</b>. It's linked to <b>technology</b> and <b>choreographing technique</b> obviously, to the <b>action verbs</b>, and to <b>design</b> a lot."
                                     
         ],            
         "related":["forecast","design","technology","technique","verbs"],
@@ -239,14 +239,14 @@ export const topics = [
             "<i>deep beliefs</i> is the title of my next artistic research starting in 2024, (prolonging the previous one <b>.ext</b>)", 
             "Where I am entering now is via a different natural landscape and another human practice attached to that environment.", 
             " u n d e r w a t e r  && free-diving (a.k.a <br> a p n e a)",
-            "The exact same socio-historical + symbolico-aesthetical bla-bla as developed in <b>.ext</b> applies here too, so I’ll skip that part and jump to the more juicy one", 
+            "The exact same socio-historical + symbolico-aesthetical bla-bla as developed in <b>.ext</b> applies here too, so I'll skip that part and jump to the more juicy one", 
             "What I find exciting is that free-diving mobilizes the psyche with: to believe.",
             "Whether it is about achieving outstanding performances in depth or in duration,", 
             "or about managing the paranoia inherent to going under the water: you are with what you believe.",
             "bam!",
             "How I got the first spark of interest was by <i>disapproving</i> of my utter fear of dark waters. (Not <i>limnophobia</i> yet, but in that direction).", 
             "So, it got me ex-tre-me-ly curious.",
-            "For now, I’ll let you read further on my <b>research methodology</b> and/or my <b>action verbs</b>."
+            "For now, I'll let you read further on my <b>research methodology</b> and/or my <b>action verbs</b>."
         ],            
         "related":["forecast","nature","methodology","verbs"],
         "waiting":[2000,3050,1500,3000,1200,1200,1500,200,1800,1500,1410], 
@@ -260,7 +260,7 @@ export const topics = [
              "<i>Vanilla</i> is a very immature seed for a potential future project. (in the wake of <b>Silicon Mountain</b> and the sheer joy I have with <b>design</b>", 
             ")",
              "Again an App for smartphones, it will elaborate on the infinite scroll applied to the image of the human body.", 
-            "Imagine an infinite panorama of flesh, skin and hairs, shot in intimacy. It takes you to different body parts as you scroll down, parts you don’t always recognize: is it a neck or the soft flesh of a knee?", 
+            "Imagine an infinite panorama of flesh, skin and hairs, shot in intimacy. It takes you to different body parts as you scroll down, parts you don't always recognize: is it a neck or the soft flesh of a knee?", 
             "It brushes more erogenous parts,", 
             "and as you go down and down and down,", 
             "the App triggers sexual arousal in you.",
@@ -282,9 +282,9 @@ export const topics = [
             "At the moment, it only exists on paper, in the form of a commercial brochure, but I think it could elaborate further on its call-to-action: <i>get in touch via investors@bulkgym.be...</i>", 
             "Any business-angel amongst you? ",
             "It is a door that the project could take to explore outside of the theater. Could <i>BULK2</i> enter the realm of the real biz world? How does fiction operate in pitching, marketing or selling an idea?  What system of beliefs does an <b>entrepreneur</b> surf on? The “innovative idea”, the “commodity”, the “solution”, the <b>technology</b>…",
-            "I really have to think of Elizabeth Holmes’ crazy story in Silicon Valley.",
+            "I really have to think of Elizabeth Holmes' crazy story in Silicon Valley.",
             "Which, in turn, would be an a-ma-zing theater piece...", 
-            "Let me get famous and ask her if she wants to play her own role in it…",
+            "Let me get famous and ask her if she wants to play her own role in it...",
             "When she comes out of jail. Muhahaha."
 
         ],            
@@ -333,7 +333,7 @@ export const topics = [
         "texts":[
             "<i>Technology</i> constitutes a regular counterpart to the theme of <b>nature</b> in my investigations.", 
             "Such antagonism between <i>technology</i> and <i>nature</i> is common discourse. Think video-games vs. walk in the forest.",
-            " In <b>.ext</b>, I use this common discourse and speculate on it. I don’t try to deconstruct it frontally.", 
+            " In <b>.ext</b>, I use this common discourse and speculate on it. I don't try to deconstruct it frontally.", 
             "in <b>Silicon Mountain</b> and <b>intuit</b>, technology gets portrayed as an obstacle between us and nature and at the same time as a resolution.",
             "I am more interested in treating technology as a discourse, or as a belief system.",
             "Next to this: digital media are pretty fun to toy with", 
@@ -352,7 +352,7 @@ export const topics = [
         "images":["./images/internet-2.jpg"],
         "texts":[
             "Pfew. Don't get me started on it...",
-            "It’s just so much present here the whole time. That we stopped seeing it",
+            "It's just so much present here the whole time. That we stopped seeing it",
             "i mean: it = internet",
             "But I'm like, ok, what is it that we do <i>with</i> this internet? what do we <i>not</i> do with it? What does this internet do to us? What do we do <i>to</i> this internet? What does this internet do to anything that is not this internet?", 
             "Even a rock polished by the shoes of thousands of us walking on insta-famous hiking trails can feel the reach of this internet on the surface of its skin.",
@@ -430,16 +430,16 @@ export const topics = [
         "images":["./images/methodology-1.jpg"],
         "texts":[
             "I am very very careful when I speak about methodology.", 
-            "Firstly because I don’t have one.", 
+            "Firstly because I don't have one.", 
             "And secondly because I feel a bit bored about setting a methodology and abiding by it.",
-            "Trust me I’m an engineer.",
+            "Trust me I'm an engineer.",
             "What I do observe in my practice is that the mere <i>thought</i> of methodology has an efficacy already", 
             "I am not saying that any methodology does the job (I actually disagree)", 
             "What I am saying is that observing the question present in my mind performs better than producing a rigid answer to that question.",
             "In a nutshell >> This is my methodology >> what is my methodology?",
             "So far in my processes I observed that <i>instant methodologies</i> tended to emerge, matching the moment, situation, material and my skills.", 
             "I also noticed that my thinking can start moving once I have made myself a <i>tool for thinking</i>.", 
-            "That’s all I can tell.",
+            "That's all I can tell.",
             "These divagations originated in <b>duet</b>, in <b>.ext</b>, in <b>Travail!</b> and in this <b>chatbox</b>. "
                 
         ],            
@@ -472,7 +472,7 @@ export const topics = [
         "key":"news",
         "images":[],
         "texts":[
-            "Ok. Laurent, what’s on the menu?",
+            "Ok. Laurent, what's on the menu?",
             "At the end of March 2023 I am two weeks in residency in Nantes, at Le Lieu Unique to work on <b>Travail!</b>",
             "The first week of April 2023 I will be performing <b>Silicon Mountain</b> during the Festival Batard in Brussels.",
             "I am su-per-du-per-ex-ci-ted!!!",
@@ -498,8 +498,8 @@ export const topics = [
                 "Now working and living in Antwerp, Belgium. With one foot in France.",
                 "At the moment my interests go towards performance <b>design</b> and exploratory practices. I love the mountains, I love sports.",
                 "Basic rule of thumb in my life: where I smell danger, I go.",
-                "Besides what’s on the <b>news</b> at the moment, I am spending way too much time preparing <b>Travail!</b>, speculating on <b>deep beliefs</b>, and meta-thinking about this <b>chatbox</b>.",
-                "Hi! I’m Laurent!"
+                "Besides what's on the <b>news</b> at the moment, I am spending way too much time preparing <b>Travail!</b>, speculating on <b>deep beliefs</b>, and meta-thinking about this <b>chatbox</b>.",
+                "Hi! I'm Laurent!"
            
         ],            
         "related":["news","travail","deep","chatbox","yourself"],
