@@ -392,6 +392,25 @@ img {
 
 }
 
+.speed-inactive{
+    background-color: rgba(32, 189, 184, 0.8);
+    height: 52px;
+    width: 52px;
+    border-radius:6px;
+    border: solid rgb(255, 255, 255) 0px;
+    margin-left:5px;
+    background-image: url("./images/logo-speed-mini-white.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%; 
+
+
+}
+
+
+
+
+
 /*Style du formulaire et bouton si mobile */
 
 .input-user-mobile{

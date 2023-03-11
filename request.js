@@ -64,7 +64,7 @@ if(orientationPortrait){
 
 //Constantes du temps 
 
-const reactionTime=2200; // Temps de réaction avant de commencer à écrire
+const reactionTime=22; // Temps de réaction avant de commencer à écrire
 let dateNextScroll = Date.now(); // Initialisation du calcul pour effectuer un scroll après affichage d'image
 let nextScrollToDo = true; // idem
 
@@ -675,22 +675,26 @@ function isTopicMatchingCentralTopic(topic,centralTopic){
 }
 
 
-///////////////////////// CHECK WHATSAPP //////////////////////////////////
+///////////////////////// CHECK   //////////////////////////////////
 
 
 function checkWhatsApp (){
     switch (validTopicRequests){
         case 1:
-            infoBulle(`Ask ${3 - validTopicRequests} more questions </br> to unlock direct messaging on WhatsApp`);
-            addWhatsAppButton("(Locked) Message on WhatsApp");
+            infoBulle(`Ask ${3 - validTopicRequests} more questions </br> to unlock Fast Response`);
+            addSpeedButton();
         break;
         case 2:
-            
+            activateSpeedButton();
         break;
         case 3:
+            infoBulle(`Ask ${3 - validTopicRequests} more questions </br> to unlock direct messaging on WhatsApp`);
+            addWhatsAppButton();
+        break;
+        case 4:
             infoBulle(`Well done! By asking ${validTopicRequests} questions </br> you unlocked direct messaging on WhatsApp.`);
             infoBulle(`Feel free to ask me further questions </br> or to just drop by and say <i>Hi!</i>`);
-            openWhatsAppButton("Message on WhatsApp");
+            openWhatsAppButton();
         break;
         
 
@@ -698,13 +702,14 @@ function checkWhatsApp (){
 }
 
 
-function addWhatsAppButton(message){
+function addWhatsAppButton(){
     //empty the button if it exists
 
     //create the button and find a place to append it? (maybe the form?)
     document.getElementById("whatsapp-send-button").disabled =true;
     document.getElementById("whatsapp-chat").style.display= "flex";
-    document.getElementById("whatsapp-chat").style.opacity= "0.7";
+    document.getElementById("whatsapp-send-button").style.opacity ="0.7";
+    
     //waButton.addEventListener("click", function(){
       //  window.open("https://www.google.com", "_blank");
     //})
@@ -712,17 +717,37 @@ function addWhatsAppButton(message){
     
 }
 
-function openWhatsAppButton(message){
+function openWhatsAppButton(){
       document.getElementById("whatsapp-send-button").disabled =false;
     //add event listener to the form
-    const whatsappChat = document.getElementById("whatsapp-chat");
-    whatsappChat.style.opacity="1";
-    whatsappChat.addEventListener("submit", function(event){
+    const whatsappChat = document.getElementById("whatsapp-send-button");
+    document.getElementById("whatsapp-send-button").style.opacity ="1";
+    whatsappChat.addEventListener("click", function(event){
         event.preventDefault();       
         window.open(`https://wa.me/33673144374?text=Hi!`,`_blank`);    
     });
 
     
+}
+
+function addSpeedButton(){
+
+    const speedButton = document.getElementById("speed-button");
+ //create the button and find a place to append it? (maybe the form?)
+ speedButton.disabled =true;
+ document.getElementById("whatsapp-chat").style.display= "flex";
+ speedButton.style.opacity= "0.7";
+
+// Présence du whatsapp button mais invisible
+document.getElementById("whatsapp-send-button").disabled =true;
+document.getElementById("whatsapp-send-button").style.opacity ="0";
+
+}
+
+function activateSpeedButton(){
+    const speedButton = document.getElementById("speed-button");
+    speedButton.disabled = false;
+    speedButton.style.opacity = "1";
 }
 
 //text=${chatContent}
