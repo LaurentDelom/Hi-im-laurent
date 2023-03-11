@@ -158,6 +158,7 @@ function chatBulleServer (message,color,waitingTime){
     const textBulleUser = document.createElement("div");
     textBulleUser.classList.add("message-user-green");
     textBulleUser.innerText = "is typing...  ";
+    
     setTimeout( () => {
         textBulleUser.innerHTML = message;
         textBulleUser.classList.remove("message-user-green");
@@ -180,6 +181,7 @@ function chatBulleServer (message,color,waitingTime){
 
     //rentrer la bulle dans le dom
     document.getElementById('conversation-thread').appendChild(chatEntry);
+    updateScroll();
 }
 
 
@@ -291,7 +293,7 @@ chatBox.addEventListener("submit", function(event){
         
         visitedTopics.push(selectedTopics[0]); //ajouter le topic à la liste des topics visités
         waitForArborescence = waitForImages*speedFactor; // Attribuer le même délai à l'arrivée de l'arborescence
-        dateNextScroll = Date.now() + waitForImages + 1200;
+        dateNextScroll = Date.now() + waitForImages*speedFactor + 1200;
         nextScrollToDo = true;
        
        updateScroll();
@@ -303,7 +305,7 @@ chatBox.addEventListener("submit", function(event){
         setTimeout( () => {
             displayError(numberInvalidRequests,colorBulle);
             updateScroll();
-            dateNextScroll = Date.now() + reactionTime + 1800;
+            dateNextScroll = Date.now() + reactionTime*speedFactor + 1200;
             nextScrollToDo = true;
         },reactionTime*speedFactor
         );
@@ -783,7 +785,7 @@ function activateSpeedButton(){
 
 
 // Fonction to scroll to bottom of the section after pressing send or sending up a response
-const scrollToBottom = (id) => {
+function scrollToBottom(id) {
     const element = document.getElementById(id);
   element.scrollTop = element.scrollHeight;
 }
