@@ -64,7 +64,7 @@ if(orientationPortrait){
 
 //Constantes du temps 
 
-const reactionTime=200; // Temps de réaction avant de commencer à écrire
+const reactionTime=2200; // Temps de réaction avant de commencer à écrire
 let dateNextScroll = Date.now(); // Initialisation du calcul pour effectuer un scroll après affichage d'image
 let nextScrollToDo = true; // idem
 
@@ -241,7 +241,7 @@ chatBox.addEventListener("submit", function(event){
         setTimeout( () => {
             displayContent("intro",colorBulle);
             updateScroll();
-        },reactionTime*1.5
+        },reactionTime*1.8
         );
 
     }
