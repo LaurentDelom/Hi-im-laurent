@@ -456,9 +456,9 @@ export const topics = [
            "Of-course-I-do!",
            "I am an <b>entrepreneur</b>, remember?", 
            "Now, the number 3 is a bit arbitrary, but I do like to think in verbs for what I do and what I think my work does.", 
-           "Namely, in french: <i>confondre</i>, <i>speculer</i>, <i>explorer</i>.",
+           "Namely, in french: <i>confondre</i>, <i>spéculer</i>, <i>explorer</i>.",
            "<i>Confondre</i> can mean a lot of things: to mistake something for something else, to blend two things (like a color gradient does to colors), to disconcert someone, to provoke confusion in someone, to unmask a liar. It is active here in this <b>chatbox</b>, as well as in <b>Travail!</b> And a lot in <b>duet</b>.",
-            "<i>Speculer</i> was my main creative tool in <b>.ext</b>. I take something that is already there and I bring it further, <i>going the extra mile</i>. <b>Bulk</b> being the best example. <b>Vanilla</b> also.", 
+            "<i>Spéculer</i> was my main creative tool in <b>.ext</b>. I take something that is already there and I bring it further, <i>going the extra mile</i>. <b>Bulk</b> being the best example. <b>Vanilla</b> also.", 
             "And <i>explorer</i> is about daring to go out of place, dealing with the unknown, not understanding, adapting, modifying yourself. Which is where I am at with <b>deep beliefs</b>."
             
         ],            

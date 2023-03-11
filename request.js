@@ -696,7 +696,7 @@ function checkWhatsApp (){
             addSpeedButton();
         break;
         case 3:
-            infoBulle(`Ask ${4 - validTopicRequests} more questions </br> to unlock Quick Response`);
+            infoBulle(`Ask ${4 - validTopicRequests} more question </br> to unlock Quick Response`);
         break;
         case 4:
             infoBulle(`Quick Response : unlocked!! <br> Get answers quicker !`);
