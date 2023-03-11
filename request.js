@@ -676,7 +676,8 @@ function isTopicMatchingCentralTopic(topic,centralTopic){
 
 
 ///////////////////////// CHECK   //////////////////////////////////
-
+let fastMode = false;
+let speedFactor = 1;
 
 function checkWhatsApp (){
     switch (validTopicRequests){
@@ -685,6 +686,8 @@ function checkWhatsApp (){
             addSpeedButton();
         break;
         case 2:
+            infoBulle(`Fast Response : unlocked!! <br> Get quicker answers!`);
+            infoBulle('Get quicker answers by activating Fast Response');
             activateSpeedButton();
         break;
         case 3:
@@ -748,6 +751,27 @@ function activateSpeedButton(){
     const speedButton = document.getElementById("speed-button");
     speedButton.disabled = false;
     speedButton.style.opacity = "1";
+
+    speedButton.addEventListener("click", function(event){
+        event.preventDefault();
+
+        if (fastMode == false){
+            fastMode = true;
+            speedFactor = 0.3;
+            speedButton.style.opacity = "0.7";
+            infoBulle(`Fast Response activated`);
+            updateScroll();
+        } else {
+            fastMode = false;
+            speedFactor = 1;
+            speedButton.style.opacity = "1";
+            infoBulle(`Fast Response deactivated`);
+            updateScroll();
+        }
+        console.log(`Speed Factor = ${speedFactor}`);
+    });
+
+
 }
 
 //text=${chatContent}
