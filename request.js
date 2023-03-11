@@ -66,6 +66,7 @@ if(orientationPortrait){
 
 let fastMode = false;
 let speedFactor = 1;
+let whatsappChatDisplay = false;
 
 const reactionTime=2200; // Temps de réaction avant de commencer à écrire
 let dateNextScroll = Date.now(); // Initialisation du calcul pour effectuer un scroll après affichage d'image
@@ -494,8 +495,10 @@ function displayImages(topicKey,color){
                  document.getElementById("conversation-hider").classList.remove("conversation-hider-enlarged");
                  document.getElementById("conversation-hider").classList.add("conversation-hider-normal");
                  document.getElementById("chatbox-form").classList.remove("chatbox-user-enlarged");
-                 document.getElementById("whatsapp-chat").style.display="flex";
                  
+                 if (whatsappChatDisplay){
+                 document.getElementById("whatsapp-chat").style.display="flex";
+                 }
                  updateScroll();
  
              });
@@ -782,6 +785,7 @@ function addSpeedButton(){
 document.getElementById("whatsapp-send-button").disabled =true;
 document.getElementById("whatsapp-send-button").style.opacity ="0";
 
+whatsappChatDisplay = true;
 }
 
 function activateSpeedButton(){
