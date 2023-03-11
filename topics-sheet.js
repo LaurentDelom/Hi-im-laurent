@@ -10,7 +10,7 @@ export const topics = [
             "Or ask me about my <b>latest news</b>, or <b>about myself</b>!",
             "Where shall we start?"],
         "related":[],
-        "waiting":[40,40,30,30,20,13], //[3200,4200,4000,3000,3000],
+        "waiting":[4000,4000,3000,3000,2000,1300], //[3200,4200,4000,3000,3000],
         "transverse":false
     },
 

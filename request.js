@@ -64,7 +64,10 @@ if(orientationPortrait){
 
 //Constantes du temps 
 
-const reactionTime=22; // Temps de réaction avant de commencer à écrire
+let fastMode = false;
+let speedFactor = 1;
+
+const reactionTime=2200; // Temps de réaction avant de commencer à écrire
 let dateNextScroll = Date.now(); // Initialisation du calcul pour effectuer un scroll après affichage d'image
 let nextScrollToDo = true; // idem
 
@@ -232,7 +235,7 @@ chatBox.addEventListener("submit", function(event){
     //Appel de l'analyse du message et renvoi des topics demandés
     let wordArrayUser = messageIntoArray(chatContent);
     let selectedTopics = keyComparison(listKeys,wordArrayUser);
-    let waitForImages = reactionTime*0.8;
+    let waitForImages = reactionTime;
     let waitForArborescence = 0;
     //console.log(selectedTopics);
     //Appelle la fonction qui retrouve la couleur du message
@@ -267,27 +270,27 @@ chatBox.addEventListener("submit", function(event){
         setTimeout( () => {
             displayContent(selectedTopics[0],colorBulle);
             updateScroll();
-        },reactionTime
+        },reactionTime*speedFactor
         );
         
         setTimeout( () => {
             displayImages(selectedTopics[0],colorBulle);
             updateScroll();
-        },waitForImages
+        },waitForImages*speedFactor
         );
 
         setTimeout( () => {
             validTopicRequests+=1; //Incrémenter le compte de topics valides
             checkWhatsApp ();
             updateScroll();
-        },waitForImages + 2000
+        },waitForImages*speedFactor + 1200*speedFactor
         );
         
         // Incrémentation des valeurs externes
         
         
         visitedTopics.push(selectedTopics[0]); //ajouter le topic à la liste des topics visités
-        waitForArborescence = waitForImages; // Attribuer le même délai à l'arrivée de l'arborescence
+        waitForArborescence = waitForImages*speedFactor; // Attribuer le même délai à l'arrivée de l'arborescence
         dateNextScroll = Date.now() + waitForImages + 1200;
         nextScrollToDo = true;
        
@@ -302,7 +305,7 @@ chatBox.addEventListener("submit", function(event){
             updateScroll();
             dateNextScroll = Date.now() + reactionTime + 1800;
             nextScrollToDo = true;
-        },reactionTime
+        },reactionTime*speedFactor
         );
         
 
@@ -314,7 +317,7 @@ chatBox.addEventListener("submit", function(event){
 
         setTimeout( () => {
             displayTopicTree(selectedTopics[0]);
-        },waitForArborescence
+        },waitForArborescence*speedFactor
         );
 
         
@@ -392,19 +395,19 @@ function displayContent(topicKey,color){
     const waitingTimeArray = desiredTopic[0].waiting;
     let waitingTime = waitingTimeArray[0];
     
-    chatBulleServer(textsArray[0],color,waitingTime);
+    chatBulleServer(textsArray[0],color,waitingTime*speedFactor);
 
-    waitingTime = waitingTime + reactionTime*0.5;
+    waitingTime = waitingTime*speedFactor + reactionTime*0.5*speedFactor;
     
     for(let i=1;i<textsArray.length;i++){
         
         
         setTimeout(() => {
-            chatBulleServer(textsArray[i],color,waitingTimeArray[i]);
+            chatBulleServer(textsArray[i],color,waitingTimeArray[i]*speedFactor);
             updateScroll();
         },waitingTime);
 
-        waitingTime = waitingTime + waitingTimeArray[i] + reactionTime*0.5;
+        waitingTime = waitingTime + waitingTimeArray[i]*speedFactor + reactionTime*0.5*speedFactor;
         
     }
     
@@ -428,7 +431,7 @@ function displayError(errorNumber,color){
         setTimeout(() => {
             chatBulleServer(textsArray[i],color,waitingTimeArray[i]);
             updateScroll();
-        },waitingTime);
+        },waitingTime*speedFactor);
         
     }
     updateScroll();
@@ -676,8 +679,7 @@ function isTopicMatchingCentralTopic(topic,centralTopic){
 
 
 ///////////////////////// CHECK   //////////////////////////////////
-let fastMode = false;
-let speedFactor = 1;
+
 
 function checkWhatsApp (){
     switch (validTopicRequests){
@@ -687,7 +689,7 @@ function checkWhatsApp (){
         break;
         case 2:
             infoBulle(`Fast Response : unlocked!! <br> Get quicker answers!`);
-            infoBulle('Get quicker answers by activating Fast Response');
+           
             activateSpeedButton();
         break;
         case 3:
@@ -768,7 +770,7 @@ function activateSpeedButton(){
             infoBulle(`Fast Response deactivated`);
             updateScroll();
         }
-        console.log(`Speed Factor = ${speedFactor}`);
+        //console.log(`Speed Factor = ${speedFactor}`);
     });
 
 
