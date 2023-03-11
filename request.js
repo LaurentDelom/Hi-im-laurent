@@ -798,7 +798,7 @@ function activateSpeedButton(){
 
         if (fastMode == false){
             fastMode = true;
-            speedFactor = 0.3;
+            speedFactor = 0.1;
             speedButton.style.opacity = "0.7";
             infoBulle(`Quick Response activated!`);
             updateScroll();
