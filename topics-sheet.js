@@ -28,7 +28,7 @@ export const topics = [
         "images":[],
         "texts":["A good part of my existing works were made during a research called <b>.ext</b> between 2019 and 2022.",
                 "Like <b>Silicon Mountain</b>, <b>BULK</b>, <b>intuit®</b>, or the <b>Stone Beauty Contest</b>.",
-                "Before that I co-created a dance <b>duet</b> with my friend Dan Mussett. And a first solo piece <b>if any question</b>.",
+                "Before that I co-created a dance <b>duet</b> with my friend Dan Mussett. And a first solo piece for a toaster: <b>if any question</b>.",
                 "In parallel I like to design my artist page as mini-performances on internet. The <b>2016</b> edition and this current <b>chatbox</b>."],
         "related":["ext","silicon","bulk","contest","intuit","chatbox","2016","duet","question"],
         "waiting":[3800,3600,3400,4000], 
@@ -40,11 +40,11 @@ export const topics = [
         "images":["./images/ext-1.jpg"],
         "texts":["<i>.ext</i> was a 3 year long research between October 2019 and June 2022.", 
             "During which I produced several works.",
-            "At first an exploration of the figure of the mountaineer. The starting point was to examine it in its specific socio-cultural context and its contingency to our western history and aesthetics.",
+            "At first an exploration of the figure of the mountaineer. The starting point was to examine its specific socio-cultural context and contingency to our western history and aesthetics.",
             "My work hypothesis was : what we call nature is a dedicated space where we perform a fixed idea of Nature.",
-            "There is a legacy of unspoken rules pre-scripting the practice of mountaineering, establishing re-enactment as default behavior. Our desires, perceptions, subjective experience and ethos when we are in nature, is conditioned.",
+            "There is a legacy of unspoken rules pre-scripting the practice of mountaineering, establishing re-enactment as default behavior. Our desires, perceptions, subjective experience and ethos when we are in nature, are conditioned.",
             "To <i>speculate</i> was one of the <b>action verbs</b> that drove the research. For example <b>Silicon Mountain</b> speculates on the contemplation of nature under the pressure of technology, <b>BULK</b> on the commodification of hiking, <b>intuit</b> on our faith in Gore-tex, and <b>Stone Beauty contest</b> on the origins of beauty in nature.",
-            "Some <b>themes</b> seem to in-flirt-rate my <b>work forecast</b> such as <b>nature</b>, <b>technology</b>, <b>internet</b>. As well as an emerging <b>research methodology</b>."],
+            "Some <b>themes</b> seem to <i>inflirtrate</i> my <b>work forecast</b> such as <b>nature</b>, <b>technology</b>, <b>internet</b>. As well as an emerging <b>research methodology</b>."],
         "related":["existing","forecast","themes","nature","technology","methodology","verbs","silicon","bulk","intuit","contest"],
         "waiting":[2200,1500,2000,3000,4000,3000,2000], 
         "transverse":false
@@ -385,18 +385,20 @@ export const topics = [
         "key":"design",
         "images":["./images/design-1.png"],
         "texts":[
-           "I believe that the design of an interactive web object (an app, a website like in <b>2016</b> or this <b>chatbox</b>…) works just like the making of a performance.", 
-           "Both can arguably be qualified as <i>organized protocols to display information and promote an experience, including time and attention management</i>.",
+           "For me, a digital interface (an app, a website) can be described just like a performance.", 
+           "And vice-versa",
+           "Both <i>can</i> be qualified as <i>organized protocols to display information and promote an experience, with time and attention management</i>.",
            "LOL",
-           "But it does get interesting when you start comparing design tools with dramaturgy tools, and start playing swapping mixing.", 
-           "So, an app can have a dramaturgy, >> <b>Silicon Mountain</b>, or a performance can work like a human-machine interface, like with <b>Travail!</b>",
+           "But it does get interesting when you start comparing design tools with dramaturgy tools, and start playing swapping mixing.",
+           "on how to retain attention, spark curiosity, reduce friction, increase engagement... for example", 
+           "So, an app can have a dramaturgy, >> <b>Silicon Mountain</b>, or a performance can work like a human-machine interface, like with <b>Travail!</b>. Or a website can have its own artistic concept ( like in <b>2016</b> or this <b>chatbox</b>…)",
            "My thinking on all this has not fully blossomed yet.", 
            "Feel free to contribute!",
            "In the meanwhile, you can have a look at my <b>research methodology</b>, or my deep deep thoughts on <b>choreographing technique</b>."
 
         ],            
         "related":["silicon","travail","chatbox","2016","methodology","technique","themes"],
-        "waiting":[2400,2500,600,2200,2200,1000,1000,2100,100,100,100,100], 
+        "waiting":[2400,2500,3600,1200,3200,2000,3000,2100,3100,3100,100,100], 
         "transverse":true
     },
 
@@ -511,11 +513,11 @@ export const topics = [
         "key":"yourself",
         "images":[],
         "texts":[
-            "Yeah yeah.",
-            "But no.",
+            "Oh.",
+            "Maybe I wasn't clear",
             "If you want me to speak <i>about myself</i>, you need to ask <b>about myself</b>.",
-            "Not <i>about yourself</i>.",
-            "So selfish…"
+            "Not <i>about yourself</i>."
+            
         
         ],
         "related":["myself"],
@@ -532,17 +534,37 @@ export const topics = [
 
 export const errorResponses = [ 
     {   
-        "texts":["I am sorry, I didn't quite get that one..."],
+        "texts":["Mmh"],
         "waiting":[1500]
     },
 
     {   
-        "texts":["I am sorry again, I didn't get that one either..."],
+        "texts":["Oh"],
         "waiting":[1500]
     },
     
     {
-        "texts":["Oupsie, come again..."],
+        "texts":["Yes"],
+        "waiting":[1500]
+    },
+    
+    {
+        "texts":["100%!"],
+        "waiting":[1500]
+    },
+    {
+        "texts":[";)"],
+        "waiting":[1500]
+    },
+
+    {
+        "texts":["totally"],
+        "waiting":[1500]
+    },
+    {
+        "texts":["I agree"],
         "waiting":[1500]
     }
+
+
 ];
