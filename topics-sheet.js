@@ -472,7 +472,7 @@ export const topics = [
    
     {   
         "key":"news",
-        "images":[],
+        "images":["./images/news-1.jpg"],
         "texts":[
             "Ok. Laurent, what's on the menu?",
             "At the end of March 2023 I am two weeks in residency in Nantes, at Le Lieu Unique to work on <b>Travail!</b>",
