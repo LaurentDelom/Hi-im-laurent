@@ -164,7 +164,7 @@ export const topics = [
             
         ],            
         "related":["existing","verbs","internet","design","chatbox"],
-        "waiting":[2200,3150,2100,2800,200,1000], 
+        "waiting":[2200,3150,2100,2800], 
         "transverse":false
     },
 
@@ -228,7 +228,7 @@ export const topics = [
                                     
         ],            
         "related":["forecast","design","technology","technique","verbs"],
-        "waiting":[2000,1500,3000,1200,1200,1500,1200,1700,3100,100], 
+        "waiting":[2000,1500,3000,1200,1200,1500,1200,1700,3100], 
         "transverse":false
     },
 
@@ -270,7 +270,7 @@ export const topics = [
 
         ],            
         "related":["forecast","technology","internet","methodology","design","verbs"],
-        "waiting":[2200,450,1500,200,3400,1800,1500,1500,3100,2100,1100], 
+        "waiting":[2200,450,1500,200,3400,1800,1500,1500,3100,2100], 
         "transverse":false
     },
 
@@ -289,7 +289,7 @@ export const topics = [
 
         ],            
         "related":["forecast","technology","methodology","design","entrepreneur","verbs","bulk"],
-        "waiting":[1200,3150,1000,3200,1200,1800,2100,1100,100,100,100], 
+        "waiting":[1200,3150,1000,3200,1200,1800,2100], 
         "transverse":false
     },
 
@@ -305,7 +305,7 @@ export const topics = [
 
         ],            
         "related":["nature","technology","methodology","design","entrepreneur","verbs","internet","technique"],
-        "waiting":[3800,2500,5000,3200,200,1000,100,100,100,100,100], 
+        "waiting":[3800,2500,5000,3200], 
         "transverse":true
     },
 
@@ -323,7 +323,7 @@ export const topics = [
             
         ],            
         "related":["ext","deep","silicon","bulk","contest","intuit","themes"],
-        "waiting":[2400,550,3000,3200,2200,1000,2000,100,100,100,100], 
+        "waiting":[2400,550,3000,3200,2200,1000,2000], 
         "transverse":true
     },
 
@@ -343,7 +343,7 @@ export const topics = [
 
         ],            
         "related":["ext","silicon","intuit","vanilla","chatbox","internet","technique","entrepreneur","themes"],
-        "waiting":[2000,2150,1000,2000,1200,1000,1000,1000,3100,100,100], 
+        "waiting":[2000,2150,1000,2000,1200,1000,1000,1000,3100], 
         "transverse":true
     },
 
@@ -360,7 +360,7 @@ export const topics = [
 
         ],            
         "related":["design","silicon","vanilla","chatbox","technology","duet","entrepreneur","themes"],
-        "waiting":[800,1500,3000,2500,3200,2000,100,100,100,100,100], 
+        "waiting":[800,1500,3000,2500,3200,2000], 
         "transverse":true
     },
 
@@ -377,7 +377,7 @@ export const topics = [
             "It will get extra legroom with <b>BULK2</b> & <b>Vanilla</b>. He works closely with the theme of <b>technology</b> and my <b>action verbs</b>."
         ],            
         "related":["silicon","vanilla","technology","bulk2","verbs","themes"],
-        "waiting":[2200,1500,2100,2000,3200,2000,2100,100,100,100,100], 
+        "waiting":[2200,1500,2100,2000,3200,2000,2100], 
         "transverse":true
     },
 
@@ -398,7 +398,7 @@ export const topics = [
 
         ],            
         "related":["silicon","travail","chatbox","2016","methodology","technique","themes"],
-        "waiting":[2400,2500,3600,1200,3200,2000,3000,2100,3100,3100,100,100], 
+        "waiting":[2400,2500,3600,1200,3200,2000,3000,2100,3100,1000], 
         "transverse":true
     },
 
@@ -465,7 +465,7 @@ export const topics = [
             
         ],            
         "related":["ext","duet","travail","silicon","chatbox","bulk","entrepreneur","vanilla","deep","themes"],
-        "waiting":[1200,1000,1200,2200,1200,2500,2400,2200,100,100,100,100], 
+        "waiting":[1200,1000,1200,2200,1200,2500,2400,2100], 
         "transverse":true
     },
 
@@ -486,7 +486,7 @@ export const topics = [
            
         ],            
         "related":["silicon","travail","deep","methodology"],
-        "waiting":[3200,4500,4700,3200,3000,5000,5100,2100,100,100,100,100], 
+        "waiting":[3200,4500,4700,3200,3000,5000,5100,2100], 
         "transverse":true
     },
 
@@ -505,7 +505,7 @@ export const topics = [
            
         ],            
         "related":["news","travail","deep","chatbox","yourself"],
-        "waiting":[4200,5150,3500,5200,4200,5100,3100,100,100,100,100,100], 
+        "waiting":[4200,5150,3500,5200,4200,5100,3100], 
         "transverse":true
     },
 
@@ -514,14 +514,15 @@ export const topics = [
         "images":[],
         "texts":[
             "Oh.",
-            "Maybe I wasn't clear",
+            "Sorry, my bad, i wasn't so clear",
             "If you want me to speak <i>about myself</i>, you need to ask <b>about myself</b>.",
-            "Not <i>about yourself</i>."
+            "Not <i>about yourself</i>.",
+            ";)"
             
         
         ],
         "related":["myself"],
-        "waiting":[1000,1000,2000,1000],
+        "waiting":[1000,1000,2000,1000,1000],
         "transverse":true
     }
     
