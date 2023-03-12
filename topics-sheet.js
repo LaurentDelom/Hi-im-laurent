@@ -534,6 +534,17 @@ export const topics = [
 
 
 export const errorResponses = [ 
+    
+    {
+        "texts":[";)"],
+        "waiting":[1500]
+    },
+
+    {
+        "texts":["nice"],
+        "waiting":[1500]
+    },
+    
     {   
         "texts":["Mmh"],
         "waiting":[1500]
@@ -553,10 +564,7 @@ export const errorResponses = [
         "texts":["100%!"],
         "waiting":[1500]
     },
-    {
-        "texts":[";)"],
-        "waiting":[1500]
-    },
+  
 
     {
         "texts":["totally"],
