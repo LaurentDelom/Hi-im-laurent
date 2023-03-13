@@ -541,37 +541,37 @@ export const errorResponses = [
     },
 
     {
-        "texts":["nice"],
+        "texts":["8-)"],
         "waiting":[1500]
     },
     
     {   
-        "texts":["Mmh"],
+        "texts":[":)"],
         "waiting":[1500]
     },
 
     {   
-        "texts":["Oh"],
+        "texts":["^^"],
         "waiting":[1500]
     },
     
     {
-        "texts":["Yes"],
+        "texts":[":-O"],
         "waiting":[1500]
     },
     
     {
-        "texts":["100%!"],
+        "texts":["nice"],
         "waiting":[1500]
     },
   
 
     {
-        "texts":["totally"],
+        "texts":[":-3"],
         "waiting":[1500]
     },
     {
-        "texts":["I agree"],
+        "texts":["I knooow"],
         "waiting":[1500]
     }
 
