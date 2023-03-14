@@ -332,14 +332,67 @@ img {
     font-family: Roboto;
     font-size: 0.8em;
     font-weight:500;
-    color: rgba(157, 148, 158, 0.8);
+    color: rgba(157, 148, 158, 0.9);
+    
     border-radius: 3px;
     width: fit-content;
     max-width: 75%;
-    padding: 9px 13px 9px 13px;
+    margin: 13px 0px 13px 0px;
     background-color: rgba(243, 182, 250, 0.622); 
+    
     text-align: center;
 }
+
+
+
+.info-bulle-speed{
+    font-family: Roboto;
+    font-size: 0.8em;
+    font-weight:500;
+    color: rgba(255, 255, 255, 1);
+    border-radius: 3px;
+    width: fit-content;
+    max-width: 70%;
+    margin: 20px 0px 18px 0px;
+    background-color: rgba(32, 189, 184, 0.58);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.2%;
+    
+}
+
+.info-bulle-whatsapp{
+    font-family: Roboto;
+    font-size: 0.8em;
+    font-weight:500;
+    color: rgba(255, 255, 255, 1);
+    border-radius: 3px;
+    width: fit-content;
+    max-width: 70%;
+    margin: 20px 0px 18px 0px;
+    background-color: rgba(33, 182, 80, 0.68);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding:1.2%;
+    
+}
+
+.info-bulle p, .info-bulle-speed p, .info-bulle-whatsapp p{
+    margin: 9px 13px 9px 13px;
+
+}
+
+.logo-info-bulle{
+    width:10%;
+    height:auto;
+    
+    
+}
+
 
 .whatsapp-chatbox{
     position: fixed;
@@ -407,7 +460,6 @@ img {
 
 
 }
-
 
 
 

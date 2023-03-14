@@ -186,18 +186,56 @@ function chatBulleServer (message,color,waitingTime){
 }
 
 
-function infoBulle (message) {
+function infoBulle (message,param) {
     const infoBox = document.createElement("div");
     infoBox.classList.add("info-box");
+
+    const containerTextImage = document.createElement("div");
+
     const infoMessage = document.createElement("p");
-    infoMessage.classList.add("info-bulle");
+
+    switch (param){
+        case 1:
+            containerTextImage.classList.add("info-bulle");
+            containerTextImage.appendChild(infoMessage);
+        break;
+        case 2:
+            containerTextImage.classList.add("info-bulle-speed");
+            const logoInfoBulle = document.createElement("img");
+            logoInfoBulle.src = "./images/logo-speed-mini-white.png";
+            logoInfoBulle.classList.add("logo-info-bulle");
+            containerTextImage.appendChild(logoInfoBulle);
+            containerTextImage.appendChild(infoMessage);
+            const logoInfoBulle2 = document.createElement("img");
+            logoInfoBulle2.src = "./images/logo-speed-mini-white.png";
+            logoInfoBulle2.classList.add("logo-info-bulle");
+            containerTextImage.appendChild(logoInfoBulle2);
+        break;
+        case 3:
+            containerTextImage.classList.add("info-bulle-whatsapp");
+            const logoInfoBulle3 = document.createElement("img");
+            logoInfoBulle3.src = "./images/logo-whatsapp-mini-white.png";
+            logoInfoBulle3.classList.add("logo-info-bulle");
+            containerTextImage.appendChild(logoInfoBulle3);
+            containerTextImage.appendChild(infoMessage);
+            const logoInfoBulle4 = document.createElement("img");
+            logoInfoBulle4.src = "./images/logo-whatsapp-mini-white.png";
+            logoInfoBulle4.classList.add("logo-info-bulle");
+            containerTextImage.appendChild(logoInfoBulle4);
+        break;
+
+    }
+    
+
+    
     infoMessage.innerHTML = message;
 
     
-    infoBox.appendChild(infoMessage);
+    infoBox.appendChild(containerTextImage);
     document.getElementById('conversation-thread').appendChild(infoBox);
 }
 
+function infoBulleSpeed(){}
 
 
 // EventListener du SUBMIT:
@@ -208,9 +246,11 @@ function infoBulle (message) {
 const chatBox = document.querySelector(".chatbox-user");
 let colorBulle = gradientArray[0];
 
-infoBulle("Today");
+infoBulle("Today",1);
 chatBulleServer("Hi! I'm Laurent!",colorBulle,0);
 chatBulleServer(":-)", colorBulle,0);
+
+
 
 chatBox.addEventListener("submit", function(event){
     event.preventDefault();
@@ -692,14 +732,14 @@ function checkWhatsApp (){
            
         break;
         case 2:
-            infoBulle(`Ask ${4 - validTopicRequests} more questions </br> to unlock Quick Response`);
+            infoBulle(`Ask ${4 - validTopicRequests} more questions to unlock <br> the Quick Response button`,2);
             addSpeedButton();
         break;
         case 3:
-            infoBulle(`Ask ${4 - validTopicRequests} more question </br> to unlock Quick Response`);
+           
         break;
         case 4:
-            infoBulle(`Quick Response : unlocked!! <br> Get answers quicker !`);
+            infoBulle(`Well done! <br> Quick Response button: unlocked!! <br> Get answers quicker !`,2);
             activateSpeedButton();
         break;
         case 5:
@@ -709,28 +749,27 @@ function checkWhatsApp (){
             
         break;
         case 7:
-            infoBulle(`Ask ${9 - validTopicRequests} more questions </br> to unlock direct messaging on WhatsApp`);
+            infoBulle(`Ask ${9 - validTopicRequests} more questions </br> to unlock the WhatsApp button`,3);
             addWhatsAppButton();
         break;
         case 8:
-            infoBulle(`Ask ${9 - validTopicRequests} more questions </br> to unlock direct messaging on WhatsApp`);
+            
         break; 
         case 9:
-            infoBulle(`Well done! By asking ${validTopicRequests} questions </br> you unlocked direct messaging on WhatsApp.`);
-            infoBulle(`Feel free to send more questions on it</br> or to just drop by and say <i>Hi!</i>`);
+            infoBulle(`Well done! <br> WhatsApp button: unlocked!! <br> Send more questions <br> or leave a message.`,3);
             openWhatsAppButton();
         break;
         case 10:
             
         break;
         case 11:
-            infoBulle(`Feel free to send more questions via the WhatsApp button</br> or to just drop by and say <i>Hi!</i>`);
+            infoBulle(`You can send more questions <br> via the WhatsApp button</br> or just leave a message`,3);
         break;
         case 12:
         
         break;
         case 13:
-            infoBulle(`Feel free to send more questions via the WhatsApp button</br> or to just drop by and say <i>Hi!</i>`);
+            infoBulle(`You can send more questions <br> via the WhatsApp button</br> or just leave a message`,3);
         break;
         case 14:
         
@@ -739,7 +778,7 @@ function checkWhatsApp (){
         
         break;
         case 16:
-            infoBulle(`Feel free to send more questions via the WhatsApp button</br> or to just drop by and say <i>Hi!</i>`);
+            infoBulle(`You can send more questions <br> via the WhatsApp button</br> or just leave a message`,3);
         break;
     }
 }
@@ -800,13 +839,13 @@ function activateSpeedButton(){
             fastMode = true;
             speedFactor = 0.1;
             speedButton.style.opacity = "0.7";
-            infoBulle(`Quick Response activated!`);
+            infoBulle(`Quick Response = ON`,2);
             updateScroll();
         } else {
             fastMode = false;
             speedFactor = 1;
             speedButton.style.opacity = "1";
-            infoBulle(`Quick Response deactivated...`);
+            infoBulle(`Quick Response = OFF`,2);
             updateScroll();
         }
         //console.log(`Speed Factor = ${speedFactor}`);

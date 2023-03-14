@@ -19,12 +19,11 @@ export const topics = [
         "key":"tracking",
         "images":[],
         "texts":[
-            "Yeah, no, for privacy reasons, I don't keep track of our conversation",
-            "nor of any of your inputs",
+            "Yeah, no, for privacy reasons, I don't keep track of anything",
             "in the end <i>it will all get lost forever</i>...",
-            "if you want to get in touch,", 
+            "if you want to leave me a message,", 
             "wait for the",
-            "(SPOILER ALERT!!)",
+            "<i>(SPOILER ALERT!!)</i>",
             "...WhatsApp button to show up after 9 questions",
             ":-0"
 
@@ -377,11 +376,12 @@ export const topics = [
             "i mean: it = internet",
             "But I'm like, ok, what is it that we do <i>with</i> this internet? what do we <i>not</i> do with it? What does this internet do to us? What do we do <i>to</i> this internet? What does this internet do to anything that is not this internet?", 
             "Even a rock polished by the shoes of thousands of us walking on insta-famous hiking trails can feel the reach of this internet on the surface of its skin.",
+            "Is internet the <i> New Nature</i>?",
             "So internet was on the table in <b>2016</b> when I made the first <b>design</b> of my artist website, and in 2019 when we made <b>duet</b>, and in <b>silicon mountain</b>, and in this <b>chatbox</b>, and in <b>vanilla</b>."
 
         ],            
         "related":["design","silicon","vanilla","chatbox","technology","duet","entrepreneur","themes"],
-        "waiting":[800,1500,3000,2500,3200,2000], 
+        "waiting":[800,1500,3000,2500,3200,2000,3200], 
         "transverse":true
     },
 
@@ -527,7 +527,7 @@ export const topics = [
            
         ],            
         "related":["news","travail","deep","chatbox","yourself"],
-        "waiting":[4200,5150,3500,5200,4200,5100,3100], 
+        "waiting":[4200,5150,3500,5200,4200,5100,3100,2400], 
         "transverse":true
     },
 
