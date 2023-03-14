@@ -756,20 +756,20 @@ function checkWhatsApp (){
             
         break; 
         case 9:
-            infoBulle(`Well done! <br> WhatsApp button: unlocked!! <br> Send more questions <br> or leave a message.`,3);
+            infoBulle(`Well done! <br> WhatsApp button: unlocked!! <br> Send me more questions <br> or leave me a message.`,3);
             openWhatsAppButton();
         break;
         case 10:
             
         break;
         case 11:
-            infoBulle(`You can send more questions <br> via the WhatsApp button</br> or just leave a message`,3);
+            infoBulle(`You can send me more questions <br> via the WhatsApp button</br> or just leave me a message`,3);
         break;
         case 12:
         
         break;
         case 13:
-            infoBulle(`You can send more questions <br> via the WhatsApp button</br> or just leave a message`,3);
+            infoBulle(`You can send me more questions <br> via the WhatsApp button</br> or just leave me a message`,3);
         break;
         case 14:
         
@@ -778,7 +778,7 @@ function checkWhatsApp (){
         
         break;
         case 16:
-            infoBulle(`You can send more questions <br> via the WhatsApp button</br> or just leave a message`,3);
+            infoBulle(`You can send me more questions <br> via the WhatsApp button</br> or just leave me a message`,3);
         break;
     }
 }
