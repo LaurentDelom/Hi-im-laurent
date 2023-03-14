@@ -8,9 +8,30 @@ export const topics = [
             "As we go, you will see some keywords appear in <b>bold</b>. By sending these words in the chat, you are the one to navigate. I respond with the matching information.",
             "Would you like to start with an overview of my <b>existing works</b>? or my <b>themes</b> of reflection? And later move on to my <b>work forecast</b>? ",
             "Or ask me about my <b>latest news</b>, or <b>about myself</b>!",
+            "(<i>FYI</i>: there is no <b>tracking</b> of our conversation)",
             "Where shall we start?"],
         "related":[],
         "waiting":[3200,3500,4000,4000,3000,2300], //[3200,4200,4000,3000,3000],
+        "transverse":false
+    },
+
+    {   
+        "key":"tracking",
+        "images":[],
+        "texts":[
+            "Yeah, no, for privacy reasons, I don't keep track of our conversation",
+            "nor of any of your inputs",
+            "in the end <i>it will all get lost forever</i>...",
+            "if you want to get in touch,", 
+            "wait for the",
+            "(SPOILER ALERT!!)",
+            "...WhatsApp button to show up after 9 questions",
+            ":-0"
+
+
+        ],
+        "related":[],
+        "waiting":[3200,1500,2000,2000,2000,1500,2300,1000], //[3200,4200,4000,3000,3000],
         "transverse":false
     },
 
@@ -434,7 +455,7 @@ export const topics = [
             "I am very very careful when I speak about methodology.", 
             "Firstly because I don't have one.", 
             "And secondly because I feel a bit bored about setting a methodology and abiding by it.",
-            "Trust me I'm an engineer.",
+            "i <i>used to be</i> an engineer <b>myself</b>...^^",
             "What I do observe in my practice is that the mere <i>thought</i> of methodology has an efficacy already", 
             "I am not saying that any methodology does the job (I actually disagree)", 
             "What I am saying is that observing the question present in my mind performs better than producing a rigid answer to that question.",
@@ -445,7 +466,7 @@ export const topics = [
             "These divagations originated in <b>duet</b>, in <b>.ext</b>, in <b>Travail!</b> and in this <b>chatbox</b>. "
                 
         ],            
-        "related":["ext","duet","travail","chatbox","themes"],
+        "related":["ext","duet","travail","chatbox","themes","myself"],
         "waiting":[4800,1500,3100,1200,2000,1800,3100,2100,2100,2100,1000,1700], 
         "transverse":true
     },
@@ -456,7 +477,7 @@ export const topics = [
         "texts":[
            "I have 3 <i>action verbs</i>.",
            "Of-course-I-do!",
-           "I am an <b>entrepreneur</b>, remember?", 
+           "just like a real <b>entrepreneur</b>", 
            "Now, the number 3 is a bit arbitrary, but I do like to think in verbs for what I do and what I think my work does.", 
            "Namely, in french: <i>confondre</i>, <i>spéculer</i>, <i>explorer</i>.",
            "<i>Confondre</i> can mean a lot of things: to mistake something for something else, to blend two things (like a color gradient does to colors), to disconcert someone, to provoke confusion in someone, to unmask a liar. It is active here in this <b>chatbox</b>, as well as in <b>Travail!</b> And a lot in <b>duet</b>.",
@@ -479,8 +500,8 @@ export const topics = [
             "The first week of April 2023 I will be performing <b>Silicon Mountain</b> during the Festival Batard in Brussels.",
             "I am su-per-du-per-ex-ci-ted!!!",
             "Check them out on insta @batardbrussels",
-            "After that I will be working as performer for a project in the Netherlands with Via Berlin company.",
             "+ I have two weeks of field research in Bretagne in France to start gathering material for <b>deep beliefs</b>... #<b>research methodology</b>",
+            "Next to that I also work as performer in other people's projects.",
             "Voilà."
 
            
@@ -497,10 +518,11 @@ export const topics = [
         "texts":[
                 "Hi ! I am Laurent Delom de Mézerac. I am French.",
                 "I first graduated as an engineer in telecommunications in France and later in contemporary dance from the Conservatoire of Antwerp in 2016.",
-                "Now working and living in Antwerp, Belgium. With one foot in France.",
+                "Now working and living in Antwerp, Belgium. With <i>virtually</i> one foot in France.",
                 "At the moment my interests go towards performance <b>design</b> and exploratory practices. I love the mountains, I love sports.",
                 "Basic rule of thumb in my life: where I smell danger, I go.",
                 "Besides what's on the <b>news</b> at the moment, I am spending way too much time preparing <b>Travail!</b>, speculating on <b>deep beliefs</b>, and meta-thinking about this <b>chatbox</b>.",
+                "<i>for contact</i> >>> you have a WhatsApp button showing up after 9 questions",
                 "Hi! I'm Laurent!"
            
         ],            
