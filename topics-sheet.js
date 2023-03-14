@@ -331,7 +331,7 @@ export const topics = [
 
     {   
         "key":"nature",
-        "images":["./images/nature1.jpg"],
+        "images":["./images/nature1.jpg","./images/nature3.jpg"],
         "texts":[
             "Well, <i>nature</i> is everywhere, you know.",
             "Huhu.",
