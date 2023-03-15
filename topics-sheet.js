@@ -340,10 +340,12 @@ export const topics = [
             "Hence the idea that Nature is performed. And is in its essence nostalgic.",
             "snif snif",
             "Central to our relationship with nature, the trope of “re-connecting with nature” takes for granted that the “link has been broken”. What strikes me: when we speak about nature, or when we go into nature, we are reactivating this dichotomy.",
+            "Me thinks:", 
+            "we are in a long-distance relationship with nature"
             
         ],            
         "related":["ext","deep","silicon","bulk","contest","intuit","themes"],
-        "waiting":[2400,550,3000,3200,2200,1000,2000], 
+        "waiting":[2400,550,3000,3200,2200,1000,2000,2000,2500], 
         "transverse":true
     },
 
