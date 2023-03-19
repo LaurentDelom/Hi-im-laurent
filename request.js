@@ -36,7 +36,7 @@ if(screen.availHeight > screen.availWidth){
 
 if (iOS()){
     orientationPortrait = true;
-}
+} 
 
 function iOS() {
     return [
@@ -250,6 +250,10 @@ infoBulle("Today",1);
 chatBulleServer("Hi! I'm Laurent!",colorBulle,0);
 chatBulleServer(":-)", colorBulle,0);
 
+const timerIntroInstructions = setTimeout(()=>{
+    infoBulle("Don't know how to start? <br> Just say <i>Hi!</i> or <i>Hello!</i><br>The rest will follow...",1);
+},12300);
+
 
 
 chatBox.addEventListener("submit", function(event){
@@ -289,7 +293,7 @@ chatBox.addEventListener("submit", function(event){
             updateScroll();
         },reactionTime*1.8
         );
-
+        clearTimeout(timerIntroInstructions);
     }
 
 
