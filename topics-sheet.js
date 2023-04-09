@@ -234,7 +234,7 @@ export const topics = [
 
     {   
         "key":"travail",
-        "images":["./images/travail-4.jpg","./images/travail-2.jpg","./images/travail-3.jpg"],
+        "images":["./images/travail-5.jpg","./images/travail-2.jpg","./images/travail-3.jpg"],
         "texts":[
             "<i>Travail!</i> is a project co-created with Mina Perrichon, and supported by the program Chimères, in France.",
             "It will become a performance flirting with the game world.", 
