@@ -234,7 +234,7 @@ export const topics = [
 
     {   
         "key":"travail",
-        "images":["./images/work1.jpg","./images/travail-2.jpg","./images/travail-3.jpg"],
+        "images":["./images/travail-4.jpg","./images/travail-2.jpg","./images/travail-3.jpg"],
         "texts":[
             "<i>Travail!</i> is a project co-created with Mina Perrichon, and supported by the program Chimères, in France.",
             "It will become a performance flirting with the game world.", 
@@ -498,11 +498,10 @@ export const topics = [
         "images":["./images/news-1.jpg"],
         "texts":[
             "Ok. Laurent, what's on the menu?",
-            "At the end of March 2023 I am two weeks in residency in Nantes, at Le Lieu Unique to work on <b>Travail!</b>",
-            "The first week of April 2023 I will be performing <b>Silicon Mountain</b> during the Festival Batard in Brussels.",
-            "I am su-per-du-per-ex-ci-ted!!!",
+            "Well I just finished a beautiful meaningful series of performances at Festival Bâtard in Brussels",
+            "It went veryyy well and the team is fan-ta-sti-co!",
             "Check them out on insta @batardbrussels",
-            "+ I have two weeks of field research in Bretagne in France to start gathering material for <b>deep beliefs</b>... #<b>research methodology</b>",
+            "In May I have two weeks of field research in Bretagne in France to start gathering material for <b>deep beliefs</b>... #<b>research methodology</b>",
             "Next to that I also work as performer in other people's projects.",
             "Voilà."
 
