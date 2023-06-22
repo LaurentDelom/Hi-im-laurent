@@ -355,19 +355,21 @@ export const topics = [
         "key":"technology",
         "images":["./images/technology-1.jpg"],
         "texts":[
-            "<i>Technology</i> constitutes a regular counterpart to the theme of <b>nature</b> in my investigations.", 
+            "I am more interested in treating <i>technology</i> as a discourse, or belief system.",
+            "In my investigations, it constitutes a regular counterpart to the theme of <b>nature</b>.", 
             "Such antagonism between <i>technology</i> and <i>nature</i> is common discourse. Think video-games vs. walk in the forest.",
-            " In <b>.ext</b>, I use this common discourse and speculate on it. I don't try to deconstruct it frontally.", 
+            "In <b>.ext</b>, I use this common discourse and speculate on it. I don't try to deconstruct it frontally.", 
             "in <b>Silicon Mountain</b> and <b>intuit</b>, technology gets portrayed as an obstacle between us and nature and at the same time as a resolution.",
-            "I am more interested in treating technology as a discourse, or as a belief system.",
-            "Next to this: digital media are pretty fun to toy with", 
+            "Next to this: I loooove it.",
+            "I mean: Hi! I'm Laurent!",
+            "and it is a joy to toy with it", 
             "like in <b>Vanilla</b> or in this <b>chatbox</b> for example, dealing with <b>internet</b>.", 
-            "To integrate it to a performance is a cool challenge, if you check <b>choreographing technique</b>.", 
-            "Politically, it is also about reclaiming space and attention that is otherwise colonized by commercial interests. See <b>entrepreneur</b> if needs be. "
-
+            "(I work mostly on web tech because it is the one thing that everyone has already in their pocket and i feel it needs to be harnessed artistically more than it is already... See <b>entrepreneur</b> if needs be.)",
+            "To integrate it to an art work is a cool challenge in itself, if you check <b>choreographing technique</b>."
+            
         ],            
         "related":["ext","silicon","intuit","vanilla","chatbox","internet","technique","entrepreneur","themes"],
-        "waiting":[2000,2150,1000,2000,1200,1000,1000,1000,3100], 
+        "waiting":[2000,2150,1000,2000,1200,1000,1000,1000,3100,1000,3100], 
         "transverse":true
     },
 
