@@ -251,8 +251,8 @@ chatBulleServer("Hi! I'm Laurent!",colorBulle,0);
 chatBulleServer(":-)", colorBulle,0);
 
 const timerIntroInstructions = setTimeout(()=>{
-    infoBulle("Just say <i>Hi!</i> or <i>Hello!</i><br> to initiate the conversation with my chatbot...",1);
-},12300);
+    infoBulle("Just say <i>Hi!</i> or <i>Hello!</i><br> to initiate the conversation with the chatbot...",1);
+},6300);
 
 
 
