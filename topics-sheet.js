@@ -79,12 +79,14 @@ export const topics = [
             " And it really works!",
             "Different layers of questioning. What do we look at when we look at nature? How do we deal with technology today? (mediatizing large parts of our interaction with the world: social life, entertainment, memory...)  Will it go as far as to cover our connection with nature?", 
             "And WTF is an 'im-mediate connection' with nature anyways?",
+            "feel free to go wonder by yourself,",
+            "the app is on the internet via siliconmountain.app",
             "so basically >>> </br> the <b>themes</b> are <b>nature</b>, <b>technology</b>, <b>internet</b>, <b>choreographing technique</b>, <b>design</b>, <b>entrepreneur</b>. And <b>methodology</b>",
             "you got the picture"
         ],
             
         "related":["existing","ext","nature","technology","methodology","verbs","technique","internet","design","entrepreneur"],
-        "waiting":[2000,4000,800,1000,4000,1500,2800,1200], 
+        "waiting":[2000,4000,800,1000,4000,1500,2800,1200,1500,2800], 
         "transverse":false
     },
 
@@ -430,20 +432,23 @@ export const topics = [
         "images":[],
         "texts":[
                 "<i>Choreographic Technique</i> is an ongoing reflection", 
-                "on the fact that technique has more agency over a live performance than the human performers themselves.", 
-                "(sounds like <i>technique is god</i> but ok)",
-                "It does exactly and rigidly what it was assigned to do by choices made in the past: the editing of the video, the encoding of a program, etc...",
-                "Therefore, I want my artistic vision to encompass the technical dimension from very early in the process.",
-                "If my piece works with a program, the program needs to be approached choreographically.", 
+                "on the fact when you make an art project with technology", 
+                "the answer to a technical question is oftentimes intradiegetic",
+                "it will lie in the artistic",
+                "So the two need to understand enough of each other in order to communicate",
+                "like this, the artistic vision can <i>actually</i> command the technique",
+                "and not the other way around...",
+                "If my piece works with a program let's say",
+                "the program needs to be developed from the start with that same vision",
+                "that is >> a choreographical.", 
                 "Hence the idea to choreograph <i>Technique</i>.", 
                 "voilà, with the big T.",
                 "It all really started with <b>duet</b> and <b>if any question</b>.", 
-                "Later in <b>.ext</b> I had technical set-ups rigorously prepared in advance so that they would conduct the entire live performance (voice, rhythm, dramaturgy…). No rehearsing at all.", 
                 "In <b>Silicon Mountain</b>, technique conveys the discourse. And <b>Travail!</b> is nothing but <i>choreographing Technique</i>."    
         
         ],            
         "related":["silicon","duet","question","travail","themes"],
-        "waiting":[1500,1500,1500,2800,2200,1800,1200,1000,2000,3100,2000], 
+        "waiting":[1500,1500,1500,2800,2200,1800,1200,1000,2000,3100,2000,2000,3100,2000], 
         "transverse":true
     },
 
