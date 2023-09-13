@@ -223,13 +223,13 @@ export const topics = [
             "Some fresh ideas, many vague visions, too much thinking.",
             "But listen, here is what <i>might</i> happen :", 
             "<b>Travail!</b>, a now mature research project going in production, as we speak.", 
-            "<b>deep beliefs</b> my next “big research” after <b>.ext</b>", 
+            "<b>dark waters</b> my next “big research” after <b>.ext</b>", 
             "Expect water, darkness and prayers that it all goes well.",
             "maybe maybe <b>Vanilla</b> a kind of social network for long distance sexual arousal.", 
             "And going further with <b>BULK2</b>."
                         
         ],            
-        "related":["travail","deep","vanilla","bulk2","ext"],
+        "related":["travail","dark","vanilla","bulk2","ext"],
         "waiting":[3200,3500,4200,3200,2200,2400,2100,2800,3100,2300], 
         "transverse":false
     },
@@ -255,10 +255,10 @@ export const topics = [
     },
 
     {   
-        "key":"deep",
+        "key":"dark",
         "images":["./images/deep-1.jpg","./images/deep-2.jpg","./images/deep-3.jpg"],
         "texts":[
-            "<i>deep beliefs</i> is the title of my next artistic research starting in 2024, (prolonging the previous one <b>.ext</b>)", 
+            "<i>dark waters</i> is the title of my next artistic research starting in 2024, (prolonging the previous one <b>.ext</b>)", 
             "Where I am entering now is via a different natural landscape and another human practice attached to that environment.", 
             " u n d e r w a t e r  && free-diving (a.k.a <br> a p n e a)",
             "The exact same socio-historical + symbolico-aesthetical bla-bla as developed in <b>.ext</b> applies here too, so I'll skip that part and jump to the more juicy one", 
@@ -337,7 +337,7 @@ export const topics = [
         "texts":[
             "Well, <i>nature</i> is everywhere, you know.",
             "Huhu.",
-            "I mean, as a theme, it is almost everywhere in my work. I love to look at how we look at nature within the western context. Especially in <b>.ext</b> and in my upcoming research <b>deep beliefs</b>.",
+            "I mean, as a theme, it is almost everywhere in my work. I love to look at how we look at nature within the western context. Especially in <b>.ext</b> and in my upcoming research <b>dark waters</b>.",
             "Nature is a conceptual production of Modernity ( XVIIth century). It endorsed the dichotomy between Man and Nature. As a result of this separation, humans must perform deliberate acts in order to re-access nature. “Harmony with nature” requires a ritual: go someplace do something. Re-enact.",
             "Hence the idea that Nature is performed. And is in its essence nostalgic.",
             "snif snif",
@@ -346,7 +346,7 @@ export const topics = [
             "we are in a long-distance relationship with nature"
             
         ],            
-        "related":["ext","deep","silicon","bulk","contest","intuit","themes"],
+        "related":["ext","dark","silicon","bulk","contest","intuit","themes"],
         "waiting":[2400,550,3000,3200,2200,1000,2000,2000,2500], 
         "transverse":true
     },
@@ -462,15 +462,15 @@ export const topics = [
         "images":["./images/methodology-1.jpg"],
         "texts":[
             "I am very very careful when I speak about methodology.", 
-            "Firstly because I don't have one.", 
-            "And secondly because I feel a bit bored about setting a methodology and abiding by it.",
+            "Firstly because I don't have a steady one.", 
+            "And secondly because I don't want to be too strict with my methodologiiies.",
             "i <i>used to be</i> an engineer <b>myself</b>...^^",
-            "What I do observe in my practice is that the mere <i>thought</i> of methodology has an efficacy already", 
+            "Fun fact though: I do observe in my practice is that the mere <i>thought</i> of methodology has an efficacy already", 
             "I am not saying that any methodology does the job (I actually disagree)", 
-            "What I am saying is that observing the question present in my mind performs better than producing a rigid answer to that question.",
+            "What I am saying is that observing the question present in my mind already activates methodological approaches.",
             "In a nutshell >> This is my methodology >> what is my methodology?",
             "So far in my processes I observed that <i>instant methodologies</i> tended to emerge, matching the moment, situation, material and my skills.", 
-            "I also noticed that my thinking can start moving once I have made myself a <i>tool for thinking</i>.", 
+            "I also noticed that my thinking can start growing once I have made myself a <i>tool for thinking</i> like a prototype.", 
             "That's all I can tell.",
             "These divagations originated in <b>duet</b>, in <b>.ext</b>, in <b>Travail!</b> and in this <b>chatbox</b>. "
                 
@@ -491,10 +491,10 @@ export const topics = [
            "Namely, in french: <i>confondre</i>, <i>spéculer</i>, <i>explorer</i>.",
            "<i>Confondre</i> can mean a lot of things: to mistake something for something else, to blend two things (like a color gradient does to colors), to disconcert someone, to provoke confusion in someone, to unmask a liar. It is active here in this <b>chatbox</b>, as well as in <b>Travail!</b> And a lot in <b>duet</b>.",
             "<i>Spéculer</i> was my main creative tool in <b>.ext</b>. I take something that is already there and I bring it further, <i>going the extra mile</i>. <b>Bulk</b> being the best example. <b>Vanilla</b> also.", 
-            "And <i>explorer</i> is about daring to go out of place, dealing with the unknown, not understanding, adapting, modifying yourself. Which is where I am at with <b>deep beliefs</b>."
+            "And <i>explorer</i> is about daring to go out of place, dealing with the unknown, not understanding, adapting, modifying yourself. Which is where I am at with <b>dark waters</b>."
             
         ],            
-        "related":["ext","duet","travail","silicon","chatbox","bulk","entrepreneur","vanilla","deep","themes"],
+        "related":["ext","duet","travail","silicon","chatbox","bulk","entrepreneur","vanilla","dark","themes"],
         "waiting":[1200,1000,1200,2200,1200,2500,2400,2100], 
         "transverse":true
     },
@@ -505,7 +505,7 @@ export const topics = [
         "images":["./images/news-1.jpg"],
         "texts":[
             "Ok. Laurent, what's on the menu?",
-            "Well I am in the middle of my field research, gathering material for <b>deep beliefs</b>... #<b>research methodology</b>",
+            "Well I am in the middle of my field research, gathering material for <b>dark waters</b>... #<b>research methodology</b>",
             "And planning an intense learning phase: arduino programming, calligraphy, paleography, gregorian singing, free-diving...",
             "(it will all make sense later!)",
             "Also gathering momentum in France to make <b>Travail!</b> happen",
@@ -514,7 +514,7 @@ export const topics = [
 
            
         ],            
-        "related":["silicon","travail","deep","methodology"],
+        "related":["silicon","travail","dark","methodology"],
         "waiting":[3200,4500,4700,3200,3000,5000,5100,2100], 
         "transverse":true
     },
@@ -529,13 +529,13 @@ export const topics = [
                 "Now working and living in Antwerp, Belgium. With <i>virtually</i> one foot in France.",
                 "At the moment my interests go towards performance <b>design</b> and exploratory practices. I love sports. I love the mountains, and recently the underwater...^^",
                 "Basic rule of thumb in my life: where I smell danger, I go.",
-                "Besides what's on the <b>news</b> at the moment, I am preparing-speculating-obsessing about <b>deep beliefs</b>. And learning new stuff",
+                "Besides what's on the <b>news</b> at the moment, I am preparing-speculating-obsessing about <b>dark waters</b>. And learning new stuff",
                 "<i>for contact</i> >>> laurentmezerac_at_hotmail.com but...", 
                 "you also have a WhatsApp button showing up after 9 questions",
                 "Hi! I'm Laurent!"
            
         ],            
-        "related":["news","travail","deep","chatbox","yourself"],
+        "related":["news","travail","dark","chatbox","yourself"],
         "waiting":[4200,5150,3500,5200,4200,5100,3100,2400,2400], 
         "transverse":true
     },
